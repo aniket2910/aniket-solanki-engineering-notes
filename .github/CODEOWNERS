@@ -1,0 +1,5 @@
+# CODEOWNERS — dsa-ai-notebook
+# Every pull request requires review and approval from the repo owner.
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+* @aniket2910
