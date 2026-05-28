@@ -36,7 +36,7 @@ Use this list to track your progress and quickly open specific problem write-ups
 
 | Index | Problem Name | Difficulty | Core Pattern / Concept |
 | :---: | :--- | :---: | :--- |
-| `001` | [Sort an Array (912)](file:///Users/aniketsolanki/Desktop/work/aniket-solanki-engineering-notes/DSA/04_SORTING/001-medium-sort-an-array.md) | 🟡 Medium | Merge Sort (Divide & Conquer) |
+| `001` | [Sort an Array (912)](./001-medium-sort-an-array.md) | 🟡 Medium | Merge Sort (Divide & Conquer) |
 
 ---
 

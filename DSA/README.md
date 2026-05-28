@@ -8,17 +8,17 @@ This directory contains our structured DSA revision notebook. All concepts are d
 
 Select a topic to start your revision:
 
-1. **[00. Fundamentals](file:///Users/aniketsolanki/Desktop/work/aniket-solanki-engineering-notes/DSA/00_FUNDAMENTALS/README.md)**
+1. **[00. Fundamentals](./00_FUNDAMENTALS/README.md)**
    * Why DSA is required, running memory layouts, and algorithmic mindsets.
-2. **[01. Strings](file:///Users/aniketsolanki/Desktop/work/aniket-solanki-engineering-notes/DSA/01_STRINGS/README.md)**
+2. **[01. Strings](./01_STRINGS/README.md)**
    * String properties, ASCII/Unicode character codes, Frequency Buckets, and Sliding Window.
-3. **[02. Math](file:///Users/aniketsolanki/Desktop/work/aniket-solanki-engineering-notes/DSA/02_MATH/README.md)**
+3. **[02. Math](./02_MATH/README.md)**
    * Integer division behavior, base-10 digit extraction, modular arithmetic, and reconstruction.
-4. **[03. Binary Search](file:///Users/aniketsolanki/Desktop/work/aniket-solanki-engineering-notes/DSA/03_BINARY_SEARCH/README.md)**
+4. **[03. Binary Search](./03_BINARY_SEARCH/README.md)**
    * Sorted arrays, midpoint overflow prevention, exact match searching, and boundary finding.
-5. **[04. Sorting](file:///Users/aniketsolanki/Desktop/work/aniket-solanki-engineering-notes/DSA/04_SORTING/README.md)**
+5. **[04. Sorting](./04_SORTING/README.md)**
    * Stability, in-place vs out-of-place complexity matrices, and Merge Sort implementation.
-6. **[05. Arrays](file:///Users/aniketsolanki/Desktop/work/aniket-solanki-engineering-notes/DSA/05_ARRAYS/README.md)**
+6. **[05. Arrays](./05_ARRAYS/README.md)**
    * Contiguous memory, static vs dynamic vectors, Two-Pointer read/write bounds, and Prefix Sums.
 
 ---

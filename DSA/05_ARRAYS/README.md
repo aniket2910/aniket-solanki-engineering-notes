@@ -27,7 +27,7 @@ Most array problems are unlocked by applying one of these high-yield patterns:
 ### A. Two-Pointer (Read/Write or Opposite Direction)
 * **What**: Maintaining two index pointers that move either toward the center, or at different speeds (read/write).
 * **Why**: Perfect for in-place modifications, reversing, or searching pairs in sorted arrays.
-* **Example**: [001. Remove Duplicates from Sorted Array](file:///Users/aniketsolanki/Desktop/work/aniket-solanki-engineering-notes/DSA/05_ARRAYS/001-easy-remove-duplicates-from-sorted-array.md) (uses Read/Write pointer)
+* **Example**: [001. Remove Duplicates from Sorted Array](./001-easy-remove-duplicates-from-sorted-array.md) (uses Read/Write pointer)
 
 ### B. Prefix Sum
 * **What**: Creating an auxiliary array where `prefix[i]` stores the sum of all elements from index `0` to `i`.
@@ -45,8 +45,12 @@ Use this list to track your progress and quickly open specific problem write-ups
 
 | Index | Problem Name | Difficulty | Core Pattern / Concept |
 | :---: | :--- | :---: | :--- |
-| `001` | [Remove Duplicates from Sorted Array](file:///Users/aniketsolanki/Desktop/work/aniket-solanki-engineering-notes/DSA/05_ARRAYS/001-easy-remove-duplicates-from-sorted-array.md) | 🟢 Easy | Two-Pointer (Read/Write Pointer) |
-| `002` | [Remove Element](file:///Users/aniketsolanki/Desktop/work/aniket-solanki-engineering-notes/DSA/05_ARRAYS/002-easy-remove-element.md) | 🟢 Easy | Two-Pointer (Read/Write Pointer) |
+| `001` | [Remove Duplicates from Sorted Array](./001-easy-remove-duplicates-from-sorted-array.md) | 🟢 Easy | Two-Pointer (Read/Write Pointer) |
+| `002` | [Remove Element](./002-easy-remove-element.md) | 🟢 Easy | Two-Pointer (Read/Write Pointer) |
+| `003` | [Best Time to Buy and Sell Stock](./003-easy-best-time-to-buy-and-sell-stock.md) | 🟢 Easy | Running Minimum Profit Tracking |
+| `004` | [Merge Sorted Array](./004-easy-merge-sorted-array.md) | 🟢 Easy | Two-Pointer Merge from the Back |
+| `005` | [Move Zeroes](./005-easy-move-zeroes.md) | 🟢 Easy | Two-Pointer (Swap non-zeroes forward) |
+| `006` | [Max Consecutive Ones](./006-easy-max-consecutive-ones.md) | 🟢 Easy | Single-Pass Counting & Running Max |
 
 ---
 

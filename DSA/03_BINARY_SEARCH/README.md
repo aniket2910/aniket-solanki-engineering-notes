@@ -26,7 +26,7 @@ When writing Binary Search, the loop condition depends on what you are trying to
 * **Pointers**: `left = mid + 1` and `right = mid - 1`
 * **Exit State**: `left > right` (target not found).
 * **Usage**: Standard search where the target either exists in the array or it doesn't.
-* **Example**: [001. Binary Search (Standard)](file:///Users/aniketsolanki/Desktop/work/aniket-solanki-engineering-notes/DSA/03_BINARY_SEARCH/001-easy-binary-search.md)
+* **Example**: [001. Binary Search (Standard)](./001-easy-binary-search.md)
 
 ### Template B: Finding Boundaries (Lower/Upper Bound or First/Last Match)
 * **Loop Condition**: `while (left < right)`
@@ -42,7 +42,7 @@ Use this list to track your progress and quickly open specific problem write-ups
 
 | Index | Problem Name | Difficulty | Core Pattern / Concept |
 | :---: | :--- | :---: | :--- |
-| `001` | [Binary Search](file:///Users/aniketsolanki/Desktop/work/aniket-solanki-engineering-notes/DSA/03_BINARY_SEARCH/001-easy-binary-search.md) | 🟢 Easy | Two-Pointer Standard Search |
+| `001` | [Binary Search](./001-easy-binary-search.md) | 🟢 Easy | Two-Pointer Standard Search |
 
 ---
 

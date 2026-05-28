@@ -25,7 +25,7 @@ When you see a string problem, it almost always falls into one of these core pat
 ### A. Frequency Buckets / Hash Maps
 * **What**: Using an array of size 26 (for lowercase English letters) or a Hash Map to record occurrences of characters.
 * **Why**: Perfect for checking anagrams, finding first unique characters, or checking if we can form a specific set of words.
-* **Example**: [001. Second Largest Digit in a String](file:///Users/aniketsolanki/Desktop/work/aniket-solanki-engineering-notes/DSA/01_STRINGS/001-easy-second-largest-digit.md) (uses variables, but relies on a frequency concept).
+* **Example**: [001. Second Largest Digit in a String](./001-easy-second-largest-digit.md) (uses variables, but relies on a frequency concept).
 
 ### B. Two-Pointer (Opposite Direction & Fast/Slow)
 * **What**: Placing pointers at the beginning and end of a string and moving them toward the center (or at different speeds).
@@ -47,7 +47,8 @@ Use this list to track your progress and quickly open specific problem write-ups
 
 | Index | Problem Name | Difficulty | Core Pattern / Concept |
 | :---: | :--- | :---: | :--- |
-| `001` | [Second Largest Digit in a String](file:///Users/aniketsolanki/Desktop/work/aniket-solanki-engineering-notes/DSA/01_STRINGS/001-easy-second-largest-digit.md) | 🟢 Easy | Two-Variable Running Maxima |
+| `001` | [Second Largest Digit in a String](./001-easy-second-largest-digit.md) | 🟢 Easy | Two-Variable Running Maxima |
+| `002` | [Reverse String](./002-easy-reverse-string.md) | 🟢 Easy | Two-Pointer (Opposite Direction) |
 
 ---
 

@@ -25,7 +25,7 @@ When you see a numerical/math problem, it almost always falls into one of these 
 ### A. Digit Manipulation
 * **What**: Iteratively stripping and reconstructing digits of a number using `% 10` and `/ 10` in a loop.
 * **Why**: Perfect for reversing numbers, checking symmetry, or summing digits (e.g., Happy Number, Palindrome Number).
-* **Example**: [001. Palindrome Number](file:///Users/aniketsolanki/Desktop/work/aniket-solanki-engineering-notes/DSA/02_MATH/001-easy-palindrome-number.md)
+* **Example**: [001. Palindrome Number](./001-easy-palindrome-number.md)
 
 ### B. Primality & Divisors
 * **What**: Efficiently searching for divisors or checking if a number is prime.
@@ -43,9 +43,11 @@ Use this list to track your progress and quickly open specific problem write-ups
 
 | Index | Problem Name | Difficulty | Core Pattern / Concept |
 | :---: | :--- | :---: | :--- |
-| `001` | [Palindrome Number](file:///Users/aniketsolanki/Desktop/work/aniket-solanki-engineering-notes/DSA/02_MATH/001-easy-palindrome-number.md) | 🟢 Easy | Digit Manipulation & Reversal |
-| `002` | [Reverse Integer](file:///Users/aniketsolanki/Desktop/work/aniket-solanki-engineering-notes/DSA/02_MATH/002-medium-reverse-integer.md) | 🟡 Medium | Digit Manipulation & Overflow Protection |
-| `003` | [Power of Two](file:///Users/aniketsolanki/Desktop/work/aniket-solanki-engineering-notes/DSA/02_MATH/003-easy-power-of-two.md) | 🟢 Easy | Bit Manipulation & Bit Clearing |
+| `001` | [Palindrome Number](./001-easy-palindrome-number.md) | 🟢 Easy | Digit Manipulation & Reversal |
+| `002` | [Reverse Integer](./002-medium-reverse-integer.md) | 🟡 Medium | Digit Manipulation & Overflow Protection |
+| `003` | [Power of Two](./003-easy-power-of-two.md) | 🟢 Easy | Bit Manipulation & Bit Clearing |
+| `004` | [Missing Number](./004-easy-missing-number.md) | 🟢 Easy | Gauss Sum Formula / XOR |
+| `005` | [Single Number](./005-easy-single-number.md) | 🟢 Easy | Bit Manipulation (XOR Self-Cancellation) |
 
 ---
 
