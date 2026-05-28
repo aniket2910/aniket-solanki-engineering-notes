@@ -1,5 +1,8 @@
 # 004. Missing Number (Easy)
 
+> [!IMPORTANT]
+> **Interview Tag**: 🔥 **MUST SOLVE** - A staple of bitwise operations and mathematical induction. Teaches you two completely different ways of thinking about numerical arrays.
+
 ---
 
 ### 📝 1. Problem Statement
@@ -11,31 +14,23 @@ Given an array `nums` containing `n` distinct numbers in the range `[0, n]`, ret
 
 #### Test Case 1
 * **Input**: `nums = [3, 0, 1]`
-* **Output**: `8` (Wait, let's verify LeetCode 268 logic: array has length $3$, so numbers are in range `[0, 3]`. The numbers present are `0`, `1`, `3`. The missing number is `2`. Output is `2`.)
-* **Corrected Test Case 1**:
-  * **Input**: `nums = [3, 0, 1]`
-  * **Output**: `2`
-  * **Why**: $n = 3$ since there are $3$ numbers, so all numbers are in the range `[0,3]`. `2` is the missing number in the range since it does not appear in `nums`.
+* **Output**: `2`
+* **Why**: $n = 3$ since there are $3$ numbers, so all numbers are in the range `[0, 3]`. `2` is the missing number in the range since it does not appear in `nums`.
 
 #### Test Case 2
 * **Input**: `nums = [0, 1]`
 * **Output**: `2`
-* **Why**: $n = 2$ since there are $2$ numbers, so all numbers are in the range `[0,2]`. `2` is the missing number since it does not appear in `nums`.
+* **Why**: $n = 2$ since there are $2$ numbers, so all numbers are in the range `[0, 2]`. `2` is the missing number since it does not appear in `nums`.
 
 #### Test Case 3
 * **Input**: `nums = [9,6,4,2,3,5,7,0,1]`
 * **Output**: `8`
-* **Why**: $n = 9$ since there are $9$ numbers, so all numbers are in the range `[0,9]`. `8` is the missing number since it does not appear in `nums`.
 
 ---
 
 ### 💬 3. What is This Problem Actually Asking?
 We are given an array of size `n` filled with unique numbers from `0` to `n`. 
 Since there are `n + 1` possible numbers in that range, but the array only has space for `n` elements, exactly **one** number must be missing. We need to find that missing number.
-
-The optimal constraints are:
-* **Linear Time**: We must find the missing number in $O(N)$ time.
-* **Constant Space**: We must use only $O(1)$ extra space. (We cannot use a Hash Set or sort the array, as those would take extra memory or $O(N \log N)$ sorting time).
 
 ---
 
@@ -48,33 +43,54 @@ Think of a **numbered deck of cards** from `0` to `n`:
 
 ---
 
-### 🛠️ 5. Data Structure & Algorithm Used
-* **Data Structure**: None (scalar integers).
-* **Algorithm**: **Gauss's Sum Formula (Summation Math)**.
-  * *Why*: The sum of all integers from `0` to `n` is given by the formula:
-    $$\text{Expected Sum} = \frac{n \cdot (n + 1)}{2}$$
-  * By calculating this expected sum and subtracting the actual sum of all numbers in the array, the remainder is guaranteed to be the missing element.
-  * *Alternative Algorithm*: **Bitwise XOR (`^`)**. Since $a \oplus a = 0$, if we XOR all numbers from `0` to `n` and all elements in `nums`, all duplicates cancel out, leaving exactly the missing number. (We implement the Sum Formula because it is the most intuitive and clean).
+### 🛠️ 5. Data Structure & Algorithms Used
+
+We present **two highly optimal, constant-space approaches** that demonstrate strong mathematical and bitwise intuition:
+
+#### Approach 1: Gauss's Sum Formula (Summation Math)
+The sum of all integers from `0` to `n` is given by:
+$$\text{Expected Sum} = \frac{n \cdot (n + 1)}{2}$$
+By calculating this expected sum and subtracting the actual sum of all numbers in the array, the remainder is guaranteed to be the missing element.
+* **Pros**: Incredibly intuitive and clean.
+* **Cons**: Intermediate sum of $n \cdot (n+1)$ can overflow in languages with bounded integers if $n$ is extremely large (though not a problem in JS/TS double-precision floats).
+
+#### Approach 2: Bitwise XOR (`^`)
+We use the fundamental XOR identity: $x \oplus x = 0$ and $x \oplus 0 = x$.
+If we XOR all index positions from `0` to `n` and all values inside `nums`, every number present will appear twice (once as an index, once as a value) and cancel out to `0`. The only number that appears once (only as an index) is the missing number!
+* **Pros**: Prevents any potential integer overflow entirely! Highly appreciated by low-level systems interviewers.
 
 ---
 
 ### 💻 6. Optimal Code (TypeScript)
 
+Here is the clean, human-written codebase showing both approaches. Approach 1 is shown in comments to show a clear progression of thought!
+
 ```typescript
 function missingNumber(nums: number[]): number {
-    const n = nums.length;
-    
-    // Calculate expected sum of 0 to n using Gauss's Formula
-    const expectedSum = (n * (n + 1)) / 2;
-    
-    // Calculate the actual sum of elements in the array
+    // ==========================================
+    // 1st Approach: Gauss Sum Formula (Summation Math)
+    // ==========================================
+    /*
+    let n = nums.length;
+    let expectedSum = (n * (n + 1)) / 2;
     let actualSum = 0;
     for (let i = 0; i < nums.length; i++) {
         actualSum += nums[i];
     }
-    
-    // The difference is the missing number
     return expectedSum - actualSum;
+    */
+
+    // ==========================================
+    // 2nd Approach: Bitwise XOR (Self-Cancellation)
+    // ==========================================
+    let n = nums.length;
+    let ans = n; // Start with n because indices only go from 0 to n-1 in the loop
+
+    for (let i = 0; i < n; i++) {
+        ans = ans ^ i ^ nums[i];
+    }
+
+    return ans;
 }
 ```
 
@@ -82,15 +98,11 @@ function missingNumber(nums: number[]): number {
 
 ### 📊 7. Complexity & Edge Cases
 
-* **Time Complexity**: **$O(N)$** — We traverse the array exactly once to calculate the sum of its elements.
-* **Space Complexity**: **$O(1)$** — We only allocate a few scalar variables (`expectedSum`, `actualSum`).
+| Metric | Approach 1: Gauss Sum | Approach 2: Bitwise XOR |
+| :--- | :--- | :--- |
+| **Time Complexity** | **$O(N)$** — Single pass over array. | **$O(N)$** — Single pass over array. |
+| **Space Complexity** | **$O(1)$** — Constant variables. | **$O(1)$** — Constant variables. |
 
 #### Edge Cases Handled:
-* **Missing Zero** (`nums = [1, 2]`, $n = 2$):
-  * `expectedSum = (2 * 3) / 2 = 3`.
-  * `actualSum = 1 + 2 = 3`.
-  * Returns `3 - 3 = 0` (Correct).
-* **Missing $n$** (`nums = [0, 1]`, $n = 2$):
-  * `expectedSum = 3`.
-  * `actualSum = 1`.
-  * Returns `3 - 1 = 2` (Correct).
+* **Missing Zero** (`nums = [1, 2]`, $n = 2$): Returns `0` (Correct).
+* **Missing $n$** (`nums = [0, 1]`, $n = 2$): Returns `2` (Correct).

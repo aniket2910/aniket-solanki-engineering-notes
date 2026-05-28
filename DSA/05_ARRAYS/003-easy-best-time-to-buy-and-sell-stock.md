@@ -1,5 +1,8 @@
 # 003. Best Time to Buy and Sell Stock (Easy)
 
+> [!IMPORTANT]
+> **Interview Tag**: 🔥 **MUST SOLVE** - A top-tier interview classic. Perfect for testing sliding window concepts and greedy tracking of running minima.
+
 ---
 
 ### 📝 1. Problem Statement
@@ -26,11 +29,7 @@ Return the *maximum profit* you can achieve from this transaction. If you cannot
 ---
 
 ### 💬 3. What is This Problem Actually Asking?
-We want to find the largest possible gap between two numbers in an array, with the strict rule that **the smaller number (buy day) must appear before the larger number (sell day)**.
-
-The optimal constraints are:
-* **Linear Time ($O(N)$)**: We are only allowed to scan the price history once.
-* **Constant Space ($O(1)$)**: We cannot use nested loops ($O(N^2)$) as they will time out on large price histories.
+We want to find the largest possible positive difference between two numbers in an array, under the condition that **the smaller number (buy day) must appear before the larger number (sell day)**.
 
 ---
 
@@ -43,29 +42,59 @@ Think of a **financial trader looking at a stock price history chart**:
 
 ---
 
-### 🛠️ 5. Data Structure & Algorithm Used
-* **Data Structure**: **Array** (representing prices over time).
-* **Algorithm**: **Single-Pass Running Minimum Tracking (Greedy / Kadane's Style)**.
-  * *Why*: We don't need to check every pair of days. By simply remembering the lowest buying point we've seen so far as we traverse forward, we can instantly calculate the maximum profit possible if we sold on the current day in $O(1)$ operations.
+### 🛠️ 5. Data Structure & Algorithms Used
+
+We present **two approaches** showing how to optimize a brute-force search into a highly efficient single-pass search:
+
+#### Approach 1: Brute Force (Nested Loops)
+We check every possible pair of buy and sell days and keep track of the maximum profit.
+* **Pros**: Simple to write.
+* **Cons**: Extremely slow ($O(N^2)$), which will result in a Time Limit Exceeded (TLE) error on large price histories.
+
+#### Approach 2: Running Minimum Tracking (Greedy)
+We traverse the prices array exactly once. As we walk, we maintain two values: the minimum price seen so far (`minPrice`), and the maximum profit achieved so far (`maxProfit`).
+* At each step, if we find a lower price than `minPrice`, we update it.
+* Otherwise, we check if selling at the current price yields a new record profit, and update `maxProfit` accordingly.
+* **Pros**: Fast, optimal $O(N)$ runtime, and takes $O(1)$ space.
 
 ---
 
 ### 💻 6. Optimal Code (TypeScript)
 
+Here is the clean, human-written codebase showing both approaches. Approach 1 is shown in comments to demonstrate your progression of thought!
+
 ```typescript
 function maxProfit(prices: number[]): number {
-    let minPrice: number = Infinity;
-    let maxProfit: number = 0;
+    // ==========================================
+    // 1st Approach: Brute Force Nested Loops (TLE)
+    // ==========================================
+    /*
+    let maxProfit = 0;
+    for (let i = 0; i < prices.length; i++) {
+        for (let j = i + 1; j < prices.length; j++) {
+            let profit = prices[j] - prices[i];
+            if (profit > maxProfit) {
+                maxProfit = profit;
+            }
+        }
+    }
+    return maxProfit;
+    */
+
+    // ==========================================
+    // 2nd Approach: Running Minimum Tracking (Optimal)
+    // ==========================================
+    let minPrice = Infinity;
+    let maxProfit = 0;
 
     for (let i = 0; i < prices.length; i++) {
-        const price = prices[i];
+        let price = prices[i];
 
-        // 1. Keep track of the lowest buying price seen so far
         if (price < minPrice) {
+            // Track the lowest price we've seen to buy
             minPrice = price;
-        } 
-        // 2. Otherwise, check if selling today yields a higher record profit
-        else if (price - minPrice > maxProfit) {
+        } else if (price - minPrice > maxProfit) {
+            // Found a higher sell profit!
             maxProfit = price - minPrice;
         }
     }
@@ -78,13 +107,11 @@ function maxProfit(prices: number[]): number {
 
 ### 📊 7. Complexity & Edge Cases
 
-* **Time Complexity**: **$O(N)$** — We traverse the array of length $N$ exactly once.
-* **Space Complexity**: **$O(1)$** — We use only two constant-sized variables (`minPrice`, `maxProfit`).
+| Metric | Approach 1: Brute Force | Approach 2: Running Min |
+| :--- | :--- | :--- |
+| **Time Complexity** | **$O(N^2)$** — Nested index pair comparisons. | **$O(N)$** — Single pass over array. |
+| **Space Complexity** | **$O(1)$** — Constant variables. | **$O(1)$** — Constant variables. |
 
 #### Edge Cases Handled:
-* **Single Day Price History** (`prices = [5]`): The loop runs once, `minPrice` becomes `5`. The `else if` is skipped. Returns `maxProfit` (`0`) (Correct, cannot sell on the same day).
-* **Strictly Decreasing Prices** (`prices = [5, 4, 3, 2]`): `minPrice` keeps updating downward. The `price - minPrice` is never positive. Returns `0` (Correct).
-* **Stock Spikes Up and Down** (`prices = [2, 10, 1, 3]`):
-  * At price `10`: `minPrice` is `2`. Profit = $10 - 2 = 8$ (`maxProfit = 8`).
-  * At price `1`: `minPrice` updates to `1`.
-  * At price `3`: Profit = $3 - 1 = 2$. It is smaller than `8`, so `maxProfit` remains `8`. Returns `8` (Correct).
+* **Single Day Price History** (`prices = [5]`): The loop runs once, `minPrice` becomes `5`. Returns `0` (Correct, cannot buy and sell on the same day).
+* **Strictly Decreasing Prices** (`prices = [5, 4, 3, 2]`): `minPrice` keeps updating downward, profit is never positive. Returns `0` (Correct).

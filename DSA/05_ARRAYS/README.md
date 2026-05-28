@@ -45,11 +45,11 @@ Use this list to track your progress and quickly open specific problem write-ups
 
 | Index | Problem Name | Difficulty | Core Pattern / Concept |
 | :---: | :--- | :---: | :--- |
-| `001` | [Remove Duplicates from Sorted Array](./001-easy-remove-duplicates-from-sorted-array.md) | 🟢 Easy | Two-Pointer (Read/Write Pointer) |
+| `001` | [Remove Duplicates from Sorted Array](./001-easy-remove-duplicates-from-sorted-array.md) 🔥 | 🟢 Easy | Two-Pointer (Read/Write Pointer) |
 | `002` | [Remove Element](./002-easy-remove-element.md) | 🟢 Easy | Two-Pointer (Read/Write Pointer) |
-| `003` | [Best Time to Buy and Sell Stock](./003-easy-best-time-to-buy-and-sell-stock.md) | 🟢 Easy | Running Minimum Profit Tracking |
-| `004` | [Merge Sorted Array](./004-easy-merge-sorted-array.md) | 🟢 Easy | Two-Pointer Merge from the Back |
-| `005` | [Move Zeroes](./005-easy-move-zeroes.md) | 🟢 Easy | Two-Pointer (Swap non-zeroes forward) |
+| `003` | [Best Time to Buy and Sell Stock](./003-easy-best-time-to-buy-and-sell-stock.md) 🔥 | 🟢 Easy | Running Minimum Profit Tracking |
+| `004` | [Merge Sorted Array](./004-easy-merge-sorted-array.md) 🔥 | 🟢 Easy | Two-Pointer Merge from the Back |
+| `005` | [Move Zeroes](./005-easy-move-zeroes.md) 🔥 | 🟢 Easy | Two-Pointer (Swap non-zeroes forward) |
 | `006` | [Max Consecutive Ones](./006-easy-max-consecutive-ones.md) | 🟢 Easy | Single-Pass Counting & Running Max |
 
 ---

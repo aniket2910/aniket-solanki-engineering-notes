@@ -4,6 +4,23 @@ This directory contains our structured DSA revision notebook. All concepts are d
 
 ---
 
+## 📊 Repository Metrics
+
+To keep your interview preparation laser-focused, here is the real-time breakdown of all solved challenges inside this notebook.
+
+> [!TIP]
+> Prioritize the 🔥 **Must Solve** questions (marked with a 🔥 in the catalogs) first when you are short on time before an interview!
+
+| Metric | Count |
+| :--- | :---: |
+| 🚀 **Total Solved Questions** | **48** |
+| 🟢 Easy Difficulty | **32** |
+| 🟡 Medium Difficulty | **16** |
+| 🔴 Hard Difficulty | **0** |
+| 🔥 **Must Solve Interview Targets** | **25** |
+
+---
+
 ## 📂 Core Topics Index
 
 Select a topic to start your revision:
@@ -20,6 +37,8 @@ Select a topic to start your revision:
    * Stability, in-place vs out-of-place complexity matrices, and Merge Sort implementation.
 6. **[05. Arrays](./05_ARRAYS/README.md)**
    * Contiguous memory, static vs dynamic vectors, Two-Pointer read/write bounds, and Prefix Sums.
+7. **[06. Linked List](./06_LINKED_LIST/README.md)**
+   * Pointer manipulation, Sentinel Dummy nodes, Tortoise & Hare fast/slow scans, and in-place list reversals.
 
 ---
 

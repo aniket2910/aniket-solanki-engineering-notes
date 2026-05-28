@@ -48,7 +48,26 @@ Use this list to track your progress and quickly open specific problem write-ups
 | Index | Problem Name | Difficulty | Core Pattern / Concept |
 | :---: | :--- | :---: | :--- |
 | `001` | [Second Largest Digit in a String](./001-easy-second-largest-digit.md) | 🟢 Easy | Two-Variable Running Maxima |
-| `002` | [Reverse String](./002-easy-reverse-string.md) | 🟢 Easy | Two-Pointer (Opposite Direction) |
+| `002` | [Reverse String](./002-easy-reverse-string.md) 🔥 | 🟢 Easy | Two-Pointer (Opposite Direction) |
+| `003` | [Length of Last Word](./003-easy-length-of-last-word.md) | 🟢 Easy | Backward Pointer Traversal |
+| `004` | [Find Words Containing Character](./004-easy-find-words-containing-character.md) | 🟢 Easy | Basic Iteration Scanning |
+| `005` | [Jewels and Stones](./005-easy-jewels-and-stones.md) | 🟢 Easy | Set-Based Fast Lookup Counts |
+| `006` | [Find Most Frequent Vowel and Consonant](./006-easy-find-most-frequent-vowel-and-consonant.md) | 🟢 Easy | Frequency Counting & Running Max |
+| `007` | [Split a String in Balanced Strings](./007-easy-split-a-string-in-balanced-strings.md) | 🟢 Easy | Greedy State Balancing |
+| `008` | [Reverse String II](./008-easy-reverse-string-ii.md) | 🟢 Easy | Chunked Segment Reversing |
+| `009` | [Valid Palindrome](./009-easy-valid-palindrome.md) 🔥 | 🟢 Easy | Alphanumeric Filtering & Opposite Two-Pointers |
+| `010` | [Largest Odd Number in a String](./010-easy-largest-odd-number-in-a-string.md) | 🟢 Easy | String Math Search from Back |
+| `011` | [Longest Common Prefix](./011-easy-longest-common-prefix.md) 🔥 | 🟢 Easy | Vertical/Horizontal Character Scanning |
+| `012` | [Valid Anagram](./012-easy-valid-anagram.md) 🔥 | 🟢 Easy | Fixed-Size 26 Frequency Bucket Arrays |
+| `013` | [Isomorphic Strings](./013-easy-isomorphic-strings.md) | 🟢 Easy | Dual Character-Mapping Checks |
+| `014` | [Group Anagrams](./014-medium-group-anagrams.md) 🔥 | 🟡 Medium | Hash Map with Sorted Character Keys |
+| `015` | [Minimum Add to Make Parentheses Valid](./015-medium-minimum-add-to-make-parentheses-valid.md) | 🟡 Medium | Stack Balance Tracking Counters |
+| `016` | [Reverse Words in a String](./016-medium-reverse-words-in-a-string.md) 🔥 | 🟡 Medium | Dynamic Word Splitting & Reverse Joining |
+| `017` | [Sum of Beauty of All Substrings](./017-medium-sum-of-beauty-of-all-substrings.md) | 🟡 Medium | Substring Sliding Window Frequency Limits |
+| `018` | [Decode String](./018-medium-decode-string.md) 🔥 | 🟡 Medium | Dual Stack (Numbers & Letters) Decompression |
+| `019` | [Count and Say](./019-medium-count-and-say.md) | 🟡 Medium | Iterative Run-Length Encoding |
+| `020` | [Reorganize String](./020-medium-reorganize-string.md) 🔥 | 🟡 Medium | Greedy Character Spacing with Frequency Bucket Arrays |
+| `021` | [Repeated String Match](./021-medium-repeated-string-match.md) 🔥 | 🟡 Medium | Modular Replication Matching Limits |
 
 ---
 

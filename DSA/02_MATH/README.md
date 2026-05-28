@@ -43,11 +43,11 @@ Use this list to track your progress and quickly open specific problem write-ups
 
 | Index | Problem Name | Difficulty | Core Pattern / Concept |
 | :---: | :--- | :---: | :--- |
-| `001` | [Palindrome Number](./001-easy-palindrome-number.md) | 🟢 Easy | Digit Manipulation & Reversal |
+| `001` | [Palindrome Number](./001-easy-palindrome-number.md) 🔥 | 🟢 Easy | Digit Manipulation & Reversal |
 | `002` | [Reverse Integer](./002-medium-reverse-integer.md) | 🟡 Medium | Digit Manipulation & Overflow Protection |
 | `003` | [Power of Two](./003-easy-power-of-two.md) | 🟢 Easy | Bit Manipulation & Bit Clearing |
-| `004` | [Missing Number](./004-easy-missing-number.md) | 🟢 Easy | Gauss Sum Formula / XOR |
-| `005` | [Single Number](./005-easy-single-number.md) | 🟢 Easy | Bit Manipulation (XOR Self-Cancellation) |
+| `004` | [Missing Number](./004-easy-missing-number.md) 🔥 | 🟢 Easy | Gauss Sum Formula / XOR |
+| `005` | [Single Number](./005-easy-single-number.md) 🔥 | 🟢 Easy | Bit Manipulation (XOR Self-Cancellation) |
 
 ---
 

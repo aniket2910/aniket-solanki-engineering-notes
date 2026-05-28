@@ -42,7 +42,7 @@ Use this list to track your progress and quickly open specific problem write-ups
 
 | Index | Problem Name | Difficulty | Core Pattern / Concept |
 | :---: | :--- | :---: | :--- |
-| `001` | [Binary Search](./001-easy-binary-search.md) | 🟢 Easy | Two-Pointer Standard Search |
+| `001` | [Binary Search](./001-easy-binary-search.md) 🔥 | 🟢 Easy | Two-Pointer Standard Search |
 
 ---
 

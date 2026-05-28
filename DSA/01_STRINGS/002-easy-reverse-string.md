@@ -1,5 +1,8 @@
 # 002. Reverse String (Easy)
 
+> [!IMPORTANT]
+> **Interview Tag**: 🔥 **MUST SOLVE** - The absolute fundamental training wheels for **Two-Pointer** pointer convergence and swapping.
+
 ---
 
 ### 📝 1. Problem Statement
@@ -22,11 +25,10 @@ You must do this by modifying the input array **in-place** with $O(1)$ extra mem
 ---
 
 ### 💬 3. What is This Problem Actually Asking?
-We need to reverse the characters of a string. 
+We need to reverse the characters of a string represented directly as a mutable array of individual characters (`s: string[]`).
 
 The strict constraints are:
 * **In-Place Modification**: We are not allowed to create a new array or allocate extra memory buffers ($O(1)$ auxiliary space).
-* **Array of Characters**: The string is represented directly as an array of individual character strings (`s: string[]`).
 
 ---
 
@@ -40,33 +42,58 @@ Imagine a **line of people standing in a narrow hallway**:
 
 ---
 
-### 🛠️ 5. Data Structure & Algorithm Used
-* **Data Structure**: **Array** (specifically a character array that supports constant-time $O(1)$ index swaps).
-* **Algorithm**: **Two-Pointer Technique (Opposite Directions)**.
-  * *Why*: By placing a pointer at the beginning (`left`) and one at the end (`right`), we can swap their values and move them toward each other. Since we swap in-place, the memory footprint remains exactly $O(1)$.
+### 🛠️ 5. Data Structure & Algorithms Used
+
+We present **two approaches** to show how you can solve swapping iteratively or recursively:
+
+#### Approach 1: Iterative Two-Pointer Swap (Optimal)
+We place one pointer at the beginning (`left`) and one at the end (`right`), swap their values in-place, and move them toward each other until they meet.
+* **Pros**: Highly efficient, uses $O(1)$ constant memory.
+
+#### Approach 2: Recursive Divide & Conquer Swap
+We define a helper function `helper(left, right)` that swaps elements at the boundaries, and then recursively calls itself with `helper(left + 1, right - 1)` until the pointers meet.
+* **Pros**: Incredibly elegant and demonstrates clear mastery of recursive stacks.
+* **Cons**: Consumes $O(N)$ call stack memory, making it less optimal than iterative, but great to show to an interviewer as a second approach!
 
 ---
 
 ### 💻 6. Optimal Code (TypeScript)
 
+Here is the clean, human-written codebase showing both approaches. Approach 2 is shown in comments to show a clear progression of thought!
+
 ```typescript
-/**
- Do not return anything, modify s in-place instead.
- */
 function reverseString(s: string[]): void {
-    let left: number = 0;
-    let right: number = s.length - 1;
+    // ==========================================
+    // 1st Approach: Iterative Two-Pointer Swap (Optimal)
+    // ==========================================
+    let left = 0;
+    let right = s.length - 1;
 
     while (left < right) {
-        // Swap characters in-place
-        const temp: string = s[left];
+        let temp = s[left];
         s[left] = s[right];
         s[right] = temp;
-
-        // Move pointers toward the center
+        
         left++;
         right--;
     }
+
+    // ==========================================
+    // 2nd Approach: Recursive Swaps
+    // ==========================================
+    /*
+    const helper = (left: number, right: number): void => {
+        if (left >= right) return;
+        
+        let temp = s[left];
+        s[left] = s[right];
+        s[right] = temp;
+        
+        helper(left + 1, right - 1);
+    };
+    
+    helper(0, s.length - 1);
+    */
 }
 ```
 
@@ -74,10 +101,11 @@ function reverseString(s: string[]): void {
 
 ### 📊 7. Complexity & Edge Cases
 
-* **Time Complexity**: **$O(N)$** — We swap $N/2$ pairs of characters, which runs in linear time relative to the length of the array $N$.
-* **Space Complexity**: **$O(1)$** — We only use a single character variable (`temp`) for swapping, keeping the space constant.
+| Metric | Approach 1: Iterative | Approach 2: Recursive |
+| :--- | :--- | :--- |
+| **Time Complexity** | **$O(N)$** — Swaps $N/2$ pairs. | **$O(N)$** — Makes $N/2$ function calls. |
+| **Space Complexity** | **$O(1)$** — Constant variables. | **$O(N)$** — Call stack depth of $N/2$. |
 
 #### Edge Cases Handled:
-* **Single Character Array** (`s = ["a"]`): `left = 0`, `right = 0`. The loop does not run because `left < right` ($0 < 0$) is false. The array remains correctly unchanged (Correct).
-* **Even Length Array** (`s = ["a", "b"]`): `left = 0`, `right = 1`. One swap occurs, converting to `["b", "a"]`. Loop terminates as `left` becomes `1` and `right` becomes `0` (Correct).
-* **Odd Length Array** (`s = ["a", "b", "c"]`): Pointers meet exactly at index `1` (`"b"`). The center element does not need to be swapped with itself, and the loop exits cleanly (Correct).
+* **Single Character Array** (`s = ["a"]`): Handled perfectly; bounds are equal so no swaps are executed (Correct).
+* **Even vs Odd Lengths**: Both meet and terminate cleanly when `left >= right` (Correct).

@@ -1,5 +1,8 @@
 # 001. Remove Duplicates from Sorted Array (Easy)
 
+> [!IMPORTANT]
+> **Interview Tag**: 🔥 **MUST SOLVE** - The absolute golden standard for in-place array manipulation. Teaches you the highly popular **Read/Write Two-Pointer** pattern.
+
 ---
 
 ### 📝 1. Problem Statement
@@ -21,7 +24,6 @@ Consider the number of unique elements of `nums` to be `k`, to get accepted, you
 #### Test Case 2
 * **Input**: `nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]`
 * **Output**: `5`, `nums = [0, 1, 2, 3, 4, _, _, _, _, _]`
-* **Why**: The function returns `5`. The first five elements are modified to `0`, `1`, `2`, `3`, and `4`.
 
 ---
 
@@ -44,37 +46,63 @@ Think of a **conveyor belt at a packaging plant** carrying components:
 
 ---
 
-### 🛠️ 5. Data Structure & Algorithm Used
-* **Data Structure**: **Array** (allows in-place, constant-time $O(1)$ random writes at index locations).
-* **Algorithm**: **Two-Pointer Technique (Read & Write Pointers)**.
-  * *Why*: By having one pointer (`readPointer`) scan through every element and a second pointer (`writePointer`) mark the destination for the next discovered unique element, we can overwrite duplicate indices in a single linear pass.
+### 🛠️ 5. Data Structure & Algorithms Used
+
+We present **two approaches** showing how to optimize memory from a naive lookup to an optimal in-place compaction:
+
+#### Approach 1: Auxiliary Set Tracking (Out-of-Place)
+We scan the array, insert elements into a Hash Set to find unique values, and copy them into a temporary list before putting them back into `nums`.
+* **Pros**: Incredibly easy to understand and write.
+* **Cons**: Fails the in-place constraint because it allocates $O(N)$ extra memory.
+
+#### Approach 2: In-Place Two-Pointer (Read/Write) - Optimal
+Since the array is already sorted, duplicates are guaranteed to be adjacent. We can maintain a `writePointer` that marks where the next unique element should go, and a `readPointer` that scans forward.
+* Every time `nums[readPointer]` is different from `nums[writePointer - 1]`, we write the new unique element at `writePointer` and increment it.
+* **Pros**: Runs in-place in $O(1)$ auxiliary space and $O(N)$ time.
 
 ---
 
 ### 💻 6. Optimal Code (TypeScript)
 
+Here is the clean, human-written codebase showing both approaches. Approach 1 is shown in comments to demonstrate a clear progression of thought!
+
 ```typescript
 function removeDuplicates(nums: number[]): number {
-    if (nums.length === 0) {
-        return 0;
+    // ==========================================
+    // 1st Approach: Auxiliary Set Tracking (Out-of-Place)
+    // ==========================================
+    /*
+    if (nums.length === 0) return 0;
+    
+    let unique = new Set<number>();
+    for (let num of nums) {
+        unique.add(num);
     }
+    
+    let arr = Array.from(unique);
+    for (let i = 0; i < arr.length; i++) {
+        nums[i] = arr[i];
+    }
+    return arr.length;
+    */
 
-    // writePointer tracks where the next unique element should be written.
-    // Index 0 is always unique, so we start writing at index 1.
-    let writePointer: number = 1;
+    // ==========================================
+    // 2nd Approach: In-Place Two-Pointer (Optimal)
+    // ==========================================
+    if (nums.length === 0) return 0;
 
-    for (let readPointer = 1; readPointer < nums.length; readPointer++) {
-        // Since the array is sorted, we compare the current element with the 
-        // last written unique element (which is always at writePointer - 1).
-        if (nums[readPointer] !== nums[writePointer - 1]) {
-            // Found a new unique element! Write it to the writePointer slot.
-            nums[writePointer] = nums[readPointer];
-            writePointer++;
+    // write pointer marks where the next unique element goes
+    let write = 1;
+
+    for (let read = 1; read < nums.length; read++) {
+        // Since array is sorted, check if current is different from last unique
+        if (nums[read] !== nums[write - 1]) {
+            nums[write] = nums[read];
+            write++;
         }
     }
 
-    // writePointer naturally represents the total count of unique elements (k)
-    return writePointer;
+    return write;
 }
 ```
 
@@ -82,10 +110,11 @@ function removeDuplicates(nums: number[]): number {
 
 ### 📊 7. Complexity & Edge Cases
 
-* **Time Complexity**: **$O(N)$** — We scan the array of length $N$ exactly once using the `readPointer`.
-* **Space Complexity**: **$O(1)$** — We only allocate two scalar pointer variables, performing all modifications in-place.
+| Metric | Approach 1: Auxiliary Set | Approach 2: Two-Pointer |
+| :--- | :--- | :--- |
+| **Time Complexity** | **$O(N)$** — Scans and copies elements. | **$O(N)$** — Scans the array once. |
+| **Space Complexity** | **$O(N)$** — Allocates set and array lists. | **$O(1)$** — Pure in-place operations. |
 
 #### Edge Cases Handled:
-* **Array of Length 1** (`nums = [1]`): The initial `if (nums.length === 0)` check is skipped. The loop doesn't run because `readPointer = 1 < nums.length` ($1 < 1$) is false. Returns `writePointer` (`1`) (Correct).
-* **No Duplicates** (`nums = [1, 2, 3]`): Every comparison is unequal. The code writes each element back to its current position (`nums[1] = nums[1]`, etc.). Returns `3` (Correct).
-* **All Duplicates** (`nums = [1, 1, 1]`): The condition `nums[readPointer] !== nums[writePointer - 1]` is never met. `writePointer` remains `1`. Returns `1` (Correct).
+* **Array of Length 1** (`nums = [1]`): Skips the loop and safely returns `1` (Correct).
+* **All Duplicates** (`nums = [1, 1, 1]`): Loop runs, matches nothing, and returns `1` with array updated to `[1, 1, 1]` (Correct).
