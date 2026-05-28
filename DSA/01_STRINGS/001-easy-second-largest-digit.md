@@ -47,6 +47,124 @@ No complex data structures (like Stacks, Trees, or Heaps) are required here. We 
 
 ---
 
+### 🔄 Step-by-Step Dry Run (Visualizer)
+
+Let's trace the execution of the `secondHighest` function using **Test Case 1**:
+`s = "dfa12321afd"`
+
+We start with `firstMax = -1` and `secondMax = -1`.
+
+---
+
+#### **Step 0: Initial State**
+```text
+String:    d   f   a   1   2   3   2   1   a   f   d
+Index:     0   1   2   3   4   5   6   7   8   9   10
+Pointers:  ▲
+           i
+firstMax: -1, secondMax: -1
+```
+* **Character**: `'d'` is not a digit. Skip it.
+* **Next**: `i` advances to index 1.
+
+---
+
+#### **Step 1: Processing letters (Indices 1 to 2)**
+* Characters `'f'` (Index 1) and `'a'` (Index 2) are not digits. Skip.
+
+---
+
+#### **Step 2: Index 3**
+```text
+String:    d   f   a   1   2   3   2   1   a   f   d
+Index:     0   1   2   3   4   5   6   7   8   9   10
+Pointers:              ▲
+                       i
+firstMax: -1, secondMax: -1
+```
+* **Digit**: `1`
+* **Comparison**: `1 > firstMax` (`1 > -1` is True).
+* **Action**:
+  1. `secondMax = firstMax` (`secondMax` becomes `-1`).
+  2. `firstMax = digit` (`firstMax` becomes `1`).
+* **Current State**: `firstMax = 1`, `secondMax = -1`.
+
+---
+
+#### **Step 3: Index 4**
+```text
+String:    d   f   a   1   2   3   2   1   a   f   d
+Index:     0   1   2   3   4   5   6   7   8   9   10
+Pointers:                  ▲
+                           i
+firstMax: 1, secondMax: -1
+```
+* **Digit**: `2`
+* **Comparison**: `2 > firstMax` (`2 > 1` is True).
+* **Action**:
+  1. `secondMax = firstMax` (`secondMax` becomes `1`).
+  2. `firstMax = digit` (`firstMax` becomes `2`).
+* **Current State**: `firstMax = 2`, `secondMax = 1`.
+
+---
+
+#### **Step 4: Index 5**
+```text
+String:    d   f   a   1   2   3   2   1   a   f   d
+Index:     0   1   2   3   4   5   6   7   8   9   10
+Pointers:                      ▲
+                               i
+firstMax: 2, secondMax: 1
+```
+* **Digit**: `3`
+* **Comparison**: `3 > firstMax` (`3 > 2` is True).
+* **Action**:
+  1. `secondMax = firstMax` (`secondMax` becomes `2`).
+  2. `firstMax = digit` (`firstMax` becomes `3`).
+* **Current State**: `firstMax = 3`, `secondMax = 2`.
+
+---
+
+#### **Step 5: Index 6**
+```text
+String:    d   f   a   1   2   3   2   1   a   f   d
+Index:     0   1   2   3   4   5   6   7   8   9   10
+Pointers:                          ▲
+                                   i
+firstMax: 3, secondMax: 2
+```
+* **Digit**: `2`
+* **Comparison**: `2 < firstMax` (`2 < 3` is True), but `2 > secondMax` (`2 > 2` is False).
+* **Action**: Duplicate/smaller value. Ignore.
+* **Current State**: `firstMax = 3`, `secondMax = 2`.
+
+---
+
+#### **Step 6: Index 7**
+```text
+String:    d   f   a   1   2   3   2   1   a   f   d
+Index:     0   1   2   3   4   5   6   7   8   9   10
+Pointers:                              ▲
+                                       i
+firstMax: 3, secondMax: 2
+```
+* **Digit**: `1`
+* **Comparison**: `1 < firstMax` (`1 < 3` is True), but `1 > secondMax` (`1 > 2` is False).
+* **Action**: Smaller value. Ignore.
+
+---
+
+#### **Step 7: Processing letters (Indices 8 to 10)**
+* Characters `'a'`, `'f'`, and `'d'` are skipped.
+* Loop terminates.
+
+---
+
+#### **Final Result**
+* The second highest unique digit is `secondMax = 2`!
+
+---
+
 ### 💻 6. Optimal Code (TypeScript)
 
 ```typescript

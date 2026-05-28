@@ -62,6 +62,44 @@ Since the array is already sorted, duplicates are guaranteed to be adjacent. We 
 
 ---
 
+### 🔄 Step-by-Step Dry Run (Visualizer)
+
+We will dry run the optimal code with the input `nums = [1, 1, 2]`.
+
+#### **Step 0: Initial State**
+```text
+Pointers: write = 1, read = 1
+Array:    [ 1,   1,   2 ]
+           idx0 idx1 idx2
+Pointers:    ▲    ▲
+           write read
+```
+* **Comparison**: `nums[read]` (1) === `nums[write - 1]` (nums[0] = 1)
+* **Decision**: Duplicate detected! Skip.
+* **Next**: `read` advances to index 2.
+
+#### **Step 1: read = 2**
+```text
+Pointers: write = 1, read = 2
+Array:    [ 1,   1,   2 ]
+           idx0 idx1 idx2
+Pointers:    ▲        ▲
+           write     read
+```
+* **Comparison**: `nums[read]` (2) !== `nums[write - 1]` (nums[0] = 1)
+* **Decision**: Unique value found! 
+  1. Overwrite: `nums[write] = nums[read]` (nums[1] = 2).
+  2. Advance: `write++` (becomes 2).
+* **Updated Array State**:
+```text
+Array:    [ 1,   2,   2 ]
+                ▲    ▲
+              write read
+```
+* **Next**: Loop terminates. Returns `write = 2`.
+
+---
+
 ### 💻 6. Optimal Code (TypeScript)
 
 Here is the clean, human-written codebase showing both approaches. Approach 1 is shown in comments to demonstrate a clear progression of thought!

@@ -63,6 +63,54 @@ Think of a **deck of cards dealing game**:
 
 ---
 
+### 🔄 Step-by-Step Dry Run (Visualizer)
+
+For the linked list `head = [1, 2, 3, 4, 5]`:
+
+#### **Step 0: Initial State**
+```text
+Pointers: odd = Node(1), even = Node(2), evenHead = Node(2)
+List:     [ 1 ] ──► [ 2 ] ──► [ 3 ] ──► [ 4 ] ──► [ 5 ] ──► null
+           ▲         ▲
+          odd       even
+```
+
+#### **Step 1: First Iteration**
+```text
+1. odd.next = even.next (1 ──► 3)
+2. odd = odd.next (Node(3))
+3. even.next = odd.next (2 ──► 4)
+4. even = even.next (Node(4))
+
+Linkage State:
+Odds:     [ 1 ] ──► [ 3 ] ──► [ 4 ] ... (odd is Node(3))
+Evens:              [ 2 ] ──► [ 4 ] ... (even is Node(4), evenHead is Node(2))
+```
+
+#### **Step 2: Second Iteration**
+```text
+1. odd.next = even.next (3 ──► 5)
+2. odd = odd.next (Node(5))
+3. even.next = odd.next (4 ──► null)
+4. even = even.next (null)
+
+Linkage State:
+Odds:     [ 1 ] ──► [ 3 ] ──► [ 5 ] ──► null (odd is Node(5))
+Evens:              [ 2 ] ──► [ 4 ] ──► null (even is null)
+```
+
+#### **Step 3: Post-Loop Merge**
+```text
+* Action: Connect the tail of the odd list directly to the even head
+  odd.next = evenHead (5 ──► 2)
+
+Linkage State:
+Merged:   [ 1 ] ──► [ 3 ] ──► [ 5 ] ──► [ 2 ] ──► [ 4 ] ──► null
+```
+* **Returns**: `head` (`[1, 3, 5, 2, 4]`).
+
+---
+
 ### 💻 6. Optimal Code (TypeScript)
 
 ```typescript

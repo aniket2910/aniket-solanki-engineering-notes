@@ -9,7 +9,7 @@ A parentheses string is valid if and only if:
 3. It can be written as `(A)`, where `A` is a valid string.
 
 You are given a parentheses string `s`. In one move, you can insert a parenthesis at any position of the string.
-* For example, if `s = "()))"`, you can insert an opening parenthesis to be `"(学会)))"` or a closing parenthesis to be `"学会)))"`.
+* For example, if `s = "())"`, you can insert an opening parenthesis to be `"(学会)))"` or a closing parenthesis to be `"学会)))"`.
 
 Return the *minimum number of moves* required to make `s` valid.
 
@@ -18,7 +18,7 @@ Return the *minimum number of moves* required to make `s` valid.
 ### 🧪 2. Test Cases
 
 #### Test Case 1
-* **Input**: `s = "())"`
+* **Input**: `s = "()"`
 * **Output**: `1`
 * **Why**: We need to add one opening parenthesis `(` at the start to make it valid: `"(())"`.
 
@@ -119,7 +119,61 @@ function minAddToMakeValid(s: string): number {
 * **Empty String** (`s = ""`): The loop doesn't execute, returns `0` (Correct).
 * **Only Opening Parentheses** (`s = "((("`): `closeNeeded` becomes 3, `openNeeded` is 0. Returns `3` (Correct).
 * **Only Closing Parentheses** (`s = ")))"`): `openNeeded` becomes 3, `closeNeeded` is 0. Returns `3` (Correct).
-* **Interleaved Unmatched Parentheses** (`s = ")(学会"`): 
+* **Interleaved Unmatched Parentheses** (`s = ")( 学会"`): 
   * `)` at index 0: `openNeeded = 1`.
   * `(` at index 1: `closeNeeded = 1`.
   * Returns `1 + 1 = 2` (Correct).
+
+---
+
+### 🎬 8. Dry Run
+Let's trace `s = "())("` with `openNeeded = 0`, `closeNeeded = 0`:
+
+#### **Step 0: i = 0**
+```text
+Pointers: i = 0, openNeeded = 0, closeNeeded = 0
+String:   " (   )   )   ( "
+            0   1   2   3
+Pointer:    ▲
+            i
+```
+* **Character**: `s[0]` -> `"("`
+* **Decision**: Opening parenthesis found. Needs a matching closing partner. Increment `closeNeeded`.
+* **Next**: `closeNeeded` becomes 1. `i` becomes 1.
+
+#### **Step 1: i = 1**
+```text
+Pointers: i = 1, openNeeded = 0, closeNeeded = 1
+String:   " (   )   )   ( "
+            0   1   2   3
+Pointer:        ▲
+                i
+```
+* **Character**: `s[1]` -> `")"`
+* **Decision**: Closing parenthesis found. We have a waiting `'('` (`closeNeeded = 1 > 0`). They pair up. Decrement `closeNeeded`.
+* **Next**: `closeNeeded` becomes 0. `i` becomes 2.
+
+#### **Step 2: i = 2**
+```text
+Pointers: i = 2, openNeeded = 0, closeNeeded = 0
+String:   " (   )   )   ( "
+            0   1   2   3
+Pointer:            ▲
+                    i
+```
+* **Character**: `s[2]` -> `")"`
+* **Decision**: Closing parenthesis found, but no `'('` is waiting (`closeNeeded = 0`). This Follower is unmatched. Increment `openNeeded` (we must insert an opening parenthesis).
+* **Next**: `openNeeded` becomes 1. `i` becomes 3.
+
+#### **Step 3: i = 3**
+```text
+Pointers: i = 3, openNeeded = 1, closeNeeded = 0
+String:   " (   )   )   ( "
+            0   1   2   3
+Pointer:                ▲
+                        i
+```
+* **Character**: `s[3]` -> `"("`
+* **Decision**: Opening parenthesis found. Needs a matching closing partner. Increment `closeNeeded`.
+* **Next**: Loop terminates. `closeNeeded` becomes 1.
+* **Final Result**: Returns `openNeeded + closeNeeded` -> `1 + 1 = 2`.

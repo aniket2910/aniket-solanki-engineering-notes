@@ -93,3 +93,29 @@ function reverseWords(s: string): string {
   * `.join(' ')` yields `"world hello"` (Correct).
 * **Single Word** (`s = "word"`): Splits to `["word"]`. Reverse is `["word"]`. Returns `"word"` (Correct).
 * **Only Spaces** (`s = "    "`): `.trim()` yields `""`. Splitting an empty string yields `[""]` or `[]`. In JavaScript, `"".trim().split(/\s+/)` on an empty string can yield `[""]`. To be extremely safe, the regex split handles empty strings perfectly, but since `s` is guaranteed to contain at least one word in LeetCode, this native approach is extremely robust.
+
+---
+
+### 🎬 8. Dry Run
+Let's trace `s = "  blue sky  "` through the processing pipeline:
+
+#### **Step 0: Initial State**
+* **Input**: `"  blue sky  "`
+
+#### **Step 1: trim()**
+* **Operation**: Remove leading and trailing whitespace.
+* **Output**: `"blue sky"`
+
+#### **Step 2: split(/\\s+/)**
+* **Operation**: Segment the string into an array of words, using any sequence of spaces as the delimiter.
+* **Output**: `[ "blue", "sky" ]`
+
+#### **Step 3: reverse()**
+* **Operation**: Reverse the order of elements in the array in-place.
+* **Output**: `[ "sky", "blue" ]`
+
+#### **Step 4: join(' ')**
+* **Operation**: Concatenate the array elements into a single string separated by a single space.
+* **Output**: `"sky blue"`
+
+* **Final Result**: `"sky blue"`

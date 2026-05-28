@@ -51,6 +51,93 @@ No special data structures are required. We solve this using **Digit Extraction 
 
 ---
 
+### 🔄 Step-by-Step Dry Run (Visualizer)
+
+We trace the digit extraction, sign-preserving truncation, and active 32-bit overflow check operations step-by-step:
+
+#### **Case 1: Standard Negative Integer (`x = -123`)**
+
+##### **Step 0: Initial State**
+```text
+x = -123, reversed = 0
+INT_MAX = 2147483647 (limit / 10 = 214748364)
+INT_MIN = -2147483648 (limit / 10 = -214748364)
+```
+
+##### **Step 1: First Iteration**
+* **Condition**: `x !== 0` is **True**.
+* **Extraction & Truncation**:
+  ```text
+  pop = -123 % 10 = -3
+  x   = Math.trunc(-123 / 10) = -12
+  ```
+* **Overflow/Underflow Checks**:
+  * `reversed > 214748364` ($0 > 214748364$) $\rightarrow$ False.
+  * `reversed < -214748364` ($0 < -214748364$) $\rightarrow$ False.
+* **Reconstruction**:
+  ```text
+  reversed = (0 * 10) + (-3) = -3
+  ```
+* **End of Iteration**: `x = -12`, `reversed = -3`.
+
+##### **Step 2: Second Iteration**
+* **Condition**: `x !== 0` is **True**.
+* **Extraction & Truncation**:
+  ```text
+  pop = -12 % 10 = -2
+  x   = Math.trunc(-12 / 10) = -1
+  ```
+* **Overflow/Underflow Checks**: Pass.
+* **Reconstruction**:
+  ```text
+  reversed = (-3 * 10) + (-2) = -32
+  ```
+* **End of Iteration**: `x = -1`, `reversed = -32`.
+
+##### **Step 3: Third Iteration**
+* **Condition**: `x !== 0` is **True**.
+* **Extraction & Truncation**:
+  ```text
+  pop = -1 % 10 = -1
+  x   = Math.trunc(-1 / 10) = 0
+  ```
+* **Overflow/Underflow Checks**: Pass.
+* **Reconstruction**:
+  ```text
+  reversed = (-32 * 10) + (-1) = -321
+  ```
+* **End of Iteration**: `x = 0`, `reversed = -321`.
+
+##### **Step 4: Loop Termination**
+* **Condition**: `x !== 0` is **False**. Loop exits. Returns `reversed` (**`-321`**).
+
+---
+
+#### **Case 2: Overflow Detection (`x = 1534236469`)**
+
+##### **Step 0: Initial State**
+```text
+x = 1534236469, reversed = 0
+```
+
+##### **Steps 1 to 9 (Digit Accumulation)**:
+The loop extracts digits `9`, `6`, `4`, `6`, `3`, `2`, `4`, `3`, `5` sequentially.
+* **State before last digit**: `x = 1`, `reversed = 964632435`
+
+##### **Step 10: Final Iteration & Overflow Check**
+* **Condition**: `x !== 0` is **True**.
+* **Extraction & Truncation**:
+  ```text
+  pop = 1 % 10 = 1
+  x   = Math.trunc(1 / 10) = 0
+  ```
+* **Positive Overflow Check**:
+  * Is `reversed > Math.trunc(INT_MAX / 10)`?
+    Is `964632435 > 214748364`? $\rightarrow$ **True!**
+* **Decision**: Overflow detected! Instantly return **`0`**.
+
+---
+
 ### 💻 6. Optimal Code (TypeScript)
 
 ```typescript

@@ -98,3 +98,44 @@ function reverseStr(s: string, k: number): string {
   * The entire string is reversed. Returns `"gfedcba"` (Correct).
 * **$k$ is Larger than String Length**: Handled perfectly by the `Math.min` boundary check. Reverses the entire string (Correct).
 * **$k = 1$**: `right = i`. Loop `left < right` doesn't run. The string remains unchanged (Correct).
+
+---
+
+### 🎬 8. Dry Run
+Let's trace `s = "abcdefg"`, `k = 2` with `arr = ["a", "b", "c", "d", "e", "f", "g"]`:
+
+#### **First Block: i = 0**
+```text
+Pointers: i = 0, left = 0, right = 1
+Array:    [ "a", "b", "c", "d", "e", "f", "g" ]
+            idx0 idx1 idx2 idx3 idx4 idx5 idx6
+Pointers:    ▲    ▲
+            left right
+```
+* **Step 1 (left < right)**: Swap `arr[left]` ("a") and `arr[right]` ("b").
+* **Updated Array**:
+```text
+Array:    [ "b", "a", "c", "d", "e", "f", "g" ]
+                 ▲    ▲
+               right left
+```
+* **Next**: `left` (1) is no longer `< right` (0). Swap terminates. `i` advances by `2*k = 4` to become `4`.
+
+#### **Second Block: i = 4**
+```text
+Pointers: i = 4, left = 4, right = 5
+Array:    [ "b", "a", "c", "d", "e", "f", "g" ]
+            idx0 idx1 idx2 idx3 idx4 idx5 idx6
+Pointers:                        ▲    ▲
+                               left right
+```
+* **Step 1 (left < right)**: Swap `arr[left]` ("e") and `arr[right]` ("f").
+* **Updated Array**:
+```text
+Array:    [ "b", "a", "c", "d", "f", "e", "g" ]
+                                   ▲    ▲
+                                 right left
+```
+* **Next**: `left` (5) is no longer `< right` (4). Swap terminates. `i` advances to `8`.
+* **Exit**: `i` (8) is $\ge$ array length (7). Loop terminates.
+* **Final Result**: `"bacdfeg"`.

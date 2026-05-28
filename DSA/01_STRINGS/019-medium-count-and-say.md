@@ -124,3 +124,36 @@ function countAndSay(n: number): string {
   * `i = 1`: `'2'` $\rightarrow$ count 1. Appends `"12"`.
   * `i = 2`: `'1'` $\rightarrow$ matches next `'1'`, count 2. Appends `"21"`.
   * Result: `"111221"` (Correct).
+
+---
+
+### 🎬 8. Dry Run
+Let's trace the transition from `result = "21"` (term 3) to term 4 (`"1211"`) with `nextResult = []`:
+
+#### **Step 0: i = 0**
+```text
+Pointers: i = 0
+result:   " 2   1 "
+            0   1
+Pointer:    ▲
+            i
+```
+* **Character**: `char = '2'`, `count = 1`.
+* **Comparison**: `result[i+1]` is `'1'`, which is not equal to `char` ('2').
+* **Decision**: Group finished. Append `count` ("1") and `char` ("2") to `nextResult`.
+* **Next**: `nextResult` becomes `["1", "2"]`. `i` becomes 1.
+
+#### **Step 1: i = 1**
+```text
+Pointers: i = 1
+result:   " 2   1 "
+            0   1
+Pointer:        ▲
+                i
+```
+* **Character**: `char = '1'`, `count = 1`.
+* **Comparison**: `i + 1` (2) is not `< result.length` (2).
+* **Decision**: Group finished. Append `count` ("1") and `char` ("1") to `nextResult`.
+* **Next**: `nextResult` becomes `["1", "2", "1", "1"]`. `i` becomes 2.
+* **Exit**: `i` (2) is $\ge$ `result.length` (2). Loop exits.
+* **Result**: `nextResult.join('')` -> `"1211"`.

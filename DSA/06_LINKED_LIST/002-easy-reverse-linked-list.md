@@ -52,6 +52,45 @@ Imagine a **conga line of people, where each person holds the shoulders of the p
 
 ---
 
+### 🔄 Step-by-Step Dry Run (Visualizer)
+
+For the linked list `head = [1, 2]`:
+
+#### **Step 0: Initial State**
+```text
+Pointers: prev = null, curr = Node(1)
+List:     [ 1 ] ──► [ 2 ] ──► null
+           ▲
+          curr
+```
+
+#### **Step 1: First Iteration (curr = Node(1))**
+```text
+1. Save next: nextTemp = curr.next (Node(2))
+2. Reverse:   curr.next = prev (null)
+3. Advance:   prev = curr (Node(1)), curr = nextTemp (Node(2))
+
+Linkage State:
+          null ◄── [ 1 ]        [ 2 ] ──► null
+                    ▲            ▲
+                  prev          curr
+```
+
+#### **Step 2: Second Iteration (curr = Node(2))**
+```text
+1. Save next: nextTemp = curr.next (null)
+2. Reverse:   curr.next = prev (Node(1))
+3. Advance:   prev = curr (Node(2)), curr = nextTemp (null)
+
+Linkage State:
+          null ◄── [ 1 ] ◄── [ 2 ]
+                              ▲     ▲
+                            prev   curr (null)
+```
+* **Next**: `curr` is null, loop exits. Returns `prev` (`Node(2)` -> `[2, 1]`).
+
+---
+
 ### 💻 6. Optimal Code (TypeScript)
 
 ```typescript

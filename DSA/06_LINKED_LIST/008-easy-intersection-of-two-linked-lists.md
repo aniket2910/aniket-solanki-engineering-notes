@@ -68,6 +68,85 @@ Think of **two friends walking along different hiking trails that eventually mer
 
 ---
 
+### 🔄 Step-by-Step Dry Run (Visualizer)
+
+For the linked lists `listA = [1, 8]`, `listB = [2, 1, 8]` intersecting at `8` (lengths are 2 and 3; Node(8) is the exact same reference):
+
+#### **Step 0: Initial State**
+```text
+Pointers: pA = Node(1), pB = Node(2)
+List A:   [ 1 ] ──► [ 8 ] ──► null
+           ▲
+          pA
+List B:   [ 2 ] ──► [ 1 ] ──► [ 8 ] ──► null
+           ▲
+          pB
+```
+
+#### **Step 1: First Iteration**
+```text
+* Actions:  pA = pA.next (Node(8)), pB = pB.next (Node(1))
+* Pointers: pA = Node(8), pB = Node(1)
+List A:   [ 1 ] ──► [ 8 ] ──► null
+                     ▲
+                    pA
+List B:   [ 2 ] ──► [ 1 ] ──► [ 8 ] ──► null
+                     ▲
+                    pB
+```
+
+#### **Step 2: Second Iteration**
+```text
+* Actions:  pA = pA.next (null), pB = pB.next (Node(8))
+* Pointers: pA = null, pB = Node(8)
+List A:   [ 1 ] ──► [ 8 ] ──► null
+                               ▲
+                              pA (null)
+List B:   [ 2 ] ──► [ 1 ] ──► [ 8 ] ──► null
+                               ▲
+                              pB
+```
+
+#### **Step 3: Third Iteration**
+```text
+* Actions:  pA === null ? Redirect pA to headB (Node(2))
+            pB = pB.next (null)
+* Pointers: pA = Node(2), pB = null
+List A:   [ 1 ] ──► [ 8 ] ──► null
+List B:   [ 2 ] ──► [ 1 ] ──► [ 8 ] ──► null
+           ▲                     ▲
+          pA                    pB (null)
+```
+
+#### **Step 4: Fourth Iteration**
+```text
+* Actions:  pA = pA.next (Node(1))
+            pB === null ? Redirect pB to headA (Node(1))
+* Pointers: pA = Node(1) [from List B], pB = Node(1) [from List A]
+List A:   [ 1 ] ──► [ 8 ] ──► null
+           ▲
+          pB
+List B:   [ 2 ] ──► [ 1 ] ──► [ 8 ] ──► null
+                     ▲
+                    pA
+```
+
+#### **Step 5: Fifth Iteration**
+```text
+* Actions:  pA = pA.next (Node(8))
+            pB = pB.next (Node(8))
+* Pointers: pA = Node(8), pB = Node(8)
+List A:   [ 1 ] ──► [ 8 ] ──► null
+                     ▲
+                    pB
+List B:   [ 2 ] ──► [ 1 ] ──► [ 8 ] ──► null
+                     ▲
+                    pA
+```
+* **Next**: `pA === pB` (both pointing to `Node(8)`). Loop exits. Returns `Node(8)`.
+
+---
+
 ### 💻 6. Optimal Code (TypeScript)
 
 ```typescript

@@ -59,6 +59,55 @@ Imagine a **line of people standing at a counter**:
 
 ---
 
+### 🔄 Step-by-Step Dry Run (Visualizer)
+
+For the linked list `head = [1, 2, 3, 4]`, `n = 2` (deleting the 2nd node from the end, which is `3`):
+
+#### **Step 0: Initial State**
+```text
+Pointers: slow = dummyHead, fast = dummyHead
+List:     [ -1 ] ──► [ 1 ] ──► [ 2 ] ──► [ 3 ] ──► [ 4 ] ──► null
+            ▲
+        slow/fast
+```
+
+#### **Step 1: Establish Gap of n + 1 (n = 2, so 3 steps forward for fast)**
+1. `fast = dummyHead.next` (`Node(1)`)
+2. `fast = Node(1).next` (`Node(2)`)
+3. `fast = Node(2).next` (`Node(3)`)
+```text
+List:     [ -1 ] ──► [ 1 ] ──► [ 2 ] ──► [ 3 ] ──► [ 4 ] ──► null
+            ▲                             ▲
+          slow                          fast
+```
+
+#### **Step 2: Advance both slow and fast together until fast is null**
+* **Iteration 1**: `slow = slow.next` (`Node(1)`), `fast = fast.next` (`Node(4)`)
+```text
+List:     [ -1 ] ──► [ 1 ] ──► [ 2 ] ──► [ 3 ] ──► [ 4 ] ──► null
+                      ▲                             ▲
+                    slow                          fast
+```
+
+* **Iteration 2**: `slow = slow.next` (`Node(2)`), `fast = fast.next` (`null`)
+```text
+List:     [ -1 ] ──► [ 1 ] ──► [ 2 ] ──► [ 3 ] ──► [ 4 ] ──► null
+                                ▲                             ▲
+                              slow                          fast (null)
+```
+
+#### **Step 3: Bypass Target Node (slow.next = slow.next.next)**
+* **Target node is**: `Node(3)`
+* **Action**: Link `Node(2).next` directly to `Node(4)` (bypassing `Node(3)`).
+```text
+List:     [ -1 ] ──► [ 1 ] ──► [ 2 ] ───────────► [ 4 ] ──► null
+                                ▲      └─► [ 3 ] ──x
+                              slow
+```
+* **Returns**: `dummyHead.next` (`[1, 2, 4]`).
+
+---
+
 ### 💻 6. Optimal Code (TypeScript)
 
 ```typescript

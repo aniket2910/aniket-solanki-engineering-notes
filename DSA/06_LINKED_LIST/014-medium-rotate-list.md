@@ -60,6 +60,57 @@ Think of a **rotating combination padlock or combination lock dial containing nu
 
 ---
 
+### 🔄 Step-by-Step Dry Run (Visualizer)
+
+For the linked list `head = [1, 2, 3]` and `k = 1`:
+
+#### **Step 1: Calculate Length & Locate Tail**
+* **Traverse**: Walk through the list to count length.
+* **Result**: `length = 3`, `tail = Node(3)`
+```text
+List:         [ 1 ] ──► [ 2 ] ──► [ 3 ] ──► null
+               ▲                   ▲
+              head                tail
+```
+
+#### **Step 2: Connect Tail to Head (Create Circular Ring)**
+* **Action**: `tail.next = head` (`3 ──► 1`)
+```text
+Linkage State:
+              ┌────────────────────┐
+              ▼                    │
+            [ 1 ] ──► [ 2 ] ──► [ 3 ]
+             ▲
+            head
+```
+
+#### **Step 3: Calculate Split Point & Find newTail**
+* **Math**: `stepsToNewTail = length - (k % length) = 3 - (1 % 3) = 2` steps from head.
+* **Traverse**: Start at `head`, move forward by `2` steps (lands on `Node(2)`).
+* **Result**: `newTail = Node(2)`
+```text
+Linkage State:
+              ┌────────────────────┐
+              ▼                    │
+            [ 1 ] ──► [ 2 ] ──► [ 3 ]
+                       ▲
+                    newTail
+```
+
+#### **Step 4: Decouple Ring & Establish newHead**
+* **Actions**:
+  1. `newHead = newTail.next` (`Node(3)`)
+  2. `newTail.next = null` (breaks connection `2 ──► 3`)
+```text
+Linkage State:
+List:       [ 3 ] ──► [ 1 ] ──► [ 2 ] ──► null
+             ▲
+          newHead
+```
+* **Returns**: `newHead` (`[3, 1, 2]`).
+
+---
+
 ### 💻 6. Optimal Code (TypeScript)
 
 ```typescript

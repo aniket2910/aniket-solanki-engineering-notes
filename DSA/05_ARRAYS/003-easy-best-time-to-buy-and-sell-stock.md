@@ -59,6 +59,99 @@ We traverse the prices array exactly once. As we walk, we maintain two values: t
 
 ---
 
+### 🔄 Step-by-Step Dry Run (Visualizer)
+
+We will dry run the optimal code with the input `prices = [7, 1, 5, 3, 6, 4]`.
+
+#### **Step 0: Initial State (Before loop)**
+* **Variables**: `minPrice` = `Infinity`, `maxProfit` = `0`
+
+#### **Step 1: i = 0 (price = 7)**
+```text
+Pointers: i = 0
+Prices:   [ 7,   1,   5,   3,   6,   4 ]
+           idx0 idx1 idx2 idx3 idx4 idx5
+Pointers:    ▲
+             i
+```
+* **State check**: `price` (7) < `minPrice` (Infinity)? Yes!
+* **Updates**: `minPrice` becomes `7`.
+* **Next**: `i` advances to index 1.
+
+#### **Step 2: i = 1 (price = 1)**
+```text
+Pointers: i = 1
+Prices:   [ 7,   1,   5,   3,   6,   4 ]
+           idx0 idx1 idx2 idx3 idx4 idx5
+Pointers:         ▲
+                  i
+```
+* **State check**: `price` (1) < `minPrice` (7)? Yes!
+* **Updates**: `minPrice` becomes `1`.
+* **Next**: `i` advances to index 2.
+
+#### **Step 3: i = 2 (price = 5)**
+```text
+Pointers: i = 2
+Prices:   [ 7,   1,   5,   3,   6,   4 ]
+           idx0 idx1 idx2 idx3 idx4 idx5
+Pointers:              ▲
+                       i
+```
+* **State check**:
+  1. `price` (5) < `minPrice` (1)? No.
+  2. Potential profit: `price - minPrice` = `5 - 1 = 4`.
+  3. `profit` (4) > `maxProfit` (0)? Yes!
+* **Updates**: `maxProfit` becomes `4`.
+* **Next**: `i` advances to index 3.
+
+#### **Step 4: i = 3 (price = 3)**
+```text
+Pointers: i = 3
+Prices:   [ 7,   1,   5,   3,   6,   4 ]
+           idx0 idx1 idx2 idx3 idx4 idx5
+Pointers:                   ▲
+                            i
+```
+* **State check**:
+  1. `price` (3) < `minPrice` (1)? No.
+  2. Potential profit: `price - minPrice` = `3 - 1 = 2`.
+  3. `profit` (2) > `maxProfit` (4)? No.
+* **Updates**: No changes.
+* **Next**: `i` advances to index 4.
+
+#### **Step 5: i = 4 (price = 6)**
+```text
+Pointers: i = 4
+Prices:   [ 7,   1,   5,   3,   6,   4 ]
+           idx0 idx1 idx2 idx3 idx4 idx5
+Pointers:                        ▲
+                                 i
+```
+* **State check**:
+  1. `price` (6) < `minPrice` (1)? No.
+  2. Potential profit: `price - minPrice` = `6 - 1 = 5`.
+  3. `profit` (5) > `maxProfit` (4)? Yes!
+* **Updates**: `maxProfit` becomes `5`.
+* **Next**: `i` advances to index 5.
+
+#### **Step 6: i = 5 (price = 4)**
+```text
+Pointers: i = 5
+Prices:   [ 7,   1,   5,   3,   6,   4 ]
+           idx0 idx1 idx2 idx3 idx4 idx5
+Pointers:                             ▲
+                                      i
+```
+* **State check**:
+  1. `price` (4) < `minPrice` (1)? No.
+  2. Potential profit: `price - minPrice` = `4 - 1 = 3`.
+  3. `profit` (3) > `maxProfit` (5)? No.
+* **Updates**: No changes.
+* **Next**: Loop terminates. Returns `maxProfit = 5`.
+
+---
+
 ### 💻 6. Optimal Code (TypeScript)
 
 Here is the clean, human-written codebase showing both approaches. Approach 1 is shown in comments to demonstrate your progression of thought!

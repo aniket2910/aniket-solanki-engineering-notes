@@ -168,13 +168,44 @@ function rabinKarp(text: string, pattern: string): boolean {
 
 ### 📊 7. Complexity & Edge Cases
 
-| Metric | Approach 1: Native Search | Approach 2: Rabin-Karp Rolling Hash |
-| :--- | :--- | :--- |
-| **Time Complexity** | **$O(N + M)$** average | **$O(N + M)$** average ($O(N \cdot M)$ worst-case) |
-| **Space Complexity** | **$O(N + M)$** for text | **$O(N + M)$** for text, with $O(1)$ auxiliary memory |
+* **Time Complexity**:
+  - **Approach 1 (Native Search)**: **$O(N + M)$** average.
+  - **Approach 2 (Rabin-Karp)**: **$O(N + M)$** average, where $N$ is the length of the repeated text and $M$ is the length of the pattern.
+* **Space Complexity**:
+  - **Approach 1 (Native Search)**: **$O(N + M)$** to hold the repeated string in memory.
+  - **Approach 2 (Rabin-Karp)**: **$O(N + M)$** to hold the repeated string, with only $O(1)$ auxiliary memory.
 
 #### Edge Cases Handled:
 * **`b` is smaller than `a`** (`a = "abcd"`, `b = "bc"`):
-  * The `while` loop doesn't run. `text` has length 4, which is $\ge$ `b.length` (2).
-  * Returns `1` after checking index match (Correct).
+  - The `while` loop doesn't run. `text` has length 4, which is $\ge$ `b.length` (2).
+  - Returns `1` after checking index match (Correct).
 * **No Match Possible** (`a = "abc"`, `b = "xyz"`): Returns `-1` after trying both replication bounds (Correct).
+
+---
+
+### 🎬 8. Dry Run
+Let's trace `repeatedStringMatch(a = "abcd", b = "cdabcdab")` step-by-step:
+
+#### **Phase 1: Replicating to Minimum Boundary**
+* **Initial State**: `text = "abcd"` (length 4), `count = 1`.
+* **Condition Check**: `text.length` (4) is less than `b.length` (8).
+* **Action**: Append `a` to `text`. `text` becomes `"abcdabcd"` (length 8), `count` becomes `2`.
+* **Condition Check**: `text.length` (8) is no longer less than `b.length` (8). Exit loop.
+
+#### **Phase 2: Checking Substring Match (Repetition Count = 2)**
+* We invoke `rabinKarp(text = "abcdabcd", pattern = "cdabcdab")`:
+  - Since `text` and `pattern` are identical in length but represent different sequences (`"abcdabcd"` !== `"cdabcdab"`), this returns `false`.
+
+#### **Phase 3: Handling Offset Shifts (Repetition Count = 3)**
+* **Action**: Append `a` one more time. `text` becomes `"abcdabcdabcd"` (length 12), `count` becomes `3`.
+* We invoke `rabinKarp(text = "abcdabcdabcd", pattern = "cdabcdab")`:
+  - The pattern `"cdabcdab"` (length 8) is matched starting at index 2 of `text`.
+```text
+text:    " a b c d a b c d a b c d "
+           0 1 2 3 4 5 6 7 8 9 10 11
+b:           " c d a b c d a b "
+               ▲             ▲
+             start          end
+```
+  - `rabinKarp` returns `true`.
+* **Final Result**: Returns `count = 3`.

@@ -88,3 +88,62 @@ function numJewelsInStones(jewels: string, stones: string): number {
 * **No Stones** (`stones = ""`): The loop doesn't run. Returns `0` (Correct).
 * **Case Sensitivity** (`jewels = "a"`, `stones = "A"`): `Set` contains `"a"`. `Set.has("A")` is false. Returns `0` (Correct).
 * **No Jewels Match** (`jewels = "x"`, `stones = "abc"`): Returns `0` (Correct).
+
+---
+
+### 🎬 8. Dry Run
+Let's trace `jewels = "aA"`, `stones = "aAAb"`:
+
+#### **Phase 1: Hash Set Construction**
+* Populate `jewelSet` from `jewels = "aA"`.
+* `jewelSet = {"a", "A"}`
+
+#### **Phase 2: Stones Scanning**
+
+#### **Step 0: i = 0**
+```text
+Pointers: i = 0, count = 0
+Stones:   " a a A b "
+            0 1 2 3
+Pointer:    ▲
+            i
+```
+* **Comparison**: `jewelSet.has(stones[0])` -> `jewelSet.has("a")` is `true`.
+* **Decision**: Jewel found! Increment `count`.
+* **Next**: `count` becomes 1, `i` becomes 1.
+
+#### **Step 1: i = 1**
+```text
+Pointers: i = 1, count = 1
+Stones:   " a a A b "
+            0 1 2 3
+Pointer:      ▲
+              i
+```
+* **Comparison**: `jewelSet.has(stones[1])` -> `jewelSet.has("a")` is `true`.
+* **Decision**: Jewel found! Increment `count`.
+* **Next**: `count` becomes 2, `i` becomes 2.
+
+#### **Step 2: i = 2**
+```text
+Pointers: i = 2, count = 2
+Stones:   " a a A b "
+            0 1 2 3
+Pointer:        ▲
+                i
+```
+* **Comparison**: `jewelSet.has(stones[2])` -> `jewelSet.has("A")` is `true`.
+* **Decision**: Jewel found! Increment `count`.
+* **Next**: `count` becomes 3, `i` becomes 3.
+
+#### **Step 3: i = 3**
+```text
+Pointers: i = 3, count = 3
+Stones:   " a a A b "
+            0 1 2 3
+Pointer:          ▲
+                  i
+```
+* **Comparison**: `jewelSet.has(stones[3])` -> `jewelSet.has("b")` is `false`.
+* **Decision**: Not a jewel. Skip.
+* **Next**: Loop terminates. Returns `count = 3`.

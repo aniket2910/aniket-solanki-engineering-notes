@@ -71,6 +71,63 @@ We traverse the linked list node-by-node and store the reference of each visited
 
 ---
 
+### 🔄 Step-by-Step Dry Run (Visualizer)
+
+For the linked list `head = [3, 2, 0, -4]`, `pos = 1` (where the tail `-4` points back to `2`):
+
+#### **Step 0: Initial State**
+```text
+Pointers: slow = Node(3), fast = Node(3)
+List:     [ 3 ] ──► [ 2 ] ──► [ 0 ] ──► [ -4 ]
+                     ▲                     │
+                     └─────────────────────┘
+           ▲
+       slow/fast
+```
+
+#### **Step 1: First Iteration**
+```text
+1. Advance slow: slow = slow.next (Node(2))
+2. Advance fast: fast = fast.next.next (Node(0))
+
+Linkage State:
+          [ 3 ] ──► [ 2 ] ──► [ 0 ] ──► [ -4 ]
+                     ▲         ▲           │
+                     │         fast        │
+                     └─────────────────────┘
+                     ▲
+                    slow
+```
+
+#### **Step 2: Second Iteration**
+```text
+1. Advance slow: slow = slow.next (Node(0))
+2. Advance fast: fast = fast.next.next (Node(-4) -> Node(2))
+
+Linkage State:
+          [ 3 ] ──► [ 2 ] ──► [ 0 ] ──► [ -4 ]
+                     ▲         ▲           │
+                     │        slow         │
+                     └─────────────────────┘
+                     ▲
+                    fast
+```
+
+#### **Step 3: Third Iteration**
+```text
+1. Advance slow: slow = slow.next (Node(-4))
+2. Advance fast: fast = fast.next.next (Node(2) -> Node(0) -> Node(-4))
+
+Linkage State:
+          [ 3 ] ──► [ 2 ] ──► [ 0 ] ──► [ -4 ]
+                     ▲                     ▲
+                     │                  slow/fast
+                     └─────────────────────┘
+```
+* **Next**: `slow === fast` (both point to `Node(-4)`). Loop exits. Returns `true`.
+
+---
+
 ### 💻 6. Optimal Codes (TypeScript)
 
 #### Code - Approach 1: Floyd's Cycle-Finding Algorithm (Tortoise & Hare)

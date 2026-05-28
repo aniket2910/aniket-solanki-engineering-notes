@@ -55,6 +55,89 @@ In computer science, we can represent this "pairing and canceling out" behavior 
 
 ---
 
+### 🔄 Step-by-Step Dry Run (Visualizer)
+
+We trace the cumulative bitwise XOR operations showing how duplicate pairs cancel each other out to `0`, leaving only the unique single number:
+
+Using input: `nums = [4, 1, 2, 1, 2]`
+
+#### **Step 0: Initial State**
+```text
+result = 0
+```
+
+#### **Step 1: Index i = 0**
+* **Value**: `nums[0] = 4`
+* **XOR Operation**:
+  ```text
+  result = 0 ^ 4 = 4
+  ```
+
+#### **Step 2: Index i = 1**
+* **Value**: `nums[1] = 1`
+* **XOR Operation**:
+  ```text
+  result = 4 ^ 1
+  ```
+* **Binary Alignment**:
+  ```text
+    4:  0 1 0 0
+    1:  0 0 0 1
+    -----------
+    XOR:0 1 0 1  (5)
+  ```
+* **Result**: `result = 5`.
+
+#### **Step 3: Index i = 2**
+* **Value**: `nums[2] = 2`
+* **XOR Operation**:
+  ```text
+  result = 5 ^ 2
+  ```
+* **Binary Alignment**:
+  ```text
+    5:  0 1 0 1
+    2:  0 0 1 0
+    -----------
+    XOR:0 1 1 1  (7)
+  ```
+* **Result**: `result = 7`.
+
+#### **Step 4: Index i = 3**
+* **Value**: `nums[3] = 1`
+* **XOR Operation**:
+  ```text
+  result = 7 ^ 1
+  ```
+* **Binary Alignment**:
+  ```text
+    7:  0 1 1 1
+    1:  0 0 0 1
+    -----------
+    XOR:0 1 1 0  (6)   <-- Note: The digit '1' XORed again cancels out!
+  ```
+* **Result**: `result = 6`.
+
+#### **Step 5: Index i = 4**
+* **Value**: `nums[4] = 2`
+* **XOR Operation**:
+  ```text
+  result = 6 ^ 2
+  ```
+* **Binary Alignment**:
+  ```text
+    6:  0 1 1 0
+    2:  0 0 1 0
+    -----------
+    XOR:0 1 0 0  (4)   <-- Note: The digit '2' XORed again cancels out!
+  ```
+* **Result**: `result = 4`.
+
+#### **Step 6: Loop Termination**
+* Loop terminates. Returns `result` (**`4`**).
+
+---
+
 ### 💻 6. Optimal Code (TypeScript)
 
 ```typescript

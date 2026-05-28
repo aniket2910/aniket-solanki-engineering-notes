@@ -20,7 +20,7 @@ An **Anagram** is a word or phrase formed by rearranging the letters of a differ
   * one `'g'`
   * one `'r'`
   * one `'m'`
-  Since the character counts match exactly, they are anagrams.
+  * Since the character counts match exactly, they are anagrams.
 
 #### Test Case 2
 * **Input**: `s = "rat"`, `t = "car"`
@@ -63,7 +63,7 @@ Imagine you have a **toy bucket** containing letter blocks.
     - Decrement the count for the letter in `t`: `counts[t[i].charCodeAt(0) - 97]--`.
   - After the loop, check the array:
     - If any value is not `0`, it means there's a mismatch in frequency. Return `false`.
-  - If all values are `0`, return `true`.
+    - If all values are `0`, return `true`.
 
 ---
 
@@ -107,3 +107,50 @@ function isAnagram(s: string, t: string): boolean {
 * **Different Lengths** (`s = "ab"`, `t = "abc"`): Handled at the very beginning of the function, returning `false` (Correct).
 * **Single Character Strings** (`s = "a"`, `t = "a"`): Lengths are equal. Loops run for index 0, increments and decrements index 0. Array remains all zeros. Returns `true` (Correct).
 * **Unicode/Non-English inputs**: If the problem description is expanded to support Unicode, we can easily replace the fixed 26-array with a standard `Map<string, number>` hash map, which takes $O(K)$ space where $K$ is the unique character set size.
+
+---
+
+### 🎬 8. Dry Run
+Let's trace `s = "rat"`, `t = "art"` with `counts` representing a frequency map (showing only mutated letter counts for clarity):
+
+#### **Step 0: i = 0**
+```text
+Pointers: i = 0
+s: " r a t "
+     ▲
+     i
+t: " a r t "
+     ▲
+     i
+Mutations: s[0] ('r') adds +1, t[0] ('a') subtracts -1
+Counts:    { 'r': 1, 'a': -1 }
+```
+* **Next**: `i` becomes 1.
+
+#### **Step 1: i = 1**
+```text
+Pointers: i = 1
+s: " r a t "
+       ▲
+       i
+t: " a r t "
+       ▲
+       i
+Mutations: s[1] ('a') adds +1, t[1] ('r') subtracts -1
+Counts:    { 'r': 0, 'a': 0 }
+```
+* **Next**: `i` becomes 2.
+
+#### **Step 2: i = 2**
+```text
+Pointers: i = 2
+s: " r a t "
+         ▲
+         i
+t: " a r t "
+         ▲
+         i
+Mutations: s[2] ('t') adds +1, t[2] ('t') subtracts -1
+Counts:    { 'r': 0, 'a': 0, 't': 0 }
+```
+* **Next**: Loop terminates. All counts in the 26-element array are `0`, confirming a perfect anagram match. Returns `true`.

@@ -51,6 +51,84 @@ There are two common ways to solve this:
 
 ---
 
+### 🔄 Step-by-Step Dry Run (Visualizer)
+
+We trace the mathematical division and modulo operations step-by-step for both odd-length (`x = 121`) and even-length (`x = 1221`) palindrome inputs:
+
+#### **Case 1: Odd-Length Palindrome (`x = 121`)**
+
+##### **Step 0: Initial State**
+```text
+x = 121
+revertedNumber = 0
+```
+
+##### **Step 1: First Iteration**
+* **Condition**: `x > revertedNumber` ($121 > 0$) is **True**.
+* **Mathematical Operations**:
+  ```text
+  Extract digit:   121 % 10                = 1
+  Reconstruct:     (revertedNumber * 10) + 1 = (0 * 10) + 1 = 1
+  Shrink x:        Math.floor(121 / 10)    = 12
+  ```
+* **Result**: `x = 12`, `revertedNumber = 1`.
+
+##### **Step 2: Second Iteration**
+* **Condition**: `x > revertedNumber` ($12 > 1$) is **True**.
+* **Mathematical Operations**:
+  ```text
+  Extract digit:   12 % 10                 = 2
+  Reconstruct:     (revertedNumber * 10) + 2 = (1 * 10) + 2 = 12
+  Shrink x:        Math.floor(12 / 10)     = 1
+  ```
+* **Result**: `x = 1`, `revertedNumber = 12`.
+
+##### **Step 3: Loop Termination**
+* **Condition**: `x > revertedNumber` ($1 > 12$) is **False**. Loop exits.
+
+##### **Final Comparison**:
+* Since the digit count was odd, we check if `x === Math.floor(revertedNumber / 10)`:
+  `1 === Math.floor(12 / 10)` $\rightarrow$ `1 === 1` $\rightarrow$ **`true`**.
+
+---
+
+#### **Case 2: Even-Length Palindrome (`x = 1221`)**
+
+##### **Step 0: Initial State**
+```text
+x = 1221
+revertedNumber = 0
+```
+
+##### **Step 1: First Iteration**
+* **Condition**: `x > revertedNumber` ($1221 > 0$) is **True**.
+* **Mathematical Operations**:
+  ```text
+  Extract digit:   1221 % 10               = 1
+  Reconstruct:     (revertedNumber * 10) + 1 = (0 * 10) + 1 = 1
+  Shrink x:        Math.floor(1221 / 10)   = 122
+  ```
+* **Result**: `x = 122`, `revertedNumber = 1`.
+
+##### **Step 2: Second Iteration**
+* **Condition**: `x > revertedNumber` ($122 > 1$) is **True**.
+* **Mathematical Operations**:
+  ```text
+  Extract digit:   122 % 10                = 2
+  Reconstruct:     (revertedNumber * 10) + 2 = (1 * 10) + 2 = 12
+  Shrink x:        Math.floor(122 / 10)    = 12
+  ```
+* **Result**: `x = 12`, `revertedNumber = 12`.
+
+##### **Step 3: Loop Termination**
+* **Condition**: `x > revertedNumber` ($12 > 12$) is **False**. Loop exits.
+
+##### **Final Comparison**:
+* Since the digit count was even, we check if `x === revertedNumber`:
+  `12 === 12` $\rightarrow$ **`true`**.
+
+---
+
 ### 💻 6. Optimal Code (TypeScript)
 
 ```typescript

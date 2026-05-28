@@ -56,6 +56,108 @@ Imagine you are **sorting two rows of physical files into a single cabinet drawe
 
 ---
 
+### 🔄 Step-by-Step Dry Run (Visualizer)
+
+We will dry run the optimal code with the inputs: `nums1 = [1, 2, 3, 0, 0, 0]`, `m = 3`, `nums2 = [2, 5, 6]`, `n = 3`.
+
+#### **Step 0: Initial State**
+```text
+Pointers: i = 2, j = 2, writePointer = 5
+nums1:    [ 1,   2,   3,   0,   0,   0 ]
+           idx0 idx1 idx2 idx3 idx4 idx5
+Pointers:             ▲              ▲
+                      i            write
+
+nums2:    [ 2,   5,   6 ]
+           idx0 idx1 idx2
+Pointers:             ▲
+                      j
+```
+* **Comparison**: `nums1[i]` (nums1[2] = 3) vs `nums2[j]` (nums2[2] = 6)
+* **Decision**: `6 > 3`. Copy `nums2[j]` to `nums1[writePointer]`.
+  1. Overwrite: `nums1[5] = nums2[2]` (6).
+  2. Advance: `j` becomes `1`, `writePointer` becomes `4`.
+* **Updated State**:
+```text
+nums1:    [ 1,   2,   3,   0,   0,   6 ]
+nums2:    [ 2,   5,   6 ]
+```
+* **Next**: Next iteration.
+
+#### **Step 1: i = 2, j = 1, writePointer = 4**
+```text
+Pointers: i = 2, j = 1, writePointer = 4
+nums1:    [ 1,   2,   3,   0,   0,   6 ]
+           idx0 idx1 idx2 idx3 idx4 idx5
+Pointers:             ▲         ▲
+                      i       write
+
+nums2:    [ 2,   5,   6 ]
+           idx0 idx1 idx2
+Pointers:         ▲
+                  j
+```
+* **Comparison**: `nums1[i]` (nums1[2] = 3) vs `nums2[j]` (nums2[1] = 5)
+* **Decision**: `5 > 3`. Copy `nums2[j]` to `nums1[writePointer]`.
+  1. Overwrite: `nums1[4] = nums2[1]` (5).
+  2. Advance: `j` becomes `0`, `writePointer` becomes `3`.
+* **Updated State**:
+```text
+nums1:    [ 1,   2,   3,   0,   5,   6 ]
+nums2:    [ 2,   5,   6 ]
+```
+* **Next**: Next iteration.
+
+#### **Step 2: i = 2, j = 0, writePointer = 3**
+```text
+Pointers: i = 2, j = 0, writePointer = 3
+nums1:    [ 1,   2,   3,   0,   5,   6 ]
+           idx0 idx1 idx2 idx3 idx4 idx5
+Pointers:             ▲    ▲
+                      i  write
+
+nums2:    [ 2,   5,   6 ]
+           idx0 idx1 idx2
+Pointers:    ▲
+             j
+```
+* **Comparison**: `nums1[i]` (nums1[2] = 3) vs `nums2[j]` (nums2[0] = 2)
+* **Decision**: `3 > 2`. Copy `nums1[i]` to `nums1[writePointer]`.
+  1. Overwrite: `nums1[3] = nums1[2]` (3).
+  2. Advance: `i` becomes `1`, `writePointer` becomes `2`.
+* **Updated State**:
+```text
+nums1:    [ 1,   2,   3,   3,   5,   6 ]
+nums2:    [ 2,   5,   6 ]
+```
+* **Next**: Next iteration.
+
+#### **Step 3: i = 1, j = 0, writePointer = 2**
+```text
+Pointers: i = 1, j = 0, writePointer = 2
+nums1:    [ 1,   2,   3,   3,   5,   6 ]
+           idx0 idx1 idx2 idx3 idx4 idx5
+Pointers:         ▲    ▲
+                  i  write
+
+nums2:    [ 2,   5,   6 ]
+           idx0 idx1 idx2
+Pointers:    ▲
+             j
+```
+* **Comparison**: `nums1[i]` (nums1[1] = 2) vs `nums2[j]` (nums2[0] = 2)
+* **Decision**: `nums1[i] > nums2[j]` is false (`2 > 2` is false). Copy `nums2[j]` to `nums1[writePointer]`.
+  1. Overwrite: `nums1[2] = nums2[0]` (2).
+  2. Advance: `j` becomes `-1`, `writePointer` becomes `1`.
+* **Updated State**:
+```text
+nums1:    [ 1,   2,   2,   3,   5,   6 ]
+nums2:    [ 2,   5,   6 ]
+```
+* **Next**: `j` is now `-1` (which is `< 0`), so the loop terminates. The merge is complete!
+
+---
+
 ### 💻 6. Optimal Code (TypeScript)
 
 ```typescript

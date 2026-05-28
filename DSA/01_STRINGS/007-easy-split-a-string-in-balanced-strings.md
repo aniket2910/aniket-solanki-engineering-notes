@@ -98,3 +98,86 @@ function balancedStringSplit(s: string): number {
 * **Deeply Nested Balance** (`s = "LLLRRR"`):
   * `balance` goes: `-1, -2, -3, -2, -1, 0`.
   * Hits `0` only at the very end. Returns `1` (Correct).
+
+---
+
+### 🎬 8. Dry Run
+Let's trace `s = "RLRRLL"` with `balance = 0`, `count = 0`:
+
+#### **Step 0: i = 0**
+```text
+Pointers: i = 0, balance = 0, count = 0
+String:   " R   L   R   R   L   L "
+            0   1   2   3   4   5
+Pointer:    ▲
+            i
+```
+* **Character**: `s[0]` -> `"R"`
+* **Decision**: `'R'` increment balance. `balance` becomes `1`.
+* **Comparison**: `balance === 0` is `false`.
+* **Next**: `i` becomes 1.
+
+#### **Step 1: i = 1**
+```text
+Pointers: i = 1, balance = 1, count = 0
+String:   " R   L   R   R   L   L "
+            0   1   2   3   4   5
+Pointer:        ▲
+                i
+```
+* **Character**: `s[1]` -> `"L"`
+* **Decision**: `'L'` decrement balance. `balance` becomes `0`.
+* **Comparison**: `balance === 0` is `true`. Increment `count`.
+* **Next**: `count` becomes 1. `i` becomes 2.
+
+#### **Step 2: i = 2**
+```text
+Pointers: i = 2, balance = 0, count = 1
+String:   " R   L   R   R   L   L "
+            0   1   2   3   4   5
+Pointer:            ▲
+                    i
+```
+* **Character**: `s[2]` -> `"R"`
+* **Decision**: `'R'` increment balance. `balance` becomes `1`.
+* **Comparison**: `balance === 0` is `false`.
+* **Next**: `i` becomes 3.
+
+#### **Step 3: i = 3**
+```text
+Pointers: i = 3, balance = 1, count = 1
+String:   " R   L   R   R   L   L "
+            0   1   2   3   4   5
+Pointer:                ▲
+                        i
+```
+* **Character**: `s[3]` -> `"R"`
+* **Decision**: `'R'` increment balance. `balance` becomes `2`.
+* **Comparison**: `balance === 0` is `false`.
+* **Next**: `i` becomes 4.
+
+#### **Step 4: i = 4**
+```text
+Pointers: i = 4, balance = 2, count = 1
+String:   " R   L   R   R   L   L "
+            0   1   2   3   4   5
+Pointer:                    ▲
+                            i
+```
+* **Character**: `s[4]` -> `"L"`
+* **Decision**: `'L'` decrement balance. `balance` becomes `1`.
+* **Comparison**: `balance === 0` is `false`.
+* **Next**: `i` becomes 5.
+
+#### **Step 5: i = 5**
+```text
+Pointers: i = 5, balance = 1, count = 1
+String:   " R   L   R   R   L   L "
+            0   1   2   3   4   5
+Pointer:                        ▲
+                                i
+```
+* **Character**: `s[5]` -> `"L"`
+* **Decision**: `'L'` decrement balance. `balance` becomes `0`.
+* **Comparison**: `balance === 0` is `true`. Increment `count`.
+* **Next**: Loop terminates. Returns `count = 2`.

@@ -78,3 +78,34 @@ function findWordsContaining(words: string[], x: string): number[] {
 #### Edge Cases Handled:
 * **No Words Match** (`words = ["abc"]`, `x = "z"`): The `.indexOf("z")` returns `-1`. The loop finishes, returning `[]` (Correct).
 * **All Words Match** (`words = ["a", "a"]`, `x = "a"`): Loop finds `"a"` in all elements. Returns `[0, 1]` (Correct).
+
+---
+
+### 🎬 8. Dry Run
+Let's trace `words = ["leet", "code"]` with `x = "e"`:
+
+#### **Step 0: Initial State**
+```text
+Pointers: i = 0
+Words:    [ "leet", "code" ]
+            idx0    idx1
+Pointer:     ▲
+             i
+Result:   []
+```
+* **Comparison**: `words[0].indexOf("e")` -> `"leet".indexOf("e")` is `1` (which is `!== -1`).
+* **Decision**: Character `"e"` found in `"leet"`. Push index `0` to `result`.
+* **Next**: `i` advances to `1`. `result` becomes `[0]`.
+
+#### **Step 1: i = 1**
+```text
+Pointers: i = 1
+Words:    [ "leet", "code" ]
+            idx0    idx1
+Pointer:             ▲
+                     i
+Result:   [0]
+```
+* **Comparison**: `words[1].indexOf("e")` -> `"code".indexOf("e")` is `3` (which is `!== -1`).
+* **Decision**: Character `"e"` found in `"code"`. Push index `1` to `result`.
+* **Next**: Loop terminates. Returns `result = [0, 1]`.

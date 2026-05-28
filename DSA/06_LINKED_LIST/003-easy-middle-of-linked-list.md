@@ -49,6 +49,43 @@ This is the quintessential **Fast & Slow Pointer** algorithm!
 
 ---
 
+### 🔄 Step-by-Step Dry Run (Visualizer)
+
+For the linked list `head = [1, 2, 3, 4, 5]`:
+
+#### **Step 0: Initial State**
+```text
+Pointers: slow = Node(1), fast = Node(1)
+List:     [ 1 ] ──► [ 2 ] ──► [ 3 ] ──► [ 4 ] ──► [ 5 ] ──► null
+           ▲
+       slow/fast
+```
+
+#### **Step 1: First Iteration**
+```text
+1. Advance slow: slow = slow.next (Node(2))
+2. Advance fast: fast = fast.next.next (Node(3))
+
+Linkage State:
+          [ 1 ] ──► [ 2 ] ──► [ 3 ] ──► [ 4 ] ──► [ 5 ] ──► null
+                     ▲         ▲
+                   slow       fast
+```
+
+#### **Step 2: Second Iteration**
+```text
+1. Advance slow: slow = slow.next (Node(3))
+2. Advance fast: fast = fast.next.next (Node(5))
+
+Linkage State:
+          [ 1 ] ──► [ 2 ] ──► [ 3 ] ──► [ 4 ] ──► [ 5 ] ──► null
+                               ▲                   ▲
+                             slow                 fast
+```
+* **Next**: `fast.next` is null, loop exits. Returns `slow` (`Node(3)` -> `[3, 4, 5]`).
+
+---
+
 ### 💻 6. Optimal Code (TypeScript)
 
 ```typescript

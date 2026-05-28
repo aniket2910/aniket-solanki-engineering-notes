@@ -61,6 +61,60 @@ If we XOR all index positions from `0` to `n` and all values inside `nums`, ever
 
 ---
 
+### 🔄 Step-by-Step Dry Run (Visualizer)
+
+We trace the bitwise XOR self-cancellation step-by-step. By XORing every index and value together, matching numbers cancel out to `0`, leaving only the single missing number.
+
+We use the input: `nums = [3, 0, 1]` (length $n = 3$, indices `0, 1, 2`).
+
+#### **Step 0: Initial State**
+```text
+n = 3
+ans = 3 (Initialized to n)
+```
+
+#### **Step 1: Index i = 0**
+* **Current Element**: `nums[0] = 3`
+* **XOR Calculation**:
+  ```text
+  ans = ans ^ i ^ nums[i]
+      = 3 ^ 0 ^ 3
+      = (3 ^ 3) ^ 0   (Self-cancellation)
+      = 0 ^ 0
+      = 0
+  ```
+* **Result**: `ans = 0`.
+
+#### **Step 2: Index i = 1**
+* **Current Element**: `nums[1] = 0`
+* **XOR Calculation**:
+  ```text
+  ans = ans ^ i ^ nums[i]
+      = 0 ^ 1 ^ 0
+      = (0 ^ 0) ^ 1   (Identity)
+      = 0 ^ 1
+      = 1
+  ```
+* **Result**: `ans = 1`.
+
+#### **Step 3: Index i = 2**
+* **Current Element**: `nums[2] = 1`
+* **XOR Calculation**:
+  ```text
+  ans = ans ^ i ^ nums[i]
+      = 1 ^ 2 ^ 1
+      = (1 ^ 1) ^ 2   (Self-cancellation)
+      = 0 ^ 2
+      = 2
+  ```
+* **Result**: `ans = 2`.
+
+#### **Step 4: Loop Termination**
+* Loop exits because `i` reaches `n` (3).
+* Returns `ans` (**`2`**), which is indeed the missing number!
+
+---
+
 ### 💻 6. Optimal Code (TypeScript)
 
 Here is the clean, human-written codebase showing both approaches. Approach 1 is shown in comments to show a clear progression of thought!

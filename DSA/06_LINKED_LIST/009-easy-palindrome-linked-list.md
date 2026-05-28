@@ -56,9 +56,99 @@ We perform an in-place inspection:
 
 ---
 
-### 💻 6. Optimal Code (TypeScript)
+### 🔄 Step-by-Step Dry Run (Visualizer)
 
-Here is a human-written solution showing both approaches. The Array Copy approach is shown in comments to demonstrate your progression of thought!
+For the linked list `head = [1, 2, 2, 1]`:
+
+#### **Stage 1: Find Middle Node**
+
+##### **Step 0: Initial State**
+```text
+Pointers: slow = Node(1), fast = Node(1)
+List:     [ 1 ] ──► [ 2 ] ──► [ 2 ] ──► [ 1 ] ──► null
+           ▲
+       slow/fast
+```
+
+##### **Step 1: First Iteration**
+```text
+* Actions:  slow = slow.next (Node(2)), fast = fast.next.next (Node(2))
+* Pointers: slow = Node(2), fast = Node(2) [index 2]
+List:     [ 1 ] ──► [ 2 ] ──► [ 2 ] ──► [ 1 ] ──► null
+                     ▲         ▲
+                   slow       fast
+```
+
+##### **Step 2: Second Iteration**
+```text
+* Actions:  slow = slow.next (Node(2)), fast = fast.next.next (null)
+* Pointers: slow = Node(2) [index 2], fast = null
+List:     [ 1 ] ──► [ 2 ] ──► [ 2 ] ──► [ 1 ] ──► null
+                               ▲                 ▲
+                             slow               fast (null)
+```
+* **Loop Exit**: `fast` is `null`. `slow` represents the starting point of the second half.
+
+---
+
+#### **Stage 2: Reverse Second Half**
+
+##### **Step 0: Initial State**
+```text
+Pointers: prev = null, curr = Node(2) [index 2]
+List:     [ 2 ] ──► [ 1 ] ──► null
+           ▲
+          curr
+```
+
+##### **Step 1: First Iteration**
+```text
+* Actions:  temp = curr.next (Node(1)), curr.next = prev (null)
+            prev = curr (Node(2)), curr = temp (Node(1))
+Linkage State:
+          null ◄── [ 2 ]        [ 1 ] ──► null
+                    ▲            ▲
+                  prev          curr
+```
+
+##### **Step 2: Second Iteration**
+```text
+* Actions:  temp = curr.next (null), curr.next = prev (Node(2))
+            prev = curr (Node(1)), curr = temp (null)
+Linkage State:
+          null ◄── [ 2 ] ◄── [ 1 ]
+                              ▲     ▲
+                            prev   curr (null)
+```
+* **Reversal finished**. Reversed second half head is `prev` (`Node(1)` -> `[1, 2]`).
+
+---
+
+#### **Stage 3: Palindrome Value Comparison**
+
+##### **Step 0: Comparison Initialization**
+```text
+Pointers: p1 = head (Node(1)), p2 = prev (Node(1))
+List 1:   [ 1 ] ──► [ 2 ] ──► ...
+           ▲
+          p1
+List 2:   [ 1 ] ──► [ 2 ] ──► null
+           ▲
+          p2
+```
+
+##### **Step 1: First Compare**
+* **Check**: `p1.val` (1) === `p2.val` (1) -> Match!
+* **Actions**: `p1 = p1.next` (`Node(2)`), `p2 = p2.next` (`Node(2)`)
+
+##### **Step 2: Second Compare**
+* **Check**: `p1.val` (2) === `p2.val` (2) -> Match!
+* **Actions**: `p1 = p1.next` (`Node(2)`), `p2 = p2.next` (`null`)
+* **Loop Exit**: `p2` is `null`. Palindrome check passes! Returns `true`.
+
+---
+
+### 💻 6. Optimal Code (TypeScript)
 
 ```typescript
 class ListNode {

@@ -125,3 +125,50 @@ function reorganizeString(s: string): string {
 * **Max frequency exactly equals limit** (`s = "aba"`, length = 3): Max frequency is 2. Limit is `(3 + 1) / 2 = 2`. Max frequency does not exceed limit. Placed at index `0` and `2`, leaving index `1` for `'b'`. Yields `"aba"` (Correct).
 * **Impossible layout** (`s = "aaaaab"`): Max frequency is 5. Limit is `(6 + 1) / 2 = 3`. 5 > 3, returns `""` immediately (Correct).
 * **Single character string** (`s = "a"`): Length is 1. Max frequency is 1. Limit is `(1+1)/2 = 1`. Placed at index 0. Returns `"a"` (Correct).
+
+---
+
+### 🎬 8. Dry Run
+Let's trace `s = "aab"` (length 3) with `counts = { 'a': 2, 'b': 1 }`:
+
+#### **Phase 1: Max Frequency Detection**
+* Max frequency: `2` (character `'a'`).
+* Limit check: `2 > Math.floor((3 + 1) / 2)` $\rightarrow$ `2 > 2` (False). It is possible to rearrange!
+
+#### **Phase 2: Alternating Placement**
+
+#### **Step 0: Placing Most Frequent Character ('a')**
+```text
+State: res = [ _, _, _ ], index = 0, counts['a'] = 2
+Array:       [ _, _, _ ]
+               idx0 idx1 idx2
+Pointer:       ▲
+             index
+```
+* **Action**: Place `'a'` at `res[0]`. `index` advances by 2. `counts['a']` becomes 1.
+
+#### **Step 1: Placing 'a' (Continued)**
+```text
+State: res = [ "a", _, _ ], index = 2, counts['a'] = 1
+Array:       [ "a", _, _ ]
+               idx0 idx1 idx2
+Pointer:                 ▲
+                       index
+```
+* **Action**: Place `'a'` at `res[2]`. `index` advances by 2 to become 4. `counts['a']` becomes 0.
+
+#### **Step 2: Placing Remaining Character ('b')**
+```text
+State: res = [ "a", _, "a" ], index = 4 (Out of bounds), counts['b'] = 1
+```
+* **Action**: `index` (4) is $\ge$ array length (3). Reset `index` to `1` (odd slots).
+```text
+State: index = 1
+Array:       [ "a", _, "a" ]
+               idx0 idx1 idx2
+Pointer:            ▲
+                  index
+```
+* **Action**: Place `'b'` at `res[1]`. `index` advances by 2 to become 3. `counts['b']` becomes 0.
+* **Exit**: Loop completes. All character frequencies are now 0.
+* **Final Output**: `res.join('')` $\rightarrow$ `"aba"`.

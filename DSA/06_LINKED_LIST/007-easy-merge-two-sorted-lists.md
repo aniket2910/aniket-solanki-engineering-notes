@@ -63,6 +63,81 @@ Instead of allocating new nodes or using a dummy sentinel, we compare the initia
 
 ---
 
+### 🔄 Step-by-Step Dry Run (Visualizer)
+
+For the sorted linked lists `list1 = [1, 4]`, `list2 = [1, 3]`:
+
+#### **Step 0: Initial State**
+```text
+Pointers: list1 = Node(1), list2 = Node(1), curr = null
+List 1:   [ 1 ] ──► [ 4 ] ──► null
+           ▲
+         list1
+List 2:   [ 1 ] ──► [ 3 ] ──► null
+           ▲
+         list2
+```
+
+#### **Step 1: Initial Starting Selection**
+```text
+* Comparison: list1.val (1) < list2.val (1) is false.
+* Action:     Set curr = list2, res = list2, advance list2.
+* Pointers:   list1 = Node(1), list2 = Node(3), curr = Node(1) [from List 2]
+
+Linkage State:
+Merged:   [ 1 ] (curr/res)
+           │
+List 1:    └──► [ 1 ] ──► [ 4 ] ──► null
+                 ▲
+               list1
+List 2:         [ 3 ] ──► null
+                 ▲
+               list2
+```
+
+#### **Step 2: First Loop Iteration**
+```text
+* Comparison: list1.val (1) < list2.val (3)
+* Action:     Link curr.next = list1, advance list1, advance curr.
+* Pointers:   list1 = Node(4), list2 = Node(3), curr = Node(1) [from List 1]
+
+Linkage State:
+Merged:   [ 1 ] ──► [ 1 ] (curr)
+                     │
+List 1:              └──► [ 4 ] ──► null
+                           ▲
+                         list1
+List 2:             [ 3 ] ──► null
+                     ▲
+                   list2
+```
+
+#### **Step 3: Second Loop Iteration**
+```text
+* Comparison: list1.val (4) < list2.val (3) is false.
+* Action:     Link curr.next = list2, advance list2, advance curr.
+* Pointers:   list1 = Node(4), list2 = null, curr = Node(3) [from List 2]
+
+Linkage State:
+Merged:   [ 1 ] ──► [ 1 ] ──► [ 3 ] (curr) ──► null
+                               ▲
+                             list2 (null)
+List 1:                       [ 4 ] ──► null
+                               ▲
+                             list1
+```
+
+#### **Step 4: Loop Exit & Append Remaining**
+```text
+* Action:     Loop exits because list2 is null. Append list1: curr.next = list1 (Node(4)).
+
+Linkage State:
+Merged:   [ 1 ] ──► [ 1 ] ──► [ 3 ] ──► [ 4 ] ──► null
+```
+* **Returns**: `res` (`[1, 1, 3, 4]`).
+
+---
+
 ### 💻 6. Optimal Code (TypeScript)
 
 Here is a human-written solution showing both approaches. Approach 1 is shown in comments to demonstrate a clear progression of thought to your interviewer!

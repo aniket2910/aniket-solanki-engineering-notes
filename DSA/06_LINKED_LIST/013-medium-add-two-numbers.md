@@ -62,6 +62,63 @@ Think of doing **addition with paper cards**:
 
 ---
 
+### 🔄 Step-by-Step Dry Run (Visualizer)
+
+For the inputs `l1 = [2, 4, 3]` and `l2 = [5, 6, 4]`:
+
+#### **Step 0: Initial State**
+```text
+Pointers: l1 = Node(2), l2 = Node(5), curr = dummyHead, carry = 0
+Sum List: [ -1 ] ──► null
+            ▲
+          curr
+```
+
+#### **Step 1: First Iteration**
+```text
+* Sum:      carry (0) + l1.val (2) + l2.val (5) = 7
+* Math:     carry = Math.floor(7 / 10) = 0
+            digit = 7 % 10 = 7
+* Link:     curr.next = Node(7)
+* Advance:  l1 = l1.next (Node(4)), l2 = l2.next (Node(6)), curr = Node(7)
+
+Linkage State:
+Sum List: [ -1 ] ──► [ 7 ] ──► null
+                       ▲
+                     curr
+```
+
+#### **Step 2: Second Iteration**
+```text
+* Sum:      carry (0) + l1.val (4) + l2.val (6) = 10
+* Math:     carry = Math.floor(10 / 10) = 1
+            digit = 10 % 10 = 0
+* Link:     curr.next = Node(0)
+* Advance:  l1 = l1.next (Node(3)), l2 = l2.next (Node(4)), curr = Node(0)
+
+Linkage State:
+Sum List: [ -1 ] ──► [ 7 ] ──► [ 0 ] ──► null
+                                 ▲
+                               curr
+```
+
+#### **Step 3: Third Iteration**
+```text
+* Sum:      carry (1) + l1.val (3) + l2.val (4) = 8
+* Math:     carry = Math.floor(8 / 10) = 0
+            digit = 8 % 10 = 8
+* Link:     curr.next = Node(8)
+* Advance:  l1 = null, l2 = null, curr = Node(8)
+
+Linkage State:
+Sum List: [ -1 ] ──► [ 7 ] ──► [ 0 ] ──► [ 8 ] ──► null
+                                           ▲
+                                         curr
+```
+* **Next**: `l1` is null, `l2` is null, and `carry` is `0`. Loop terminates. Returns `dummyHead.next` (`[7, 0, 8]`).
+
+---
+
 ### 💻 6. Optimal Code (TypeScript)
 
 ```typescript

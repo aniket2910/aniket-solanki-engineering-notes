@@ -55,6 +55,87 @@ To merge them into one alphabetical pile, you compare the top paper of both pile
 
 ---
 
+### 🔄 Step-by-Step Dry Run (Visualizer)
+
+We trace the recursive call stack depth outline and the pointer-based merge comparison phases for `nums = [5, 2, 3, 1]`:
+
+#### **1. Recursive Call Stack & Divide Phase**
+
+```text
+▶ Level 0: mergeSort(0, 3) for [5, 2, 3, 1]
+  ├── mid = 1 
+  ├── Spawn Level 1 (Left Half): mergeSort(0, 1) for [5, 2]
+  │     ├── mid = 0
+  │     ├── Spawn Level 2 (Left): mergeSort(0, 0) ──► Base Case: Segment size 1 is sorted.
+  │     ├── Spawn Level 2 (Right): mergeSort(1, 1) ──► Base Case: Segment size 1 is sorted.
+  │     └── Call merge(0, 0, 1) ──► Merges [5] and [2] into [2, 5]
+  ├── Spawn Level 1 (Right Half): mergeSort(2, 3) for [3, 1]
+  │     ├── mid = 2
+  │     ├── Spawn Level 2 (Left): mergeSort(2, 2) ──► Base Case: Segment size 1 is sorted.
+  │     ├── Spawn Level 2 (Right): mergeSort(3, 3) ──► Base Case: Segment size 1 is sorted.
+  │     └── Call merge(2, 2, 3) ──► Merges [3] and [1] into [1, 3]
+  └── Call merge(0, 1, 3) ──► Merges [2, 5] and [1, 3] into [1, 2, 3, 5]
+▶ Exit: Return fully sorted array [1, 2, 3, 5]
+```
+
+---
+
+#### **2. Final Merge Phase Trace: `merge(0, 1, 3)`**
+
+We trace the exact state of pointers `i`, `j`, and `k` as we merge `temp[0...1] = [2, 5]` and `temp[2...3] = [1, 3]` back into `nums`:
+
+##### **Initial Merge State**
+```text
+temp: [ 2,  5,  1,  3 ]
+        ▲   ▲   ▲   ▲
+        i  mid  j right
+```
+
+##### **Iteration 1 (k = 0)**
+* **Comparison**: `temp[i]` (2) `>` `temp[j]` (1)
+* **Decision**: Right element is smaller. Copy `temp[j]` (1) to `nums[0]`. Advance `j` to index 3.
+* **State**:
+  ```text
+  nums: [ 1,  _,  _,  _ ]
+  temp: [ 2,  5,  1,  3 ]
+          ▲       ▲   ▲
+          i      mid  j  (right)
+  ```
+
+##### **Iteration 2 (k = 1)**
+* **Comparison**: `temp[i]` (2) `<` `temp[j]` (3)
+* **Decision**: Left element is smaller. Copy `temp[i]` (2) to `nums[1]`. Advance `i` to index 1.
+* **State**:
+  ```text
+  nums: [ 1,  2,  _,  _ ]
+  temp: [ 2,  5,  1,  3 ]
+              ▲   ▲   ▲
+             mid  j  (right)
+              i
+  ```
+
+##### **Iteration 3 (k = 2)**
+* **Comparison**: `temp[i]` (5) `>` `temp[j]` (3)
+* **Decision**: Right element is smaller. Copy `temp[j]` (3) to `nums[2]`. Advance `j` to index 4 (exhausted).
+* **State**:
+  ```text
+  nums: [ 1,  2,  3,  _ ]
+  temp: [ 2,  5,  1,  3 ]
+              ▲       ▲   ▲
+             mid    right j (exhausted)
+              i
+  ```
+
+##### **Iteration 4 (k = 3)**
+* **Condition**: `j > right` (Right half exhausted).
+* **Decision**: Copy remaining left element `temp[i]` (5) to `nums[3]`. Advance `i` to index 2.
+* **State**:
+  ```text
+  nums: [ 1,  2,  3,  5 ] (Fully sorted!)
+  ```
+
+---
+
 ### 💻 6. Optimal Code (TypeScript)
 
 ```typescript

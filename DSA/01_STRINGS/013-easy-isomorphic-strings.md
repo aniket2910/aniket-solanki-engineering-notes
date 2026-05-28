@@ -19,7 +19,7 @@ All occurrences of a character must be replaced with another character while pre
 * **Why**: We can create a one-to-one mapping:
   * `'e' -> 'a'`
   * `'g' -> 'd'`
-  Substituting these characters in `"egg"` results in `"add"`.
+  * Substituting these characters in `"egg"` results in `"add"`.
 
 #### Test Case 2
 * **Input**: `s = "foo"`, `t = "bar"`
@@ -34,7 +34,7 @@ All occurrences of a character must be replaced with another character while pre
   * `'a' -> 'i'`
   * `'e' -> 'l'`
   * `'r' -> 'e'`
-  Replacing `'paper'` character-by-character yields `'title'`.
+  * Replacing `'paper'` character-by-character yields `'title'`.
 
 ---
 
@@ -131,3 +131,59 @@ function isIsomorphic(s: string, t: string): boolean {
   * `i = 0`: `'a' -> 'a'` mapped.
   * `i = 1`: `charS = 'b'`, `charT = 'a'`. `mapT` already contains `'a'` mapping to `'a'`, which is not `'b'`. The function returns `false` (Correct).
 * **Strings of Different Lengths** (`s = "abc"`, `t = "ab"`): Returns `false` immediately at the length check (Correct).
+
+---
+
+### 🎬 8. Dry Run
+Let's trace `s = "egg"`, `t = "add"` step-by-step:
+
+#### **Step 0: i = 0**
+```text
+Pointers: i = 0
+s: " e g g "
+     ▲
+     i
+t: " a d d "
+     ▲
+     i
+Maps: mapS = {}, mapT = {}
+```
+* **Characters**: `charS = 'e'`, `charT = 'a'`
+* **Decision**: Neither character is mapped yet. Register both.
+  - `mapS` adds `'e' -> 'a'`
+  - `mapT` adds `'a' -> 'e'`
+* **Next**: `i` becomes 1.
+
+#### **Step 1: i = 1**
+```text
+Pointers: i = 1
+s: " e g g "
+       ▲
+       i
+t: " a d d "
+       ▲
+       i
+Maps: mapS = { 'e' -> 'a' }, mapT = { 'a' -> 'e' }
+```
+* **Characters**: `charS = 'g'`, `charT = 'd'`
+* **Decision**: Neither character is mapped yet. Register both.
+  - `mapS` adds `'g' -> 'd'`
+  - `mapT` adds `'d' -> 'g'`
+* **Next**: `i` becomes 2.
+
+#### **Step 2: i = 2**
+```text
+Pointers: i = 2
+s: " e g g "
+         ▲
+         i
+t: " a d d "
+         ▲
+         i
+Maps: mapS = { 'e' -> 'a', 'g' -> 'd' }, mapT = { 'a' -> 'e', 'd' -> 'g' }
+```
+* **Characters**: `charS = 'g'`, `charT = 'd'`
+* **Comparison**:
+  - `mapS` already contains `'g'`. Checked mapping: `mapS.get('g')` is `'d'` (Match!).
+  - `mapT` already contains `'d'`. Checked mapping: `mapT.get('d')` is `'g'` (Match!).
+* **Decision**: No conflicts. Loop terminates. Returns `true`.

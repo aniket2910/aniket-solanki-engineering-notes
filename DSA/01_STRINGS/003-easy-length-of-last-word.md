@@ -87,3 +87,78 @@ function lengthOfLastWord(s: string): number {
 * **String of Only Spaces** (`s = "    "`):
   * The first loop runs until `p` becomes `-1`.
   * The second loop does not run. Returns `0` (Correct).
+
+---
+
+### 🎬 8. Dry Run
+Let's trace `s = "fly me  "` (length 8):
+
+#### **Step 0: Initial State**
+```text
+Pointers: p = 7, length = 0
+String:   " f l y   m e     "
+           0 1 2 3 4 5 6 7
+Pointer:                 ▲
+                         p
+```
+* **Condition**: `p >= 0 && s[p] === ' '` (s[7] = ' ' is true)
+* **Decision**: Trailing space detected. Decrement `p`.
+* **Next**: `p` becomes 6.
+
+#### **Step 1: p = 6**
+```text
+Pointers: p = 6, length = 0
+String:   " f l y   m e     "
+           0 1 2 3 4 5 6 7
+Pointer:               ▲
+                       p
+```
+* **Condition**: `p >= 0 && s[p] === ' '` (s[6] = ' ' is true)
+* **Decision**: Trailing space detected. Decrement `p`.
+* **Next**: `p` becomes 5.
+
+#### **Step 2: p = 5**
+```text
+Pointers: p = 5, length = 0
+String:   " f l y   m e     "
+           0 1 2 3 4 5 6 7
+Pointer:             ▲
+                     p
+```
+* **Condition**: `p >= 0 && s[p] === ' '` (s[5] = 'e' is false). Loop 1 terminates!
+* **Next**: Move to counting characters of the last word.
+
+#### **Step 3: Counting - p = 5**
+```text
+Pointers: p = 5, length = 0
+String:   " f l y   m e     "
+           0 1 2 3 4 5 6 7
+Pointer:             ▲
+                     p
+```
+* **Condition**: `p >= 0 && s[p] !== ' '` (s[5] = 'e' is true)
+* **Decision**: Word character found. Increment `length` and decrement `p`.
+* **Next**: `length` becomes 1, `p` becomes 4.
+
+#### **Step 4: Counting - p = 4**
+```text
+Pointers: p = 4, length = 1
+String:   " f l y   m e     "
+           0 1 2 3 4 5 6 7
+Pointer:           ▲
+                   p
+```
+* **Condition**: `p >= 0 && s[p] !== ' '` (s[4] = 'm' is true)
+* **Decision**: Word character found. Increment `length` and decrement `p`.
+* **Next**: `length` becomes 2, `p` becomes 3.
+
+#### **Step 5: Counting - p = 3**
+```text
+Pointers: p = 3, length = 2
+String:   " f l y   m e     "
+           0 1 2 3 4 5 6 7
+Pointer:         ▲
+                 p
+```
+* **Condition**: `p >= 0 && s[p] !== ' '` (s[3] = ' ' is false). Loop 2 terminates!
+* **Result**: Returns `length = 2` (length of last word `"me"`).

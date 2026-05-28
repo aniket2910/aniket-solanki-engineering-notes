@@ -48,6 +48,43 @@ Think of a **train of passenger cars, where some adjacent cars have duplicate ca
 
 ---
 
+### 🔄 Step-by-Step Dry Run (Visualizer)
+
+For the linked list `head = [1, 1, 2]`:
+
+#### **Step 0: Initial State**
+```text
+Pointers: curr = Node(1)
+List:     [ 1 ] ──► [ 1 ] ──► [ 2 ] ──► null
+           ▲
+          curr
+```
+
+#### **Step 1: First Iteration**
+```text
+* Comparison: curr.val (1) === curr.next.val (1)
+* Action:     Duplicate detected! Bypass next node: curr.next = curr.next.next (Node(2))
+* Pointers:   curr = Node(1) (Does not advance)
+
+Linkage State:
+List:     [ 1 ] ──────────────► [ 2 ] ──► null
+           ▲      └─► [ 1 ] ──x
+          curr
+```
+
+#### **Step 2: Second Iteration**
+```text
+* Comparison: curr.val (1) !== curr.next.val (2)
+* Action:     Advance curr pointer
+* Pointers:   curr = Node(2)
+List:     [ 1 ] ──► [ 2 ] ──► null
+                     ▲
+                    curr
+```
+* **Next**: `curr.next` is null, loop exits. Returns `head` (`[1, 2]`).
+
+---
+
 ### 💻 6. Optimal Code (TypeScript)
 
 ```typescript

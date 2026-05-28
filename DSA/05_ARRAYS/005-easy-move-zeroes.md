@@ -47,6 +47,97 @@ Think of a **conveyor belt containing valuable boxes and empty spacer gaps (zero
 
 ---
 
+### 🔄 Step-by-Step Dry Run (Visualizer)
+
+We will dry run the optimal code with the input `nums = [0, 1, 0, 3, 12]`.
+
+#### **Step 0: Initial State**
+```text
+Pointers: writePointer = 0, readPointer = 0
+Array:    [ 0,   1,   0,   3,  12 ]
+           idx0 idx1 idx2 idx3 idx4
+Pointers:    ▲
+           writePointer
+           readPointer
+```
+* **Comparison**: `nums[readPointer]` (nums[0] = 0) === 0
+* **Decision**: Element is zero. Skip swap!
+* **Next**: `readPointer` advances to index 1.
+
+#### **Step 1: readPointer = 1**
+```text
+Pointers: writePointer = 0, readPointer = 1
+Array:    [ 0,   1,   0,   3,  12 ]
+           idx0 idx1 idx2 idx3 idx4
+Pointers:    ▲    ▲
+           write read
+```
+* **Comparison**: `nums[readPointer]` (nums[1] = 1) !== 0
+* **Decision**: Non-zero element found! Swap `nums[readPointer]` with `nums[writePointer]`.
+  1. Swap: `nums[0]` (0) <──► `nums[1]` (1).
+  2. Advance: `writePointer++` (becomes 1).
+* **Updated State**:
+```text
+Array:    [ 1,   0,   0,   3,  12 ]
+                 ▲    ▲
+               write read
+```
+* **Next**: `readPointer` advances to index 2.
+
+#### **Step 2: readPointer = 2**
+```text
+Pointers: writePointer = 1, readPointer = 2
+Array:    [ 1,   0,   0,   3,  12 ]
+           idx0 idx1 idx2 idx3 idx4
+Pointers:         ▲    ▲
+                write read
+```
+* **Comparison**: `nums[readPointer]` (nums[2] = 0) === 0
+* **Decision**: Element is zero. Skip swap!
+* **Next**: `readPointer` advances to index 3.
+
+#### **Step 3: readPointer = 3**
+```text
+Pointers: writePointer = 1, readPointer = 3
+Array:    [ 1,   0,   0,   3,  12 ]
+           idx0 idx1 idx2 idx3 idx4
+Pointers:         ▲         ▲
+                write      read
+```
+* **Comparison**: `nums[readPointer]` (nums[3] = 3) !== 0
+* **Decision**: Non-zero element found! Swap `nums[readPointer]` with `nums[writePointer]`.
+  1. Swap: `nums[1]` (0) <──► `nums[3]` (3).
+  2. Advance: `writePointer++` (becomes 2).
+* **Updated State**:
+```text
+Array:    [ 1,   3,   0,   0,  12 ]
+                      ▲     ▲
+                    write  read
+```
+* **Next**: `readPointer` advances to index 4.
+
+#### **Step 4: readPointer = 4**
+```text
+Pointers: writePointer = 2, readPointer = 4
+Array:    [ 1,   3,   0,   0,  12 ]
+           idx0 idx1 idx2 idx3 idx4
+Pointers:              ▲        ▲
+                     write     read
+```
+* **Comparison**: `nums[readPointer]` (nums[4] = 12) !== 0
+* **Decision**: Non-zero element found! Swap `nums[readPointer]` with `nums[writePointer]`.
+  1. Swap: `nums[2]` (0) <──► `nums[4]` (12).
+  2. Advance: `writePointer++` (becomes 3).
+* **Updated State**:
+```text
+Array:    [ 1,   3,  12,   0,   0 ]
+                           ▲    ▲
+                         write read
+```
+* **Next**: Loop terminates. All zeroes have bubbled to the end!
+
+---
+
 ### 💻 6. Optimal Code (TypeScript)
 
 ```typescript

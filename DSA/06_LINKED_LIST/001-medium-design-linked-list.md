@@ -62,6 +62,69 @@ Think of a **treasure hunt / scavenger hunt**:
 
 ---
 
+### 🔄 Step-by-Step Dry Run (Visualizer)
+
+We trace the following sequence of operations to visualize how the singly linked list with a sentinel dummy node responds to additions, deletions, and lookups:
+1. `addAtHead(1)`
+2. `addAtTail(3)`
+3. `addAtIndex(1, 2)`
+4. `get(1)`
+5. `deleteAtIndex(1)`
+
+#### **Step 0: Initial State (Empty List)**
+```text
+dummyHead: [ -1 ] ──► null
+ (size = 0)
+```
+
+#### **Step 1: addAtHead(1)**
+* **Action**: Traverse to predecessor at index `0` (which is `dummyHead`), create `newNode = Node(1)`.
+* **Linkage**:
+  1. `newNode.next = pred.next` (`null`)
+  2. `pred.next = newNode`
+```text
+dummyHead ──► [ 1 ] ──► null
+  [ -1 ]
+ (size = 1)
+```
+
+#### **Step 2: addAtTail(3)**
+* **Action**: Traverse to predecessor at index `1` (which is `Node(1)`), create `newNode = Node(3)`.
+* **Linkage**:
+  1. `newNode.next = pred.next` (`null`)
+  2. `pred.next = newNode`
+```text
+dummyHead ──► [ 1 ] ──► [ 3 ] ──► null
+  [ -1 ]
+ (size = 2)
+```
+
+#### **Step 3: addAtIndex(1, 2)**
+* **Action**: Traverse to predecessor at index `1` (which is `Node(1)`), create `newNode = Node(2)`.
+* **Linkage**:
+  1. `newNode.next = pred.next` (`Node(3)`)
+  2. `pred.next = newNode`
+```text
+dummyHead ──► [ 1 ] ──► [ 2 ] ──► [ 3 ] ──► null
+  [ -1 ]
+ (size = 3)
+```
+
+#### **Step 4: get(1)**
+* **Action**: Traverse to predecessor at index `1` (which is `Node(1)`).
+* **Lookup**: The target node is `pred.next` (which is `Node(2)`). Returns `2`.
+
+#### **Step 5: deleteAtIndex(1)**
+* **Action**: Traverse to predecessor at index `1` (which is `Node(1)`).
+* **Linkage**: Bypass `pred.next` by re-wiring `pred.next = pred.next.next` (pointing directly to `Node(3)`).
+```text
+dummyHead ──► [ 1 ] ───────────► [ 3 ] ──► null
+  [ -1 ]         └─► [ 2 ] ──x (Garbage Collected)
+ (size = 2)
+```
+
+---
+
 ### 💻 6. Optimal Code (TypeScript)
 
 ```typescript

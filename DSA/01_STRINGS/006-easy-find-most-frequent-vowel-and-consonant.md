@@ -144,3 +144,73 @@ function findMostFrequent(s: string): Result {
   * `vowelFreq = { e: 1, a: 1 }`.
   * The alphabetical tie-breaker ensures `'a'` is selected over `'e'` because `'a' < 'e'`. Returns `'a'` (Correct).
 * **No Valid Characters** (`s = "123 !!!"`): No letters are processed. Returns `{ vowel: null, consonant: null }` (Correct).
+
+---
+
+### 🎬 8. Dry Run
+Let's trace `s = "e a a b"` with `vowels = {"a", "e", "i", "o", "u"}`:
+
+#### **Phase 1: Frequency Counting**
+
+#### **Step 0: i = 0**
+```text
+Pointers: i = 0
+String:   " e   a   a   b "
+            0   1   2   3
+Pointer:    ▲
+            i
+State:    vowelFreq = {}, consonantFreq = {}
+```
+* **Character**: `s[0].toLowerCase()` -> `"e"`
+* **Decision**: `"e"` is in `vowels`. `vowelFreq["e"] = (undefined || 0) + 1` -> `1`.
+* **Next**: `i` becomes 1.
+
+#### **Step 1: i = 1**
+```text
+Pointers: i = 1
+String:   " e   a   a   b "
+            0   1   2   3
+Pointer:        ▲
+                i
+State:    vowelFreq = {"e": 1}, consonantFreq = {}
+```
+* **Character**: `s[1].toLowerCase()` -> `"a"`
+* **Decision**: `"a"` is in `vowels`. `vowelFreq["a"] = (undefined || 0) + 1` -> `1`.
+* **Next**: `i` becomes 2.
+
+#### **Step 2: i = 2**
+```text
+Pointers: i = 2
+String:   " e   a   a   b "
+            0   1   2   3
+Pointer:            ▲
+                    i
+State:    vowelFreq = {"e": 1, "a": 1}, consonantFreq = {}
+```
+* **Character**: `s[2].toLowerCase()` -> `"a"`
+* **Decision**: `"a"` is in `vowels`. `vowelFreq["a"] = 1 + 1` -> `2`.
+* **Next**: `i` becomes 3.
+
+#### **Step 3: i = 3**
+```text
+Pointers: i = 3
+String:   " e   a   a   b "
+            0   1   2   3
+Pointer:                ▲
+                        i
+State:    vowelFreq = {"e": 1, "a": 2}, consonantFreq = {}
+```
+* **Character**: `s[3].toLowerCase()` -> `"b"`
+* **Decision**: `"b"` is NOT in `vowels`. `consonantFreq["b"] = (undefined || 0) + 1` -> `1`.
+* **Next**: Loop terminates.
+
+#### **Phase 2: Finding Maximums**
+1. **`getMostFrequent(vowelFreq)`**:
+   * Scans `{"e": 1, "a": 2}`.
+   * `e` gives `maxChar = "e", maxCount = 1`.
+   * `a` (count 2 > 1) updates to `maxChar = "a", maxCount = 2`.
+   * Returns `{ char: "a", count: 2 }`.
+2. **`getMostFrequent(consonantFreq)`**:
+   * Scans `{"b": 1}`.
+   * Returns `{ char: "b", count: 1 }`.
+* **Final Result**: `{ vowel: { char: "a", count: 2 }, consonant: { char: "b", count: 1 } }`.

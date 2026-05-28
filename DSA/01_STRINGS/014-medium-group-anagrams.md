@@ -108,3 +108,45 @@ function groupAnagrams(strs: string[]): string[][] {
 * **Empty Strings** (`strs = ["", ""]`): Both words sort to `""`. They are correctly grouped together into `[["", ""]]` (Correct).
 * **No Anagrams** (`strs = ["a", "b", "c"]`): Each word generates a unique key (`"a"`, `"b"`, `"c"`), resulting in three individual groups `[["a"], ["b"], ["c"]]` (Correct).
 * **Single Element Array** (`strs = ["a"]`): Returns `[["a"]]` immediately (Correct).
+
+---
+
+### 🎬 8. Dry Run
+Let's trace `strs = ["eat", "tea", "tan"]` step-by-step:
+
+#### **Step 0: Initial State**
+* `map` is empty: `{}`
+
+#### **Step 1: str = "eat"**
+* **Signature**: `"eat"` $\rightarrow$ split $\rightarrow$ `['e', 'a', 't']` $\rightarrow$ sort $\rightarrow$ `['a', 'e', 't']` $\rightarrow$ join $\rightarrow$ `"aet"`.
+* **Hash Map Lookup**: `"aet"` not found in `map`. Create a new group.
+* **Update Map**:
+```text
+map = {
+  "aet" ──► [ "eat" ]
+}
+```
+
+#### **Step 2: str = "tea"**
+* **Signature**: `"tea"` $\rightarrow$ split, sort, join $\rightarrow$ `"aet"`.
+* **Hash Map Lookup**: `"aet"` found!
+* **Update Map**:
+```text
+map = {
+  "aet" ──► [ "eat", "tea" ]
+}
+```
+
+#### **Step 3: str = "tan"**
+* **Signature**: `"tan"` $\rightarrow$ split $\rightarrow$ `['t', 'a', 'n']` $\rightarrow$ sort $\rightarrow$ `['a', 'n', 't']` $\rightarrow$ join $\rightarrow$ `"ant"`.
+* **Hash Map Lookup**: `"ant"` not found in `map`. Create a new group.
+* **Update Map**:
+```text
+map = {
+  "aet" ──► [ "eat", "tea" ],
+  "ant" ──► [ "tan" ]
+}
+```
+
+#### **Final Output**
+* Extracting values from `map`: `[["eat", "tea"], ["tan"]]`.

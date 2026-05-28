@@ -119,3 +119,40 @@ function beautySum(s: string): boolean | number {
 * **All Same Characters** (`s = "aaaa"`): Every substring contains only `'a'`s. The `minVal` and `maxVal` will always be equal. `maxVal > minVal` is never true, beauty is `0`. Returns `0` (Correct).
 * **Length Less Than 3** (`s = "ab"`): Substrings are `"a"`, `"b"`, `"ab"`. None have a beauty > 0. Returns `0` (Correct).
 * **Short Strings**: The loops terminate naturally and handle small inputs without indexing issues.
+
+---
+
+### 🎬 8. Dry Run
+Let's trace `s = "aab"` (length 3) with `totalBeauty = 0`:
+
+#### **Outer Loop: i = 0 (Substrings starting with s[0] = 'a')**
+* **`j = 0` (`s[0...0]` = "a")**:
+  - `freq['a']` becomes `1`.
+  - Non-zero frequencies: `{'a': 1}` $\rightarrow$ `maxVal = 1`, `minVal = 1`.
+  - `maxVal > minVal` is false. `totalBeauty` remains `0`.
+* **`j = 1` (`s[0...1]` = "aa")**:
+  - `freq['a']` becomes `2`.
+  - Non-zero frequencies: `{'a': 2}` $\rightarrow$ `maxVal = 2`, `minVal = 2`.
+  - `maxVal > minVal` is false. `totalBeauty` remains `0`.
+* **`j = 2` (`s[0...2]` = "aab")**:
+  - `freq['b']` becomes `1`.
+  - Non-zero frequencies: `{'a': 2, 'b': 1}` $\rightarrow$ `maxVal = 2`, `minVal = 1`.
+  - `maxVal > minVal` is true! `totalBeauty += (2 - 1)` $\rightarrow$ `totalBeauty` becomes `1`.
+
+#### **Outer Loop: i = 1 (Substrings starting with s[1] = 'a')**
+* **`j = 1` (`s[1...1]` = "a")**:
+  - `freq['a']` becomes `1`.
+  - Non-zero frequencies: `{'a': 1}` $\rightarrow$ `maxVal = 1`, `minVal = 1`.
+  - `totalBeauty` remains `1`.
+* **`j = 2` (`s[1...2]` = "ab")**:
+  - `freq['b']` becomes `1`.
+  - Non-zero frequencies: `{'a': 1, 'b': 1}` $\rightarrow$ `maxVal = 1`, `minVal = 1`.
+  - `totalBeauty` remains `1`.
+
+#### **Outer Loop: i = 2 (Substrings starting with s[2] = 'b')**
+* **`j = 2` (`s[2...2]` = "b")**:
+  - `freq['b']` becomes `1`.
+  - Non-zero frequencies: `{'b': 1}` $\rightarrow$ `maxVal = 1`, `minVal = 1`.
+  - `totalBeauty` remains `1`.
+
+* **Final Result**: Returns `totalBeauty = 1`.

@@ -57,6 +57,75 @@ We define a helper function `helper(left, right)` that swaps elements at the bou
 
 ---
 
+### 🔄 Step-by-Step Dry Run (Visualizer)
+
+Let's trace the optimal iterative Two-Pointer swap algorithm using **Test Case 1**:
+`s = ["h", "e", "l", "l", "o"]`
+
+We initialize `left = 0` and `right = 4`.
+
+---
+
+#### **Step 0: Initial State**
+```text
+Array:    [ "h",  "e",  "l",  "l",  "o" ]
+            idx0  idx1  idx2  idx3  idx4
+Pointers:    ▲                     ▲
+           left                  right
+```
+* **Pointers**: `left = 0`, `right = 4`.
+* **Comparison**: `left < right` (`0 < 4` is True).
+* **Action**: 
+  1. Swap elements at `left` and `right` indices (`s[0]` and `s[4]`).
+  2. Advance pointers: `left++` (becomes 1), `right--` (becomes 3).
+* **Updated Array**:
+```text
+Array:    [ "o",  "e",  "l",  "l",  "h" ]
+                  ▲           ▲
+                left        right
+```
+
+---
+
+#### **Step 1: Pointers Inward**
+```text
+Array:    [ "o",  "e",  "l",  "l",  "h" ]
+            idx0  idx1  idx2  idx3  idx4
+Pointers:          ▲           ▲
+                 left        right
+```
+* **Pointers**: `left = 1`, `right = 3`.
+* **Comparison**: `left < right` (`1 < 3` is True).
+* **Action**: 
+  1. Swap elements at `left` and `right` indices (`s[1]` and `s[3]`).
+  2. Advance pointers: `left++` (becomes 2), `right--` (becomes 2).
+* **Updated Array**:
+```text
+Array:    [ "o",  "l",  "l",  "e",  "h" ]
+                        ▲
+                    left / right
+```
+
+---
+
+#### **Step 2: Pointers Meet**
+```text
+Array:    [ "o",  "l",  "l",  "e",  "h" ]
+            idx0  idx1  idx2  idx3  idx4
+Pointers:               ▲
+                    left / right
+```
+* **Pointers**: `left = 2`, `right = 2`.
+* **Comparison**: `left < right` (`2 < 2` is False).
+* **Action**: Pointers have met. Loop terminates cleanly.
+
+---
+
+#### **Final Result**
+* The array is reversed in-place to `["o", "l", "l", "e", "h"]`!
+
+---
+
 ### 💻 6. Optimal Code (TypeScript)
 
 Here is the clean, human-written codebase showing both approaches. Approach 2 is shown in comments to show a clear progression of thought!

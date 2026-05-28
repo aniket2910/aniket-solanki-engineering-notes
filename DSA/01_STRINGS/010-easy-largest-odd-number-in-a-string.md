@@ -3,7 +3,7 @@
 ---
 
 ### 📝 1. Problem Statement
-You are given a string `num`, representing a large integer. Return the largest-valued odd integer (as a string) that is a non-empty substring of `num`, or an empty string `""` if no odd integer exists.
+You are given a string `num`, representing a large integer. Return *the **largest-valued odd integer** (as a string) that is a **non-empty substring** of `num`, or an empty string `""` if no odd integer exists*.
 
 A **substring** is a contiguous sequence of characters within a string.
 
@@ -14,49 +14,46 @@ A **substring** is a contiguous sequence of characters within a string.
 #### Test Case 1
 * **Input**: `num = "52"`
 * **Output**: `"5"`
-* **Why**: The only odd substring is `"5"`. The substring `"52"` is even.
+* **Why**: The only non-empty substrings that represent integers are `"5"`, `"2"`, and `"52"`. Out of these, `"5"` is the only odd number.
 
 #### Test Case 2
 * **Input**: `num = "4206"`
 * **Output**: `""`
-* **Why**: There are no odd numbers that can be formed as contiguous substrings from `"4206"` because all digits are even.
+* **Why**: No odd numbers can be formed from `"4206"`.
 
 #### Test Case 3
 * **Input**: `num = "35427"`
 * **Output**: `"35427"`
-* **Why**: The number `"35427"` ends in `'7'`, which is odd. Thus, the entire string is already the largest odd number possible.
+* **Why**: The entire string represents an odd integer since it ends in `'7'` (which is odd). Therefore, `"35427"` is the largest odd substring.
 
 ---
 
 ### 💬 3. What is This Problem Actually Asking?
-We want to find the largest contiguous substring of `num` that represents an odd number.
+We are given a huge integer represented as a string. We want to find the largest contiguous substring that forms an odd number.
 
-A simple math rule: **An integer is odd if and only if its last digit is odd** (i.e., ends in `'1'`, `'3'`, `'5'`, `'7'`, or `'9'`).
-To make a number as large as possible, we want it to have as many digits as possible starting from the very first digit. 
-So:
-* The substring must start at the very beginning of the string (index `0`) to retain maximum magnitude.
-* The substring must end at some odd digit.
-* To maximize the value, we should search for the **rightmost odd digit** in the string. 
-* Once we find that rightmost odd digit, everything from index `0` up to that digit's index is our answer!
+* **Mathematical Property**: An integer is odd if and only if its **last digit is odd**! 
+* The rest of the digits to its left can be anything (even or odd).
+* E.g. `"3542"` ends in `'2'` (even), so the whole number is even. But if we strip `'2'` off, we get `"354"` which ends in `'4'` (even). If we strip `'4'` off, we get `"35"` which ends in `'5'` (odd) $\rightarrow$ `"35"` is the largest odd number!
+* Therefore, to find the **largest** odd substring, we should scan the string from **right to left** (backwards) and find the first odd digit. The entire prefix of the string up to this digit is our answer!
 
 ---
 
 ### 🌍 4. Real-Life Example
-Imagine a long **freight train** where each car has a number painted on it. You want to detach a front portion of the train such that the number formed by the remaining front cars ends in an odd digit, and you want this train to be as long (and therefore as valuable) as possible.
-* To find where to uncouple, you walk from the **caboose (the back of the train) forward to the locomotive (the front)**.
-* The very first odd-numbered car you encounter is where you make the cut.
-* You keep everything from that car all the way to the front locomotive! That's the longest possible odd train.
+Imagine a **train of number carriages**:
+* `[3] - [5] - [4] - [2]`
+* You want to uncouple/split the train at some point such that the entire remaining front portion forms an odd number.
+* To make the train as long (largest-valued) as possible, you walk from the very back carriage forward:
+  * Carriage `[2]`: Even. Uncouple and throw away.
+  * Carriage `[4]`: Even. Uncouple and throw away.
+  * Carriage `[5]`: Odd! You stop here.
+* The remaining train is `[3] - [5]`, which is the longest possible odd number train!
 
 ---
 
 ### 🛠️ 5. Data Structure & Algorithm Used
-* **Data Structure**: Pure String. No extra allocations.
-* **Algorithm**: **Reverse Linear Scan**.
-  - We start a pointer `i` at the end of the string: `i = num.length - 1`.
-  - We scan backwards towards the front:
-    - At each index `i`, we check if the character `num[i]` is one of the odd digits: `'1', '3', '5', '7', '9'`.
-    - If it is odd, we immediately return the substring from the beginning up to index `i` (inclusive): `num.substring(0, i + 1)`.
-  - If we scan the entire string and find no odd digits, we return `""`.
+* **Data Structure**: None (scalar integers).
+* **Algorithm**: **Reverse Linear Scan (Backwards Right-to-Left Search)**.
+  * *Why*: Scanning from right to left allows us to find the first odd digit in $O(1)$ average time. Once found, we take the substring from index `0` up to `i + 1`. This avoids examining any digits to the left of the first odd digit unnecessarily.
 
 ---
 
@@ -64,20 +61,17 @@ Imagine a long **freight train** where each car has a number painted on it. You 
 
 ```typescript
 function largestOddNumber(num: string): string {
-    // Scan backwards from the rightmost character
+    // Scan backwards from the rightmost digit
     for (let i = num.length - 1; i >= 0; i--) {
-        const char = num[i];
-        
-        // Check if the digit is odd. 
-        // In ASCII, odd digits are '1', '3', '5', '7', '9'.
-        // Converting to a number code or checking set membership is O(1).
-        if (char === '1' || char === '3' || char === '5' || char === '7' || char === '9') {
-            // Slice the string from start to index i (inclusive)
+        const digit = num.charCodeAt(i) - 48; // Convert char to numeric digit (ASCII '0' is 48)
+
+        // If the digit is odd, the prefix from index 0 up to i is our largest odd number
+        if (digit % 2 !== 0) {
             return num.substring(0, i + 1);
         }
     }
 
-    // No odd digit found
+    // If no odd digit was found in the entire string
     return "";
 }
 ```
@@ -86,10 +80,52 @@ function largestOddNumber(num: string): string {
 
 ### 📊 7. Complexity & Edge Cases
 
-* **Time Complexity**: **$O(N)$** — In the worst case (where there is no odd digit or it is at the very beginning), we scan all $N$ characters of the string.
-* **Space Complexity**: **$O(1)$** auxiliary space — We only store loop variables. The return value takes up to $O(N)$ space for the sliced substring, but we don't use any extra helper data structures.
+* **Time Complexity**: **$O(N)$** — In the worst case (all digits are even), we scan the entire string of length $N$ once. In the best/average case, we find an odd digit quickly (e.g. on the very first step if the last digit is odd, which is a $O(1)$ operation).
+* **Space Complexity**: **$O(1)$** auxiliary space — We only use a single loop pointer. The substring creation is the only memory allocation, which is standard for returning the output.
 
 #### Edge Cases Handled:
-* **No Odd Digits** (`num = "2468"`): The loop completes without finding any odd digit, returning `""` (Correct).
-* **Entire String is Odd** (`num = "1357"`): The loop immediately finds `'7'` at index 3, and returns the whole string `"1357"` in $O(1)$ time (Correct).
-* **Odd Digit at index 0** (`num = "3246"`): The loop scans backwards, skips `'6'`, `'4'`, `'2'`, and finds `'3'` at index 0. Returns `"3"` (Correct).
+* **All Even Digits** (`num = "2468"`): The loop completes without finding an odd digit. Returns `""` (Correct).
+* **Single Digit - Odd** (`num = "7"`): `i = 0`, digit is 7 (odd). Returns `num.substring(0, 1)` which is `"7"` (Correct).
+* **Single Digit - Even** (`num = "8"`): `i = 0`, digit is 8 (even). Returns `""` (Correct).
+
+---
+
+### 🎬 8. Dry Run
+Let's trace `num = "3542"` (length 4):
+
+#### **Step 0: Initial State**
+```text
+Pointer: i = 3
+String:  " 3 5 4 2 "
+           0 1 2 3
+Pointer:         ▲
+                 i
+```
+* **Condition**: `parseInt(num[3]) % 2 !== 0` -> `parseInt('2') % 2 !== 0` (2 % 2 !== 0 is false).
+* **Decision**: Even digit. Decrement `i`.
+* **Next**: `i` becomes 2.
+
+#### **Step 1: i = 2**
+```text
+Pointer: i = 2
+String:  " 3 5 4 2 "
+           0 1 2 3
+Pointer:       ▲
+               i
+```
+* **Condition**: `parseInt(num[2]) % 2 !== 0` -> `parseInt('4') % 2 !== 0` (4 % 2 !== 0 is false).
+* **Decision**: Even digit. Decrement `i`.
+* **Next**: `i` becomes 1.
+
+#### **Step 2: i = 1**
+```text
+Pointer: i = 1
+String:  " 3 5 4 2 "
+           0 1 2 3
+Pointer:     ▲
+             i
+```
+* **Condition**: `parseInt(num[1]) % 2 !== 0` -> `parseInt('5') % 2 !== 0` (5 % 2 !== 0 is true!).
+* **Decision**: Odd digit found at index 1!
+* **Slice**: Slice the string from start up to index `i + 1` (2) -> `num.substring(0, 2)`.
+* **Final Result**: Returns `"35"`.

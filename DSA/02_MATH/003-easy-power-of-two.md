@@ -69,6 +69,50 @@ Think of **cell division (mitosis)**:
 
 ---
 
+### 🔄 Step-by-Step Dry Run (Visualizer)
+
+We trace the bitwise AND bit-cleaving operation `n & (n - 1)` with aligned binary layouts to make the bitwise cancellation visually obvious:
+
+#### **Case 1: Power of Two (`n = 16`)**
+
+##### **Step 1: Check Positivity**
+* `n = 16` is strictly greater than `0` $\rightarrow$ **True**.
+
+##### **Step 2: Bitwise AND Operation**
+* We align `n` and `n - 1` in binary (8-bit representation for simplicity):
+  ```text
+  n (16):     0 0 0 1 0 0 0 0   (Exactly one set bit)
+  n - 1 (15): 0 0 0 0 1 1 1 1   (Flipped trailing bits)
+  ---------------------------
+  AND (&):    0 0 0 0 0 0 0 0   (All bits cleared to 0!)
+  ```
+
+##### **Step 3: Decision**
+* Since `(n & (n - 1)) === 0` is **True**, `16` has exactly one set bit.
+* Returns **`true`**.
+
+---
+
+#### **Case 2: Not a Power of Two (`n = 12`)**
+
+##### **Step 1: Check Positivity**
+* `n = 12` is strictly greater than `0` $\rightarrow$ **True**.
+
+##### **Step 2: Bitwise AND Operation**
+* We align `n` and `n - 1` in binary:
+  ```text
+  n (12):     0 0 0 0 1 1 0 0   (Multiple set bits)
+  n - 1 (11): 0 0 0 0 1 0 1 1   
+  ---------------------------
+  AND (&):    0 0 0 0 1 0 0 0   (Result is 8, not 0!)
+  ```
+
+##### **Step 3: Decision**
+* Since `(n & (n - 1)) === 0` ($8 === 0$) is **False**, `12` does not have a single set bit.
+* Returns **`false`**.
+
+---
+
 ### 💻 6. Optimal Code (TypeScript)
 
 ```typescript

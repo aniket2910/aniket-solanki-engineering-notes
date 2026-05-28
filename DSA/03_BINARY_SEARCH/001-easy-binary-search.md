@@ -49,6 +49,59 @@ Think of searching for a name in a physical **telephone book** or a word in a **
 
 ---
 
+### 🔄 Step-by-Step Dry Run (Visualizer)
+
+We trace the binary search boundaries `left` and `right` halving the search space step-by-step:
+
+Input: `nums = [-1, 0, 3, 5, 9, 12]`, `target = 9`
+
+#### **Step 0: Initial State**
+```text
+Pointers: left = 0, right = 5
+Array:    [ -1,  0,  3,  5,  9, 12 ]
+           idx0 idx1 idx2 idx3 idx4 idx5
+Pointers:   ▲                    ▲
+          left                 right
+```
+
+#### **Step 1: First Iteration**
+* **Pointers**: `left = 0`, `right = 5`
+* **Calculate mid**:
+  ```text
+  mid = 0 + Math.floor((5 - 0) / 2) = 2
+  ```
+* **Visual State**:
+  ```text
+  Array:    [ -1,  0,  3,  5,  9, 12 ]
+             idx0 idx1 idx2 idx3 idx4 idx5
+  Pointers:   ▲        ▲        ▲
+            left      mid     right
+  ```
+* **Comparison**: `nums[mid]` ($3$) `< target` ($9$) $\rightarrow$ **True**.
+* **Decision**: Target must be in the right half. Discard the left half.
+* **Update left**: `left = mid + 1` (becomes 3).
+
+---
+
+#### **Step 2: Second Iteration**
+* **Pointers**: `left = 3`, `right = 5`
+* **Calculate mid**:
+  ```text
+  mid = 3 + Math.floor((5 - 3) / 2) = 4
+  ```
+* **Visual State**:
+  ```text
+  Array:    [ -1,  0,  3,  5,  9, 12 ]
+             idx0 idx1 idx2 idx3 idx4 idx5
+  Pointers:                  ▲    ▲    ▲
+                           left  mid right
+  ```
+* **Comparison**: `nums[mid]` ($9$) `=== target` ($9$) $\rightarrow$ **True!**
+* **Decision**: Target found at index `4`!
+* **Return**: **`4`**.
+
+---
+
 ### 💻 6. Optimal Code (TypeScript)
 
 ```typescript

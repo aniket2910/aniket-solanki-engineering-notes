@@ -150,11 +150,36 @@ function decodeStringRecursive(s: string): string {
 
 ### 📊 7. Complexity & Edge Cases
 
-| Metric | Approach 1: Dual Stacks | Approach 2: Recursion |
-| :--- | :--- | :--- |
-| **Time Complexity** | **$O(L)$** — where $L$ is the length of the *decoded* output string. | **$O(L)$** — where $L$ is the length of the *decoded* output string. |
-| **Space Complexity** | **$O(D + L)$** — stack space up to max nesting depth $D$. | **$O(D + L)$** — call stack space up to max nesting depth $D$. |
+* **Time Complexity**:
+  - **Approach 1 (Dual Stacks)**: **$O(L)$** — where $L$ is the length of the *decoded* output string.
+  - **Approach 2 (Recursion)**: **$O(L)$** — where $L$ is the length of the *decoded* output string.
+* **Space Complexity**:
+  - **Approach 1 (Dual Stacks)**: **$O(D + L)$** — stack space up to max nesting depth $D$ plus the space for output $L$.
+  - **Approach 2 (Recursion)**: **$O(D + L)$** — call stack space up to max nesting depth $D$ plus the space for output $L$.
 
 #### Edge Cases Handled:
 * **Multi-Digit Numbers** (`s = "100[a]"`): Handled perfectly by standard decimal building (`num * 10 + char`).
 * **Deep Nesting** (`s = "2[2[2[a]]]"`): Recursion calls nested layers naturally, maintaining complete tracking purity (Correct).
+
+---
+
+### 🎬 8. Dry Run
+Let's trace the recursive parser execution for `s = "3[a]2[bc]"`:
+
+```text
+▶ Level 0: decode() for "3[a]2[bc]"
+  ├── Index 0: '3' ──► num = 3
+  ├── Index 1: '[' ──► Spawn Level 1 helper:
+  │     ▶ Level 1: decode() for "a]"
+  │       ├── Index 2: 'a' ──► res = "a"
+  │       └── Index 3: ']' ──► Return "a"
+  ├── Level 0 receives "a", appends "a" * 3 ──► res = "aaa"
+  ├── Index 4: '2' ──► num = 2
+  ├── Index 5: '[' ──► Spawn Level 1 helper:
+  │     ▶ Level 1: decode() for "bc]"
+  │       ├── Index 6: 'b' ──► res = "b"
+  │       ├── Index 7: 'c' ──► res = "bc"
+  │       └── Index 8: ']' ──► Return "bc"
+  └── Level 0 receives "bc", appends "bc" * 2 ──► res = "aaabcbc"
+▶ Exit: Return final string "aaabcbc"
+```

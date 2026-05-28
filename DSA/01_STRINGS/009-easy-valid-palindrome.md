@@ -116,3 +116,57 @@ function isPalindrome(s: string): boolean {
 * **Empty or Whitespace-only Strings** (`s = "   "`): The pointers will bypass all spaces and meet in the middle. The loop terminates safely, returning `true` (Correct).
 * **No Alphanumeric Characters** (`s = ".,;:"`): Handled perfectly; both pointers will cross each other without matching, returning `true` (Correct).
 * **String with Numbers and Letters** (`s = "0P"`): Lowercasing `'0'` is `'0'` and lowercasing `'P'` is `'p'`. They don't match, returning `false` (Correct).
+
+---
+
+### 🎬 8. Dry Run
+Let's trace `s = "a, b a"` (length 6) with `left = 0`, `right = 5`:
+
+#### **Step 0: Initial State**
+```text
+Pointers: left = 0, right = 5
+String:   " a   ,       b       a "
+            0   1   2   3   4   5
+Pointers:   ▲                   ▲
+          left                right
+```
+* **Comparison**: `s[left]` ("a") and `s[right]` ("a") are both alphanumeric.
+* **Comparison**: `"a".toLowerCase() === "a".toLowerCase()` (Match!).
+* **Decision**: Advance both pointers. `left` becomes 1, `right` becomes 4.
+
+#### **Step 1: left = 1, right = 4**
+```text
+Pointers: left = 1, right = 4
+String:   " a   ,       b       a "
+            0   1   2   3   4   5
+Pointers:       ▲           ▲
+              left        right
+```
+* **Comparison**: `s[left]` (",") is not alphanumeric!
+* **Decision**: Skip character from the left. `left` becomes 2.
+
+#### **Step 2: left = 2, right = 4**
+```text
+Pointers: left = 2, right = 4
+String:   " a   ,       b       a "
+            0   1   2   3   4   5
+Pointers:           ▲       ▲
+                  left    right
+```
+* **Comparison**: `s[left]` (" ") is not alphanumeric!
+* **Decision**: Skip character from the left. `left` becomes 3.
+
+#### **Step 3: left = 3, right = 4**
+```text
+Pointers: left = 3, right = 4
+String:   " a   ,       b       a "
+            0   1   2   3   4   5
+Pointers:               ▲   ▲
+                      left right
+```
+* **Comparison**: `s[left]` (" ") is not alphanumeric!
+* **Decision**: Skip character from the left. `left` becomes 4.
+
+#### **Step 4: left = 4, right = 4**
+* **Next**: `left` (4) is no longer `< right` (4). Loop terminates.
+* **Final Result**: Returns `true`.

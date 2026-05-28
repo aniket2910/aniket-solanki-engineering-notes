@@ -14,55 +14,53 @@ If there is no common prefix, return an empty string `""`.
 #### Test Case 1
 * **Input**: `strs = ["flower","flow","flight"]`
 * **Output**: `"fl"`
-* **Why**: The letters `'f'` and `'l'` are common at the start of all three words. The third characters are `'o'`, `'o'`, and `'i'`, which do not match.
+* **Why**: The letters `"f"` and `"l"` are common prefixes to all three strings.
 
 #### Test Case 2
 * **Input**: `strs = ["dog","racecar","car"]`
 * **Output**: `""`
-* **Why**: There is no common prefix at all; the words start with `'d'`, `'r'`, and `'c'`.
-
-#### Test Case 3
-* **Input**: `strs = ["apple"]`
-* **Output**: `"apple"`
-* **Why**: There is only one string in the array, so the longest common prefix is the string itself.
+* **Why**: There is no common prefix among the input strings.
 
 ---
 
 ### 💬 3. What is This Problem Actually Asking?
-We need to find the longest substring that is at the **very beginning** of every single string in the given array. 
+We need to find the longest starting substring that is shared by **every single string** in the input array.
+* E.g., for `["flow", "flower"]`, the longest common prefix is `"flow"`.
+* E.g., for `["apple", "banana"]`, the first characters `'a'` and `'b'` do not match, so the common prefix is `""`.
 
-For example, a character at index `i` must be identical in all strings. The moment there is a mismatch at index `i` in any of the strings, or if one of the strings ends, the common prefix ends immediately, and we return the prefix accumulated up to that point.
+To find this efficiently:
+* We can compare the strings **character-by-character** (vertical scanning). We examine the first character of all strings, then the second character of all strings, and so on. As soon as we find a mismatch or reach the end of any string, we stop and return the common prefix up to that point!
 
 ---
 
 ### 🌍 4. Real-Life Example
-Imagine a group of students named:
-1. **Alex**ander
-2. **Alex**andria
-3. **Alex**ius
-
-You want to write down their longest shared prefix nickname:
-* Letter 1: All start with `'A'` $\rightarrow$ Keep going.
-* Letter 2: All have `'l'` $\rightarrow$ Keep going.
-* Letter 3: All have `'e'` $\rightarrow$ Keep going.
-* Letter 4: All have `'x'` $\rightarrow$ Keep going.
-* Letter 5: The names have `'a'`, `'a'`, and `'i'`. Since `'i'` is different, you must stop immediately.
-* The longest shared prefix is **"Alex"**.
+Imagine a group of **family members spelling out their last names**:
+* Person 1: `[S, M, I, T, H, E]`
+* Person 2: `[S, M, I, T, H]`
+* Person 3: `[S, M, I, T, T, Y]`
+* You compare them column by column:
+  * Column 0: All have `'S'` (Match!).
+  * Column 1: All have `'M'` (Match!).
+  * Column 2: All have `'I'` (Match!).
+  * Column 3: All have `'T'` (Match!).
+  * Column 4: Person 1 has `'H'`, Person 2 has `'H'`, but Person 3 has `'T'`. Mismatch!
+* You stop immediately. The longest common prefix is `"SMIT"`.
 
 ---
 
 ### 🛠️ 5. Data Structure & Algorithm Used
-* **Data Structure**: Array of strings.
-* **Algorithm**: **Vertical Character Scanning**.
-  - We use the first string in the array (`strs[0]`) as our **reference string**.
-  - We loop through each character position `i` of this reference string:
-    - We retrieve the character `c = strs[0][i]`.
-    - We then loop through all other strings in the array (from index `1` to `strs.length - 1`):
-      - If `i` is equal to the length of the current string (meaning we've reached its end), or if the character at index `i` of the current string does not equal `c`, we stop!
-      - We return the reference string sliced from index `0` up to `i` (exclusive): `strs[0].substring(0, i)`.
-  - If we finish the entire loop without finding any mismatch, the reference string `strs[0]` itself is the common prefix. Return `strs[0]`.
-
-This vertical scanning approach is highly optimal because it stops at the earliest possible mismatch, avoiding unnecessary work on long strings.
+* **Data Structure**: None (we traverse the input string array directly).
+* **Algorithm**: **Vertical Scanning (Character-by-Character Comparison)**.
+  * *Why*: Vertical scanning is highly optimal when the common prefix is short or when some strings are very short, because it avoids reading characters of long strings that lie beyond the prefix length.
+  * Steps:
+    1. If the input array is empty, return `""`.
+    2. Pick the first string as our `reference` string.
+    3. Loop `i` through the characters of `reference`:
+       - Get `char = reference[i]`.
+       - Loop `j` from `1` to the end of the `strs` array:
+         - If `i` reaches the length of `strs[j]` (out of bounds) OR `strs[j][i] !== char` (mismatch):
+           - Return the prefix up to index `i`: `reference.substring(0, i)`.
+    4. If the loop completes successfully, it means the entire first string is the common prefix. Return `reference`.
 
 ---
 
@@ -70,28 +68,26 @@ This vertical scanning approach is highly optimal because it stops at the earlie
 
 ```typescript
 function longestCommonPrefix(strs: string[]): string {
-    // If the array is empty, return an empty string
-    if (strs.length === 0) return "";
+    // If input is empty, no prefix exists
+    if (strs.length === 0) {
+        return "";
+    }
 
     const reference = strs[0];
 
-    // Scan each character position vertically
+    // Iterate character-by-character vertically
     for (let i = 0; i < reference.length; i++) {
         const char = reference[i];
 
-        // Check this position in all other strings
+        // Compare this character with the character at the same index in all other strings
         for (let j = 1; j < strs.length; j++) {
-            const currentStr = strs[j];
-
-            // If the current string ends or contains a mismatching character
-            if (i === currentStr.length || currentStr[i] !== char) {
-                // Return prefix up to index i
+            // If i is out of bounds for strs[j] OR characters don't match
+            if (i === strs[j].length || strs[j][i] !== char) {
                 return reference.substring(0, i);
             }
         }
     }
 
-    // If we scanned the entire reference string successfully
     return reference;
 }
 ```
@@ -100,11 +96,91 @@ function longestCommonPrefix(strs: string[]): string {
 
 ### 📊 7. Complexity & Edge Cases
 
-* **Time Complexity**: **$O(S)$** — where $S$ is the sum of all characters in all strings in the array. In the worst case (all strings are identical), the algorithm compares all characters. In the best case, it terminates very early in $O(M)$ time where $M$ is the number of strings.
-* **Space Complexity**: **$O(1)$** auxiliary space — We only store index pointers and perform slicing for the return string. No auxiliary hash tables or structures are created.
+* **Time Complexity**: **$O(S)$** — where $S$ is the sum of all characters in all strings. In the worst case (all strings are identical), we compare all characters, which takes $O(N \cdot L)$ time, where $N$ is the number of strings and $L$ is the length of the shortest string. In average cases, we exit extremely early.
+* **Space Complexity**: **$O(1)$** auxiliary space — We only use integer indexes and constant-sized character variables.
 
 #### Edge Cases Handled:
-* **Empty Array** (`strs = []`): Returns `""` immediately (Correct).
-* **Single String** (`strs = ["alone"]`): The outer loop runs, but the inner loop never executes. It completes and returns `"alone"` (Correct).
-* **Empty String in Array** (`strs = ["", "b"]`): `i = 0` on reference `""` doesn't run because `i < reference.length` (0 < 0) is false. Returns `""` (Correct).
-* **No Common Prefix** (`strs = ["dog", "cat"]`): The first character comparison `'d'` vs `'c'` fails instantly. Returns `""` (Correct).
+* **Empty Input Array** (`strs = []`): Handled at the beginning, returns `""` (Correct).
+* **Single String in Array** (`strs = ["a"]`): Inner loop doesn't run. Outer loop finishes and returns `"a"` (Correct).
+* **No Common Prefix** (`strs = ["a", "b"]`): `i = 0`, `reference[0] = 'a'`, `strs[1][0] = 'b'` (mismatch). Returns `reference.substring(0, 0)` which is `""` (Correct).
+
+---
+
+### 🎬 8. Dry Run
+Let's trace `strs = ["flower", "flow"]` with reference string `"flower"` (length 6):
+
+#### **Step 0: i = 0**
+```text
+Pointers: i = 0, char = 'f'
+Strings:
+  idx0: " f l o w e r "
+          ▲
+          i (reference)
+  idx1: " f l o w "
+          ▲
+          i
+```
+* **Comparison**: `strs[1][0]` ("f") === `char` ("f").
+* **Decision**: All strings match at position 0. Advance `i`.
+* **Next**: `i` becomes 1.
+
+#### **Step 1: i = 1**
+```text
+Pointers: i = 1, char = 'l'
+Strings:
+  idx0: " f l o w e r "
+            ▲
+            i (reference)
+  idx1: " f l o w "
+            ▲
+            i
+```
+* **Comparison**: `strs[1][1]` ("l") === `char` ("l").
+* **Decision**: All strings match at position 1. Advance `i`.
+* **Next**: `i` becomes 2.
+
+#### **Step 2: i = 2**
+```text
+Pointers: i = 2, char = 'o'
+Strings:
+  idx0: " f l o w e r "
+              ▲
+              i (reference)
+  idx1: " f l o w "
+              ▲
+              i
+```
+* **Comparison**: `strs[1][2]` ("o") === `char` ("o").
+* **Decision**: All strings match at position 2. Advance `i`.
+* **Next**: `i` becomes 3.
+
+#### **Step 3: i = 3**
+```text
+Pointers: i = 3, char = 'w'
+Strings:
+  idx0: " f l o w e r "
+                ▲
+                i (reference)
+  idx1: " f l o w "
+                ▲
+                i
+```
+* **Comparison**: `strs[1][3]` ("w") === `char` ("w").
+* **Decision**: All strings match at position 3. Advance `i`.
+* **Next**: `i` becomes 4.
+
+#### **Step 4: i = 4**
+```text
+Pointers: i = 4, char = 'e'
+Strings:
+  idx0: " f l o w e r "
+                  ▲
+                  i (reference)
+  idx1: " f l o w "  (length 4)
+                  ▲
+                  i (Out of bounds!)
+```
+* **Comparison**: `i` (4) is equal to `strs[1].length` (4) $\rightarrow$ Out of bounds!
+* **Decision**: Boundary reached. Return common prefix up to index 4.
+* **Slice**: `reference.substring(0, 4)` $\rightarrow$ `"flow"`
+* **Final Result**: `"flow"`.

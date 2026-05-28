@@ -57,6 +57,49 @@ Think of a **line of couples dancing at a ball**:
 
 ---
 
+### 🔄 Step-by-Step Dry Run (Visualizer)
+
+For the linked list `head = [1, 2, 3, 4]`:
+
+#### **Step 0: Initial State**
+```text
+Pointers: prev = dummyHead
+List:     [ -1 ] ──► [ 1 ] ──► [ 2 ] ──► [ 3 ] ──► [ 4 ] ──► null
+            ▲
+          prev
+```
+
+#### **Step 1: First Iteration (Swap pair 1 & 2)**
+* **Identify**: `firstNode = Node(1)`, `secondNode = Node(2)`
+* **Actions**:
+  1. `prev.next = secondNode` (dummyHead ──► 2)
+  2. `firstNode.next = secondNode.next` (1 ──► 3)
+  3. `secondNode.next = firstNode` (2 ──► 1)
+  4. `prev = firstNode` (becomes Node(1))
+```text
+Linkage State:
+List:     [ -1 ] ──► [ 2 ] ──► [ 1 ] ───────────► [ 3 ] ──► [ 4 ] ──► null
+                                ▲
+                              prev (firstNode)
+```
+
+#### **Step 2: Second Iteration (Swap pair 3 & 4)**
+* **Identify**: `firstNode = Node(3)`, `secondNode = Node(4)`
+* **Actions**:
+  1. `prev.next = secondNode` (1 ──► 4)
+  2. `firstNode.next = secondNode.next` (3 ──► null)
+  3. `secondNode.next = firstNode` (4 ──► 3)
+  4. `prev = firstNode` (becomes Node(3))
+```text
+Linkage State:
+List:     [ -1 ] ──► [ 2 ] ──► [ 1 ] ──► [ 4 ] ──► [ 3 ] ──► null
+                                                    ▲
+                                                  prev (firstNode)
+```
+* **Next**: `prev.next` is null, loop exits. Returns `dummyHead.next` (`[2, 1, 4, 3]`).
+
+---
+
 ### 💻 6. Optimal Code (TypeScript)
 
 ```typescript
