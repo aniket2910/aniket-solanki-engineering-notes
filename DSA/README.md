@@ -13,11 +13,11 @@ To keep your interview preparation laser-focused, here is the real-time breakdow
 
 | Metric | Count |
 | :--- | :---: |
-| 🚀 **Total Solved Questions** | **72** |
-| 🟢 Easy Difficulty | **37** |
-| 🟡 Medium Difficulty | **33** |
-| 🔴 Hard Difficulty | **2** |
-| 🔥 **Must Solve Interview Targets** | **48** |
+| 🚀 **Total Solved Questions** | **81** |
+| 🟢 Easy Difficulty | **39** |
+| 🟡 Medium Difficulty | **37** |
+| 🔴 Hard Difficulty | **5** |
+| 🔥 **Must Solve Interview Targets** | **57** |
 
 ---
 

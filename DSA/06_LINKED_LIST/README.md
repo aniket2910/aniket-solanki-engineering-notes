@@ -72,6 +72,11 @@ Use this list to track your progress and quickly open specific problem write-ups
 | `012` | [Odd Even Linked List](./012-medium-odd-even-linked-list.md) | 🟡 Medium | Two-Pointer List Division & Merge |
 | `013` | [Add Two Numbers](./013-medium-add-two-numbers.md) 🔥 | 🟡 Medium | Sentinel Dummy Head & Carry Addition |
 | `014` | [Rotate List](./014-medium-rotate-list.md) | 🟡 Medium | Circular Loop Creation & Splitting |
+| `015` | [Delete Node in a Linked List](./015-easy-delete-node-in-linked-list.md) 🔥 | 🟢 Easy | Successor Value Overwriting |
+| `016` | [Reverse Nodes in k-Group](./016-hard-reverse-nodes-in-k-group.md) 🔥 | 🔴 Hard | Iterative Block Pointer Tracking |
+| `017` | [Find the Starting Point of Loop in Linked List](./017-medium-linked-list-cycle-ii.md) 🔥 | 🟡 Medium | Floyd's Cycle Detect & Meet Convergence |
+| `018` | [Flattening of a Linked List](./018-medium-flatten-linked-list.md) 🔥 | 🟡 Medium | Recursive Sorted Bottom-Pointer Merging |
+| `019` | [Clone a Linked List with Random Pointer](./019-hard-clone-linked-list-random-pointer.md) 🔥 | 🔴 Hard | In-Place Node Interweaving & De-weaving |
 
 ---
 

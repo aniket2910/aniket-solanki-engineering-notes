@@ -69,6 +69,8 @@ Use this list to track your progress and quickly open specific problem write-ups
 | `020` | [Reorganize String](./020-medium-reorganize-string.md) 🔥 | 🟡 Medium | Greedy Character Spacing with Frequency Bucket Arrays |
 | `021` | [Repeated String Match](./021-medium-repeated-string-match.md) 🔥 | 🟡 Medium | Modular Replication Matching Limits |
 | `022` | [Longest Substring Without Repeating Characters](./022-medium-longest-substring-without-repeating-characters.md) 🔥 | 🟡 Medium | Sliding Window with Map Index Cache |
+| `023` | [Longest Palindromic Substring](./023-medium-longest-palindromic-substring.md) 🔥 | 🟡 Medium | Odd/Even Centers Expansion |
+| `024` | [Roman to Integer](./024-easy-roman-to-integer.md) 🔥 | 🟢 Easy | Lookahead Subtraction Check |
 
 ---
 
