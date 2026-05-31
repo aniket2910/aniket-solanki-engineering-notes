@@ -51,6 +51,26 @@ Use this list to track your progress and quickly open specific problem write-ups
 | `004` | [Merge Sorted Array](./004-easy-merge-sorted-array.md) 🔥 | 🟢 Easy | Two-Pointer Merge from the Back |
 | `005` | [Move Zeroes](./005-easy-move-zeroes.md) 🔥 | 🟢 Easy | Two-Pointer (Swap non-zeroes forward) |
 | `006` | [Max Consecutive Ones](./006-easy-max-consecutive-ones.md) | 🟢 Easy | Single-Pass Counting & Running Max |
+| `007` | [Set Matrix Zeroes](./007-medium-set-matrix-zeroes.md) 🔥 | 🟡 Medium | First Row/Col Sentinel Flagging |
+| `008` | [Pascal's Triangle I](./008-easy-pascals-triangle.md) | 🟢 Easy | Dynamic Programming Vector Addition |
+| `009` | [Next Permutation](./009-medium-next-permutation.md) 🔥 | 🟡 Medium | Single-Pass Peak Swap |
+| `010` | [Kadane's Algorithm](./010-medium-kadanes-algorithm.md) 🔥 | 🟡 Medium | Greedy Running Maxima Sum |
+| `011a` | [Sort Colors (Dutch Flag)](./011a-medium-sort-colors-dutch-flag.md) 🔥 | 🟡 Medium | Three-Pointer Partitioning (Single Pass) |
+| `011b` | [Sort Colors (Counting)](./011b-medium-sort-colors-counting.md) 🔥 | 🟡 Medium | Frequency Array Re-writing (Two Pass) |
+| `012` | [Rotate Matrix by 90 Degrees](./012-medium-rotate-image.md) 🔥 | 🟡 Medium | In-Place Transpose & Row Reversal |
+| `013` | [Merge Overlapping Subintervals](./013-medium-merge-intervals.md) 🔥 | 🟡 Medium | Sorting & Single-Pass Merge Boundary |
+| `014` | [Merge Sorted Arrays (O(1) Space)](./014-hard-merge-sorted-array-o1.md) 🔥 | 🔴 Hard | Backwards Three-Pointer In-Place Merge |
+| `015a` | [Find Duplicate Number (Floyd's)](./015a-medium-duplicate-tortoise-hare.md) 🔥 | 🟡 Medium | Floyd's Cycle Detection (Tortoise and Hare) |
+| `015b` | [Find Duplicate Number (Hash Set)](./015b-medium-duplicate-hashset.md) 🔥 | 🟡 Medium | Caching Visited Elements |
+| `016` | [Find Repeating and Missing Number](./016-medium-find-repeating-and-missing.md) 🔥 | 🟡 Medium | System of Algebraic Math Equations |
+| `017a` | [Majority Element-I (Boyer-Moore)](./017a-easy-majority-element-boyer-moore.md) 🔥 | 🟢 Easy | Boyer-Moore Balance-of-Power Voting |
+| `017b` | [Majority Element-I (Hash Map)](./017b-easy-majority-element-hashmap.md) 🔥 | 🟢 Easy | Whiteboard Tally Frequency Count |
+| `018` | [Majority Element-II](./018-medium-majority-element-ii.md) 🔥 | 🟡 Medium | Extended Boyer-Moore Voting (Two Candidates) |
+| `019` | [Reverse Pairs](./019-hard-reverse-pairs.md) 🔥 | 🔴 Hard | Modified Merge Sort Divide & Conquer Counting |
+| `020a` | [Two Sum (Hash Map)](./020a-easy-two-sum-hashmap.md) 🔥 | 🟢 Easy | Complement Index Caching Lookup |
+| `020b` | [Two Sum (Two-Pointer)](./020b-easy-two-sum-twopointer.md) 🔥 | 🟢 Easy | Sorting & Sorted Two-Pointer Squeeze |
+| `021` | [4Sum](./021-medium-4sum.md) 🔥 | 🟡 Medium | Symmetrical Sorting & Four-Pointer Squeeze |
+| `022` | [Longest Consecutive Sequence](./022-medium-longest-consecutive-sequence.md) 🔥 | 🟡 Medium | Sequence Start Lookup via Hash Set |
 
 ---
 

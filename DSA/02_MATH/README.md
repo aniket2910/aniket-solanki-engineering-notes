@@ -48,6 +48,7 @@ Use this list to track your progress and quickly open specific problem write-ups
 | `003` | [Power of Two](./003-easy-power-of-two.md) | 🟢 Easy | Bit Manipulation & Bit Clearing |
 | `004` | [Missing Number](./004-easy-missing-number.md) 🔥 | 🟢 Easy | Gauss Sum Formula / XOR |
 | `005` | [Single Number](./005-easy-single-number.md) 🔥 | 🟢 Easy | Bit Manipulation (XOR Self-Cancellation) |
+| `006` | [Pow(x, n)](./006-medium-powx-n.md) 🔥 | 🟡 Medium | Binary Exponentiation (Divide and Conquer) |
 
 ---
 

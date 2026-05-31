@@ -68,6 +68,7 @@ Use this list to track your progress and quickly open specific problem write-ups
 | `019` | [Count and Say](./019-medium-count-and-say.md) | 🟡 Medium | Iterative Run-Length Encoding |
 | `020` | [Reorganize String](./020-medium-reorganize-string.md) 🔥 | 🟡 Medium | Greedy Character Spacing with Frequency Bucket Arrays |
 | `021` | [Repeated String Match](./021-medium-repeated-string-match.md) 🔥 | 🟡 Medium | Modular Replication Matching Limits |
+| `022` | [Longest Substring Without Repeating Characters](./022-medium-longest-substring-without-repeating-characters.md) 🔥 | 🟡 Medium | Sliding Window with Map Index Cache |
 
 ---
 

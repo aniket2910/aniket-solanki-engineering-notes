@@ -37,6 +37,7 @@ Use this list to track your progress and quickly open specific problem write-ups
 | Index | Problem Name | Difficulty | Core Pattern / Concept |
 | :---: | :--- | :---: | :--- |
 | `001` | [Sort an Array (912)](./001-medium-sort-an-array.md) | 🟡 Medium | Merge Sort (Divide & Conquer) |
+| `002` | [Inversion of Array](./002-medium-inversion-of-array.md) 🔥 | 🟡 Medium | Merge Sort Divide & Conquer Counting |
 
 ---
 

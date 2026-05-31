@@ -146,3 +146,6 @@ vite.config.ts.timestamp-*
 .antigravitycli
 
 visualizer/
+
+.clinerules
+SYSTEM_PROTOCOL.md
