@@ -4,6 +4,14 @@ Welcome to the **Fundamentals of Data Structures & Algorithms (DSA)**. This sect
 
 Rather than memorizing dry academic definitions, we focus on **real-world systems** and **practical intuition** so you can instantly relate to concepts during interviews and real-world engineering.
 
+| ID | Topic | Difficulty | Key Concepts |
+| :--- | :--- | :--- | :--- |
+| `001` | [Deep Dive: Time & Space Complexity](./001-deep-dive-time-and-space-complexity.md) 🔥 | 🟡 Medium | V8 Memory Stack/Heap, Hash Tables, Complexity Cheat Sheet, Constraints |
+| `002` | [Example: Linear Search & Two Sum](./002-example-linear-search-and-two-sum.md) 🔥 | 🟢 Easy | Tracing linear $O(N)$ vs. nested loops $O(N^2)$ scaling |
+| `003` | [Example: Binary Search (Logarithmic)](./003-example-binary-search-logarithmic.md) 🔥 | 🟢 Easy | Tracing logarithmic halving steps $O(\log N)$ |
+| `004` | [Example: Bubble Sort (Quadratic)](./004-example-bubble-sort-quadratic.md) 🔥 | 🟢 Easy | Tracing nested comparisons quadratic $O(N^2)$ scaling |
+| `005` | [Example: Recursive Fibonacci (Exponential)](./005-example-recursive-fibonacci-exponential.md) 🔥 | 🟡 Medium | Tracing branching recursive $O(2^N)$ vs. memoized $O(N)$ |
+
 ---
 
 ## ❓ Why is DSA Actually Required?
