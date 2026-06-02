@@ -50,6 +50,9 @@ We record visited values inside a Hash Set. If a value is already present, it is
 * **Cons**: Requires $O(N)$ extra space, violating the strict constraint.
 
 #### Approach 2: Floyd's Cycle Detection (Tortoise and Hare) (Optimal)
+> [!NOTE]
+> For a detailed conceptual breakdown, mathematical proof, and visual explanation of this algorithm, refer to the [Floyd's Cycle Detection Blueprint](../ALGORITHMS/floyds-cycle-detection.md).
+
 Since values are in the range `[1, n]`, we can treat the array index-value pairs as a linked list graph where `curr -> nums[curr]`.
 * We initialize `tortoise = nums[0]` and `hare = nums[0]`.
 * **Phase 1: Detect cycle**: `tortoise` moves 1 step at a time (`nums[tortoise]`), `hare` moves 2 steps (`nums[nums[hare]]`) until they meet.

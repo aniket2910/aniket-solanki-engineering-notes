@@ -44,6 +44,9 @@ We tally frequencies in a Hash Map and collect all keys whose count exceeds `num
 * **Cons**: Requires $O(N)$ auxiliary memory space.
 
 #### Approach 2: Extended Boyer-Moore Voting (Optimal)
+> [!NOTE]
+> For a detailed conceptual breakdown, mathematical proof, and visual explanation of this algorithm, refer to the [Boyer-Moore Voting Blueprint](../ALGORITHMS/boyer-moore-voting.md).
+
 We track two candidates (`candidate1`, `candidate2`) and their respective counts (`count1`, `count2`).
 * For each element in `nums`:
   * If it matches `candidate1`, increment `count1++`.
@@ -51,7 +54,7 @@ We track two candidates (`candidate1`, `candidate2`) and their respective counts
   * If `count1 === 0`, assign current element to `candidate1`.
   * If `count2 === 0`, assign current element to `candidate2`.
   * Otherwise, both counts are decremented (cancels votes of both candidates).
-* **Confirming counts**: Since the algorithm only yields potential candidates, **we must perform a second pass** to verify if their actual counts exceed $\lfloor n/3 floor$.
+* **Confirming counts**: Since the algorithm only yields potential candidates, **we must perform a second pass** to verify if their actual counts exceed $\lfloor n/3 \rfloor$.
 * **Pros**: Fast, optimal $O(N)$ runtime, constant $O(1)$ space.
 * **Cons**: Highly complex logic, requires a strict second-pass check.
 

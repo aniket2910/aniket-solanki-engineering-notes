@@ -44,6 +44,9 @@ We test every possible subarray `nums[i...j]` by computing its sum using nested 
 * **Cons**: Extremely slow ($O(N^2)$), causing TLE on massive arrays.
 
 #### Approach 2: Kadane's Greedy Algorithm (Optimal)
+> [!NOTE]
+> For a detailed conceptual breakdown, mathematical proof, and visual explanation of this algorithm, refer to the [Kadane's Algorithm Blueprint](../ALGORITHMS/kadanes-algorithm.md).
+
 We traverse the array exactly once. At each element, we decide whether to add it to our existing running sum, or start a new subarray beginning with the current element.
 * If our running sum `currentSum` drops below `0`, we greedy-reset `currentSum` to `0` and start a new subarray.
 * **Pros**: Fast, optimal single-pass $O(N)$ runtime, $O(1)$ constant space.

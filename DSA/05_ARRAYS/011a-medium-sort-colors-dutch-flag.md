@@ -50,6 +50,9 @@ We count the frequencies of `0`s, `1`s, and `2`s, then write them back sequentia
 * **Cons**: Requires **two passes** over the array (one to count, one to write back).
 
 #### Approach 2: Dutch National Flag Algorithm (Optimal)
+> [!NOTE]
+> For a detailed conceptual breakdown, mathematical proof, and visual explanation of this algorithm, refer to the [Dutch National Flag Blueprint](../ALGORITHMS/dutch-national-flag.md).
+
 We maintain three pointers: `low` (boundary of `0`s), `mid` (current scan cursor), and `high` (boundary of `2`s).
 * If `nums[mid] === 0`: Swap `nums[low]` and `nums[mid]`, increment `low++` and `mid++`.
 * If `nums[mid] === 1`: Increment `mid++`.

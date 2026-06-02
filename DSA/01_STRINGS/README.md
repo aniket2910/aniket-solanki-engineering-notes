@@ -71,6 +71,8 @@ Use this list to track your progress and quickly open specific problem write-ups
 | `022` | [Longest Substring Without Repeating Characters](./022-medium-longest-substring-without-repeating-characters.md) 🔥 | 🟡 Medium | Sliding Window with Map Index Cache |
 | `023` | [Longest Palindromic Substring](./023-medium-longest-palindromic-substring.md) 🔥 | 🟡 Medium | Odd/Even Centers Expansion |
 | `024` | [Roman to Integer](./024-easy-roman-to-integer.md) 🔥 | 🟢 Easy | Lookahead Subtraction Check |
+| `025` | [Repeated Substring Pattern](./025-easy-repeated-substring-pattern.md) 🔥 | 🟢 Easy | Periodic Pattern Concatenation / KMP LPS |
+| `026` | [Find the Index of the First Occurrence in a String](./026-easy-find-index-first-occurrence.md) 🔥 | 🟢 Easy | Two-Pointer Sliding Window / KMP Substring Search |
 
 ---
 

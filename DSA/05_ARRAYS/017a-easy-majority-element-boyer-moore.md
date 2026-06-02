@@ -46,6 +46,9 @@ We tally frequencies in a Hash Map. If any count exceeds `nums.length / 2`, retu
 * **Cons**: Requires $O(N)$ auxiliary space for counts.
 
 #### Approach 2: Boyer-Moore Voting Algorithm (Optimal)
+> [!NOTE]
+> For a detailed conceptual breakdown, mathematical proof, and visual explanation of this algorithm, refer to the [Boyer-Moore Voting Blueprint](../ALGORITHMS/boyer-moore-voting.md).
+
 We maintain a `candidate` and a `count` initialized to `0`.
 * As we scan `nums`:
   * If `count === 0`, we pick the current element as our new `candidate`.

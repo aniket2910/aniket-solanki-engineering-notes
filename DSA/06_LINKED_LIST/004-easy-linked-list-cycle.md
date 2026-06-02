@@ -55,6 +55,9 @@ Think of **two runners on a circular running track**:
 To demonstrate balanced computer science engineering to the interviewer, we explain **two distinct approaches** showing the tradeoff between memory and complexity:
 
 #### Approach 1: Floyd's Cycle-Finding Algorithm (Tortoise & Hare) - Optimal
+> [!NOTE]
+> For a detailed conceptual breakdown, mathematical proof, and visual explanation of this algorithm, refer to the [Floyd's Cycle Detection Blueprint](../ALGORITHMS/floyds-cycle-detection.md).
+
 We declare two pointer variables starting at `head`:
 * `slow` (advances by 1 node: `slow = slow.next`).
 * `fast` (advances by 2 nodes: `fast = fast.next.next`).

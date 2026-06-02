@@ -48,6 +48,9 @@ We traverse the list, adding each node's reference to a set. The first node we e
 * **Cons**: Requires $O(N)$ auxiliary space.
 
 #### Approach 2: Floyd's Cycle Detection (Optimal)
+> [!NOTE]
+> For a detailed conceptual breakdown, mathematical proof, and visual explanation of this algorithm, refer to the [Floyd's Cycle Detection Blueprint](../ALGORITHMS/floyds-cycle-detection.md).
+
 1.  **Detect Cycle**: Move `tortoise` by 1 step, and `hare` by 2 steps. If they meet, a cycle exists.
 2.  **Find Entry Point**: Set `tortoise` back to the `head` of the list. Move **both** `tortoise` and `hare` exactly 1 step at a time. The node where they meet again is the start of the cycle!
 * **Mathematical Rationale**: Let $L_1$ be distance from head to loop entry, $L_2$ be distance from entry to meeting point, and $C$ be loop length. When they meet, distance traveled by `hare` = $2 	imes$ distance by `tortoise`.

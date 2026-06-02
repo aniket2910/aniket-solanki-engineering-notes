@@ -46,6 +46,9 @@ Using the mathematical identity:
 * **Cons**: Uses call stack memory ($O(\log N)$ space). Can cause call stack overflow on systems with small stack limits.
 
 #### Approach 2: Iterative Binary Exponentiation (Optimal)
+> [!NOTE]
+> For a detailed conceptual breakdown, mathematical proof, and visual explanation of this algorithm, refer to the [Binary Exponentiation Blueprint](../ALGORITHMS/binary-exponentiation.md).
+
 We maintain a running product `currentProduct` and multiply it into our `result` whenever the current power exponent $N$ is odd, halving $N$ and squaring `currentProduct` at each step.
 * **Pros**: Constant $O(1)$ space, no call stack overhead.
 * **Cons**: Slightly less intuitive loop logic to update active powers.
