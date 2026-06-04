@@ -42,6 +42,12 @@ Use this list to track your progress and quickly open specific problem write-ups
 | :---: | :--- | :---: | :--- |
 | `001` | [Subsets II](./001-medium-subsets-ii.md) 🔥 | 🟡 Medium | Loop Backtracking & Duplicate Pruning |
 | `002` | [Subset Sums](./002-medium-subset-sums.md) 🔥 | 🟡 Medium | Inclusion / Exclusion Binary Search Tree |
+| `003` | [Fibonacci Number](./003-easy-fibonacci-number.md) 🔥 | 🟢 Easy | Basic Recurrence & Iterative Space DP |
+| `004` | [Subset Sum Equals to Target](./004-medium-subset-sum-equals-target.md) 🔥 | 🟡 Medium | Binary Choice Tree with Memoization |
+| `005` | [Combination Sum](./005-medium-combination-sum.md) 🔥 | 🟡 Medium | Index Re-use Inclusion / Exclusion |
+| `006` | [Combination Sum II](./006-medium-combination-sum-ii.md) 🔥 | 🟡 Medium | Sorting & Duplicate Sibling Pruning |
+| `007` | [Palindrome Partitioning](./007-medium-palindrome-partitioning.md) 🔥 | 🟡 Medium | Contiguous Slice Backtracking DFS |
+| `008` | [Permutation Sequence](./008-hard-permutation-sequence.md) 🔥 | 🔴 Hard | Mathematical Factorial Block Slicing |
 
 ---
 
