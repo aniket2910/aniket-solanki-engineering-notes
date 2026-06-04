@@ -73,6 +73,7 @@ Use this list to track your progress and quickly open specific problem write-ups
 | `024` | [Roman to Integer](./024-easy-roman-to-integer.md) 🔥 | 🟢 Easy | Lookahead Subtraction Check |
 | `025` | [Repeated Substring Pattern](./025-easy-repeated-substring-pattern.md) 🔥 | 🟢 Easy | Periodic Pattern Concatenation / KMP LPS |
 | `026` | [Find the Index of the First Occurrence in a String](./026-easy-find-index-first-occurrence.md) 🔥 | 🟢 Easy | Two-Pointer Sliding Window / KMP Substring Search |
+| `027` | [Compare Version Numbers](./027-medium-compare-version-numbers.md) 🔥 | 🟡 Medium | Version Dot-Split & Numeric Comparators |
 
 ---
 

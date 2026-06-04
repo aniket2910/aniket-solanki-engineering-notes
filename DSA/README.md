@@ -13,11 +13,11 @@ To keep your interview preparation laser-focused, here is the real-time breakdow
 
 | Metric | Count |
 | :--- | :---: |
-| 🚀 **Total Solved Questions** | **83** |
+| 🚀 **Total Solved Questions** | **86** |
 | 🟢 Easy Difficulty | **41** |
-| 🟡 Medium Difficulty | **37** |
+| 🟡 Medium Difficulty | **40** |
 | 🔴 Hard Difficulty | **5** |
-| 🔥 **Must Solve Interview Targets** | **59** |
+| 🔥 **Must Solve Interview Targets** | **62** |
 
 ---
 
@@ -39,7 +39,9 @@ Select a topic to start your revision:
    * Contiguous memory, static vs dynamic vectors, Two-Pointer read/write bounds, and Prefix Sums.
 7. **[06. Linked List](./06_LINKED_LIST/README.md)**
    * Pointer manipulation, Sentinel Dummy nodes, Tortoise & Hare fast/slow scans, and in-place list reversals.
-8. **[07. Algorithms](./ALGORITHMS/README.md)**
+8. **[07. Recursion](./07_RECURSION/README.md)**
+   * Recursive call stacks, base cases, choice rollbacks, and backtrack search trees.
+9. **[08. Algorithms](./ALGORITHMS/README.md)**
    * In-depth visual, plain-English reference cards for core algorithmic templates and step machines.
 
 ---
