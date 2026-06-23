@@ -1,6 +1,8 @@
 # 006. Pow(x, n) (Medium)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Facebook/Meta, Google, Amazon
+>
 > **Interview Tag**: 🔥 **DIVIDE AND CONQUER** - Core binary exponentiation problem. Tests understanding of numeric limits, recursion vs iteration, and bitwise/division optimization.
 
 ---

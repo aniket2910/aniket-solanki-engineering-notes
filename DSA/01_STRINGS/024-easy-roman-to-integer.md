@@ -1,6 +1,8 @@
 # 024. Roman to Integer (Easy)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Adobe, Apple, Google, Microsoft
+>
 > **Interview Tag**: 🔥 **LOOKAHEAD COMPRESSION** - Core string-map conversion. Tests understanding of symbol lookahead conditions and greedy aggregation.
 
 ---

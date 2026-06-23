@@ -1,6 +1,8 @@
 # 004. Linked List Cycle (Easy)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Microsoft, Google
+>
 > **Interview Tag**: 🔥 **MUST SOLVE** - One of the most famous Linked List questions in history. Often asked to test your understanding of pointer operations and the tradeoff between time/space complexity.
 
 ---

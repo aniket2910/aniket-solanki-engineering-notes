@@ -1,6 +1,8 @@
 # 022. Asteroid Collision (Medium)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Zeta, Netflix, Google, Amazon
+>
 > **Interview Tag**: 🔥 **MUST SOLVE** - A top-tier interview classic. Excellent for testing directional flow, collision simulation logic, and stack-based elimination edge cases.
 
 ---

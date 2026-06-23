@@ -1,6 +1,8 @@
 # 024. Trapping Rainwater (Hard)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Google, Amazon, Facebook/Meta, Microsoft, Goldman Sachs
+>
 > **Interview Tag**: 🔥 **TWO-POINTER CLAMP BOUNDARY** - Legendary hard array problem. Tests understanding of prefix/suffix dynamic boundaries and converging single-pass pointers.
 
 ---

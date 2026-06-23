@@ -1,6 +1,8 @@
 # 019. Largest Rectangle in Histogram (Hard)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Google, Amazon, Meta, Microsoft
+>
 > **Interview Tag**: 🔥 **MUST SOLVE** - A legendary hard question. The ultimate test of your ability to identify boundary expansions using a monotonic stack.
 
 ---

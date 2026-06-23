@@ -1,5 +1,9 @@
 # 011. Longest Common Prefix (Easy)
 
+> [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Google, Microsoft, Adobe
+
+
 ---
 
 ### 📝 1. Problem Statement

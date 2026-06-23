@@ -1,5 +1,9 @@
 # 007. Split a String in Balanced Strings (Easy)
 
+> [!IMPORTANT]
+> **Company Targets**: 🏢 Google, Amazon
+
+
 ---
 
 ### 📝 1. Problem Statement

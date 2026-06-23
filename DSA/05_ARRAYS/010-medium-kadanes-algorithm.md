@@ -1,6 +1,8 @@
 # 010. Kadane's Algorithm (Medium)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Microsoft, Google
+>
 > **Interview Tag**: 🔥 **GREEDY RUNNING SUM** - Standard, legendary array algorithm. Highly useful for demonstrating greedy vs. brute-force optimization patterns.
 
 ---

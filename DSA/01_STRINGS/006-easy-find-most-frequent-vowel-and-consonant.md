@@ -1,5 +1,9 @@
 # 006. Find Most Frequent Vowel and Consonant (Easy)
 
+> [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Microsoft
+
+
 ---
 
 ### 📝 1. Problem Statement

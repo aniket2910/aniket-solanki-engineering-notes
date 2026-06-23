@@ -1,6 +1,8 @@
 # 023. 3Sum (Medium)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Facebook/Meta, Microsoft, Google
+>
 > **Interview Tag**: 🔥 **SORTED TWO-POINTER CLAMP** - High-frequency interview classic. Essential for mastering duplicates deduplication, boundary clamping, and index coordination.
 
 ---

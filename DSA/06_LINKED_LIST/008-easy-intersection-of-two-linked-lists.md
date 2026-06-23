@@ -1,5 +1,9 @@
 # 008. Intersection of Two Linked Lists (Easy)
 
+> [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Microsoft, Airbnb
+
+
 ---
 
 ### 📝 1. Problem Statement

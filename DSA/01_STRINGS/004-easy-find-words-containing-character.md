@@ -1,5 +1,9 @@
 # 004. Find Words Containing Character (Easy)
 
+> [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon
+
+
 ---
 
 ### 📝 1. Problem Statement

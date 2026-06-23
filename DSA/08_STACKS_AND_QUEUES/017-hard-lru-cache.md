@@ -1,6 +1,8 @@
 # 017. LRU Cache (Hard)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Google, Amazon, Microsoft, Meta, Apple, Bloomberg, Uber
+>
 > **Interview Tag**: 🔥 **MUST SOLVE** - The absolute king of caching design questions. Frequently asked by tier-1 tech firms to test real-world systems memory design, object orientation, and low-level pointer management.
 
 ---

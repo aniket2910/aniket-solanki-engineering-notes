@@ -1,6 +1,8 @@
 # 017a. Majority Element I (Boyer-Moore Voting) (Easy)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Microsoft, Google
+>
 > **Interview Tag**: 🔥 **BOYER-MOORE VOTING** - Core linear voting algorithm. Excellent for demonstrating how balance-of-power counts can eliminate secondary variables to achieve constant space.
 
 ---

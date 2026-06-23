@@ -1,5 +1,9 @@
 # 001. Design Linked List (Medium)
 
+> [!IMPORTANT]
+> **Company Targets**: 🏢 Google, Amazon, Microsoft
+
+
 ---
 
 ### 📝 1. Problem Statement

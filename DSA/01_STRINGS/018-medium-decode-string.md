@@ -1,6 +1,8 @@
 # 018. Decode String (Medium)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Google, Bloomberg, Amazon, Microsoft
+>
 > **Interview Tag**: 🔥 **MUST SOLVE** - A top-tier interview classic. Perfect for testing your command of parsing syntax trees using either **Stacks** or **Recursion**.
 
 ---

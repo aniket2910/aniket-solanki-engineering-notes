@@ -1,6 +1,8 @@
 # 016. Reverse Nodes in k-Group (Hard)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Microsoft, Google
+>
 > **Interview Tag**: 🔥 **GROUPED LIST REVERSAL** - Hard list standard. Tests complex multi-pointer synchronization, recursion boundaries, and in-place link tracking.
 
 ---

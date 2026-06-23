@@ -1,6 +1,8 @@
 # 016. Find the Repeating and Missing Number (Medium)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Goldman Sachs
+>
 > **Interview Tag**: 🔥 **MATH EQUATIONS SOLVER** - Premium array riddle. Tests ability to construct linear and quadratic equations to isolate two variables in a single pass.
 
 ---

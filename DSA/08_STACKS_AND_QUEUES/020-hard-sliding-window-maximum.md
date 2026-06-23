@@ -1,6 +1,8 @@
 # 020. Sliding Window Maximum (Hard)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Google, Amazon, Microsoft, Uber
+>
 > **Interview Tag**: 🔥 **MUST SOLVE** - A highly popular hard problem. Perfectly demonstrates how a double-ended queue (Deque) can optimize sliding window lookups from linear $O(K)$ per window to amortized $O(1)$ constant time.
 
 ---

@@ -1,6 +1,8 @@
 # 011a. Sort an Array of 0's, 1's, and 2's (Dutch National Flag) (Medium)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Microsoft, Salesforce
+>
 > **Interview Tag**: 🔥 **THREE-POINTER PARTITIONING** - Classical sorting constraint. Tests single-pass partition sorting without using standard library sort utilities.
 
 ---

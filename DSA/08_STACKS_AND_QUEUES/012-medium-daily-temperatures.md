@@ -1,6 +1,8 @@
 # 012. Daily Temperatures (Medium)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Google, Amazon, Meta
+>
 > **Interview Tag**: 🔥 **MUST SOLVE** - A top-tier interview classic. Demonstrates how to adapt the monotonic stack to track **index spans** instead of raw element values.
 
 ---

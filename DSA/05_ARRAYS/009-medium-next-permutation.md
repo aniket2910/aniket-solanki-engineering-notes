@@ -1,6 +1,8 @@
 # 009. Next Permutation (Medium)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Facebook/Meta, Google, Amazon
+>
 > **Interview Tag**: 🔥 **LEXICOGRAPHICAL PEAK DETECTION** - Fundamental algorithmic problem. Tests understanding of lexicographical ordering, peak breaks, and suffix reversals.
 
 ---

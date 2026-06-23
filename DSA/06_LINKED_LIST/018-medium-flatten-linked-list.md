@@ -1,6 +1,8 @@
 # 018. Flattening of a Linked List (Medium)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Microsoft
+>
 > **Interview Tag**: 🔥 **RECURSIVE SORT MERGE** - Advanced linked list puzzle. Tests understanding of 2D node structures, bottom-pointer traversals, and recursive merging.
 
 ---

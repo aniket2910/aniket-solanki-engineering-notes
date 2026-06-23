@@ -1,6 +1,8 @@
 # 007. Set Matrix Zeroes (Medium)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Microsoft, Google
+>
 > **Interview Tag**: 🔥 **IN-PLACE MATRIX MANIPULATION** - Classical array question. Tests space-optimization thinking. Moving from $O(M \cdot N)$ auxiliary space to constant $O(1)$ space.
 
 ---

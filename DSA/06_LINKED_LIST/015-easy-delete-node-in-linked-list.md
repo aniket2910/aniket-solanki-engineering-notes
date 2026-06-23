@@ -1,6 +1,8 @@
 # 015. Delete Node in a Linked List (Easy)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Apple, Microsoft, Amazon
+>
 > **Interview Tag**: 🔥 **SUCCESSOR OVERWRITING** - Extremely common paradigm test. Evaluates out-of-the-box thinking where you delete a node without access to its predecessor.
 
 ---

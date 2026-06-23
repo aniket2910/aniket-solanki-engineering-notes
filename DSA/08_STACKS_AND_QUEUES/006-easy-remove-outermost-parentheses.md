@@ -1,6 +1,8 @@
 # 006. Remove Outermost Parentheses (Easy)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Google
+>
 > **Interview Tag**: String Decomposition - Ideal for practicing count-based nesting tracking and filtering string components.
 
 ---

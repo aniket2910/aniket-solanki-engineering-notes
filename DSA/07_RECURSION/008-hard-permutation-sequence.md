@@ -1,6 +1,8 @@
 # 008. Permutation Sequence (Hard)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Google, Amazon, Microsoft
+>
 > **Interview Tag**: 🔥 **MATHEMATICAL BLOCK SELECTION** - High-impact combinations problem. Tests capacity to bypass generating $O(N!)$ permutations by mathematically jumping to the exact $k$-th permutation using factorials.
 
 ---

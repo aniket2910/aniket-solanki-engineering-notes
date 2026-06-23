@@ -1,6 +1,8 @@
 # 014. Sort a Stack (Medium)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Microsoft, Goldman Sachs
+>
 > **Interview Tag**: Recursion & Stack - A classic puzzle question. Frequently asked in core system interviews to test your ability to think recursively and use call stacks as implicit storage.
 
 ---

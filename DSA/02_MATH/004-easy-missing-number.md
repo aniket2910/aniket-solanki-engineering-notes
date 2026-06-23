@@ -1,6 +1,8 @@
 # 004. Missing Number (Easy)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Microsoft, Google
+>
 > **Interview Tag**: 🔥 **MUST SOLVE** - A staple of bitwise operations and mathematical induction. Teaches you two completely different ways of thinking about numerical arrays.
 
 ---

@@ -1,5 +1,9 @@
 # 005. Single Number (Easy)
 
+> [!IMPORTANT]
+> **Company Targets**: 🏢 Google, Amazon, Bloomberg
+
+
 ---
 
 ### 📝 1. Problem Statement

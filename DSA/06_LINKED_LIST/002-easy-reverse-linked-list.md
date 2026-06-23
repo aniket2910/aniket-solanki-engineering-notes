@@ -1,5 +1,9 @@
 # 002. Reverse Linked List (Easy)
 
+> [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Microsoft, Facebook/Meta, Google
+
+
 ---
 
 ### 📝 1. Problem Statement

@@ -1,6 +1,8 @@
 # 022. Longest Consecutive Sequence (Medium)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Google, Amazon, Microsoft
+>
 > **Interview Tag**: 🔥 **HASH SET SEQUENCE STARTING** - Classic set-lookup challenge. Tests understanding of boundary start conditions to avoid quadratic sweeps.
 
 ---

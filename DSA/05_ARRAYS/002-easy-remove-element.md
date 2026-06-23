@@ -1,5 +1,9 @@
 # 002. Remove Element (Easy)
 
+> [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Microsoft
+
+
 ---
 
 ### 📝 1. Problem Statement

@@ -1,6 +1,8 @@
 # 010. Next Greater Element II (Medium)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Google, Microsoft
+>
 > **Interview Tag**: 🔥 **MUST SOLVE** - A top-tier interview question. Tests your ability to handle circular arrays and modulo arithmetic alongside monotonic stacks.
 
 ---

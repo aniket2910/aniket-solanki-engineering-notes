@@ -1,6 +1,8 @@
 # 025. Repeated Substring Pattern (Easy)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Google, Amazon
+>
 > **Interview Tag**: 🔥 **PERIODIC PATTERN DETECTION** - Core string manipulation classic. Highly elegant lookahead trick or KMP pattern analysis. Perfect for testing out-of-the-box conceptual thinking.
 
 ---

@@ -1,6 +1,8 @@
 # 020a. Two Sum (Visited Hash Map) (Easy)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Google, Microsoft, Meta
+>
 > **Interview Tag**: 🔥 **COMPLEMENT LOOKUP** - The single most famous coding problem. Perfect for demonstrating how hash map index caches resolve nested loops instantly.
 
 ---

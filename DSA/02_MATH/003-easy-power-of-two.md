@@ -1,5 +1,9 @@
 # 003. Power of Two (Easy)
 
+> [!IMPORTANT]
+> **Company Targets**: 🏢 Google, Amazon
+
+
 ---
 
 ### 📝 1. Problem Statement

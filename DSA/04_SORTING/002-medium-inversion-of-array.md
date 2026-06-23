@@ -1,6 +1,8 @@
 # 002. Inversion of Array (Medium)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Flipkart, Microsoft
+>
 > **Interview Tag**: 🔥 **DIVIDE AND CONQUER COUNTING** - Advanced application of Merge Sort. Essential for understanding how sorting algorithms can calculate relationships between array element indices.
 
 ---

@@ -1,5 +1,9 @@
 # 012. Valid Anagram (Easy)
 
+> [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Goldman Sachs, Google, Facebook/Meta
+
+
 ---
 
 ### 📝 1. Problem Statement

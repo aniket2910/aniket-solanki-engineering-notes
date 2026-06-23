@@ -1,6 +1,8 @@
 # 003. Implement Queue using Stacks (Medium)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Microsoft, Google
+>
 > **Interview Tag**: 🔥 **MUST SOLVE** - An absolute classic. Directly tests your understanding of data flow manipulation, amortized time complexity analysis, and LIFO/FIFO conversions.
 
 ---

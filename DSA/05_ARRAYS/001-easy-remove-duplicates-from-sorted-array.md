@@ -1,6 +1,8 @@
 # 001. Remove Duplicates from Sorted Array (Easy)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Facebook/Meta, Amazon, Microsoft
+>
 > **Interview Tag**: 🔥 **MUST SOLVE** - The absolute golden standard for in-place array manipulation. Teaches you the highly popular **Read/Write Two-Pointer** pattern.
 
 ---

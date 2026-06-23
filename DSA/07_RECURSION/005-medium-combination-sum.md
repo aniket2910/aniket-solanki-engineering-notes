@@ -1,6 +1,8 @@
 # 005. Combination Sum (Medium)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Microsoft, Google
+>
 > **Interview Tag**: 🔥 **BACKTRACKING WITH REUSABLE ELEMENTS** - Standard combinatorial search problem. Evaluates command of recursion index management to allow element re-use while preventing duplicate combination sets.
 
 ---

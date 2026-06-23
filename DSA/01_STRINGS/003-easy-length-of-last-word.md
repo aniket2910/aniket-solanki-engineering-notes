@@ -1,5 +1,9 @@
 # 003. Length of Last Word (Easy)
 
+> [!IMPORTANT]
+> **Company Targets**: 🏢 Apple, Amazon, Google
+
+
 ---
 
 ### 📝 1. Problem Statement

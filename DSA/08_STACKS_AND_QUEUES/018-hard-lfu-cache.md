@@ -1,6 +1,8 @@
 # 018. LFU Cache (Hard)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Google, Amazon, Microsoft, Bloomberg
+>
 > **Interview Tag**: 🔥 **MUST SOLVE** - The ultimate system data structure design question. Demands precise map manipulation, custom doubly linked list management, and strict maintenance of frequency levels.
 
 ---

@@ -1,6 +1,8 @@
 # 006. Combination Sum II (Medium)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Microsoft
+>
 > **Interview Tag**: 🔥 **BACKTRACKING WITH SINGLE-USE & DUPLICATE PRUNING** - Standard combinatorial search problem. Evaluates sorting-based duplicate exclusion when candidate elements contain duplicates and each element can be chosen at most once.
 
 ---

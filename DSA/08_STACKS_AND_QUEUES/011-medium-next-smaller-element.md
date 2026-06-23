@@ -1,6 +1,8 @@
 # 011. Next Smaller Element (Medium)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Microsoft, Amazon
+>
 > **Interview Tag**: Monotonic Stack Foundations - Symmetrical counterpart to Next Greater Element. A fundamental building block for advanced histogram problems (like Largest Rectangle in Histogram).
 
 ---

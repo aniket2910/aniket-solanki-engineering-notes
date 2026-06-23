@@ -1,6 +1,8 @@
 # 001. Implement Stack using Array (Easy)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Core CS Fundamentals, Microsoft
+>
 > **Interview Tag**: Core Fundamentals - Essential for understanding memory limits, stack pointer management, and how high-level language stack structures work under the hood.
 
 ---

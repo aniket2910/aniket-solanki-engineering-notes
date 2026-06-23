@@ -1,6 +1,8 @@
 # 026. Find the Index of the First Occurrence in a String (Easy)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Apple, Goldman Sachs
+>
 > **Interview Tag**: 🔥 **KMP SUBSTRING SEARCH** - Standard string matching problem. Ideal for demonstrating optimal two-pointer string matching using precomputed prefix backtracks.
 
 ---

@@ -1,6 +1,8 @@
 # 007. Palindrome Partitioning (Medium)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Google, Amazon
+>
 > **Interview Tag**: 🔥 **BACKTRACKING & STRING SUBSECTIONS** - Classical partitioning problem. Tests ability to split search problems into prefix validation (palindrome check) and suffix recurrence.
 
 ---

@@ -1,6 +1,8 @@
 # 018. Majority Element II (Medium)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Google
+>
 > **Interview Tag**: 🔥 **EXTENDED BOYER-MOORE VOTING** - Harder array classic. Tests ability to generalize voting cancellation to track two separate candidates with counts in constant space.
 
 ---

@@ -1,6 +1,8 @@
 # 016. Celebrity Problem (Medium)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Microsoft, Google
+>
 > **Interview Tag**: Candidate Elimination - A clever application of stack-based pruning. Tests your ability to establish relationships and prune possibilities in linear time.
 
 ---

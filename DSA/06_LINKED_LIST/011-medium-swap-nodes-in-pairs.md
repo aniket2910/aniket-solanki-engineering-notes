@@ -1,5 +1,9 @@
 # 011. Swap Nodes in Pairs (Medium)
 
+> [!IMPORTANT]
+> **Company Targets**: 🏢 Microsoft, Amazon
+
+
 ---
 
 ### 📝 1. Problem Statement

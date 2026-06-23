@@ -1,5 +1,9 @@
 # 001. Sort an Array (Medium)
 
+> [!IMPORTANT]
+> **Company Targets**: 🏢 Microsoft, Amazon, Google
+
+
 ---
 
 ### 📝 1. Problem Statement

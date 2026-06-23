@@ -1,6 +1,8 @@
 # 002. Implement Queue using Array (Easy)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Core CS Fundamentals, Microsoft
+>
 > **Interview Tag**: Core Fundamentals - Essential for understanding circular buffers, queue pointer wrap-around, and modulo index arithmetic.
 
 ---

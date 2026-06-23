@@ -1,5 +1,9 @@
 # 009. Valid Palindrome (Easy)
 
+> [!IMPORTANT]
+> **Company Targets**: 🏢 Facebook/Meta, Microsoft, Amazon, Google
+
+
 ---
 
 ### 📝 1. Problem Statement

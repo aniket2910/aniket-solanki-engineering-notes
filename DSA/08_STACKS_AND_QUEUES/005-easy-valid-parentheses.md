@@ -1,6 +1,8 @@
 # 005. Valid Parentheses (Easy)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Google, Amazon, Microsoft, Meta, Bloomberg
+>
 > **Interview Tag**: 🔥 **MUST SOLVE** - A top 10 interview question of all time. This is the absolute golden standard for demonstrating LIFO nested ordering and boundary check conditions.
 
 ---

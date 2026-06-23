@@ -1,6 +1,8 @@
 # 013. Merge Overlapping Subintervals (Medium)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Google, Microsoft, Facebook/Meta
+>
 > **Interview Tag**: 🔥 **SORTING AND MERGING** - Core scheduler problem. Tests interval overlap conditions and sorted merge boundaries.
 
 ---

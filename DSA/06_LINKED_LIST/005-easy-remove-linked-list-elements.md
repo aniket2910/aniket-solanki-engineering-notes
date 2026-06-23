@@ -1,5 +1,9 @@
 # 005. Remove Linked List Elements (Easy)
 
+> [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Microsoft
+
+
 ---
 
 ### 📝 1. Problem Statement

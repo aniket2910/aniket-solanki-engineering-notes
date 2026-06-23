@@ -1,6 +1,8 @@
 # 015a. Find the Duplicate Number (Floyd's Cycle Detection) (Medium)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Microsoft, Google
+>
 > **Interview Tag**: 🔥 **CYCLE DETECTION** - Premium interview classic. Demonstrates how to map array elements to a linked list node graph, finding the cycle entry point in constant space.
 
 ---

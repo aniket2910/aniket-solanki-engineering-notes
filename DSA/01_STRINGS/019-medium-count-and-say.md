@@ -1,5 +1,9 @@
 # 019. Count and Say (Medium)
 
+> [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Microsoft, Google
+
+
 ---
 
 ### 📝 1. Problem Statement

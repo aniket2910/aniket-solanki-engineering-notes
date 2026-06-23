@@ -1,6 +1,8 @@
 # 009. Next Greater Element I (Easy)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Bloomberg
+>
 > **Interview Tag**: Monotonic Stack Foundations - The gateway problem for learning the monotonic stack pattern. Master this to unlock a wide range of harder linear scan problems.
 
 ---

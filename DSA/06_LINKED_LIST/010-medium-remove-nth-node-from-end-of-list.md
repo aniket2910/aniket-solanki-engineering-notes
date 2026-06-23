@@ -1,5 +1,9 @@
 # 010. Remove Nth Node From End of List (Medium)
 
+> [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Microsoft, Google
+
+
 ---
 
 ### 📝 1. Problem Statement

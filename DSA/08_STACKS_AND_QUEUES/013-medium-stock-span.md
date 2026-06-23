@@ -1,6 +1,8 @@
 # 013. Stock Span Problem (Medium)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Microsoft, Flipkart
+>
 > **Interview Tag**: Dynamic Stream Processing - A classic financial interview question. Tests your ability to apply the monotonic stack to a stream of incoming real-time data.
 
 ---

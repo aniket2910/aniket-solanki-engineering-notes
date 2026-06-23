@@ -1,5 +1,9 @@
 # 016. Reverse Words in a String (Medium)
 
+> [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Microsoft, Goldman Sachs, Google
+
+
 ---
 
 ### 📝 1. Problem Statement

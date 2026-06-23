@@ -1,6 +1,8 @@
 # 021. 4Sum (Medium)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Google
+>
 > **Interview Tag**: 🔥 **MULTI-POINTER SQUEEZE** - Advanced expansion of two-pointer scans. Tests index deduplication, sorted array skips, and nested iteration boundaries.
 
 ---

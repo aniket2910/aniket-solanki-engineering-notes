@@ -1,6 +1,8 @@
 # 015b. Find the Duplicate Number (Visited Hash Set) (Medium)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Microsoft, Google
+>
 > **Interview Tag**: 🔥 **HASH SET CHECKING** - Core set lookup. Tests direct element caching, showing the fundamental trade-off between memory and speed.
 
 ---

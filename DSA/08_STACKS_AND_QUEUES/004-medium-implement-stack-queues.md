@@ -1,6 +1,8 @@
 # 004. Implement Stack using Queues (Medium)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Bloomberg
+>
 > **Interview Tag**: System Simulation - Excellent for testing creative data flow design. The **single-queue rotation method** is highly preferred by interviewers over the two-queue approach due to its minimal footprint.
 
 ---

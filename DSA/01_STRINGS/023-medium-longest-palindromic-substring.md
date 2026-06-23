@@ -1,6 +1,8 @@
 # 023. Longest Palindromic Substring (Medium)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Microsoft, Google, Cisco
+>
 > **Interview Tag**: 🔥 **CENTERS EXPANSION** - Classical string problem. Tests understanding of palindromic symmetry, odd vs. even center cases, and boundary tracking.
 
 ---

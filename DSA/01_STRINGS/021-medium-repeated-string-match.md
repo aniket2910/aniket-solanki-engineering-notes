@@ -1,6 +1,8 @@
 # 021. Repeated String Match (Medium)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Google, Amazon
+>
 > **Interview Tag**: 🔥 **MUST SOLVE** - Highly popular in interviews for testing string replication boundaries and advanced string search algorithms like **Rabin-Karp**.
 
 ---

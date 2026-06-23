@@ -1,5 +1,9 @@
 # 008. Reverse String II (Easy)
 
+> [!IMPORTANT]
+> **Company Targets**: 🏢 Adobe, Amazon, Google
+
+
 ---
 
 ### 📝 1. Problem Statement

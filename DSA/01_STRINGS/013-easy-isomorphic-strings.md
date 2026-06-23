@@ -1,5 +1,9 @@
 # 013. Isomorphic Strings (Easy)
 
+> [!IMPORTANT]
+> **Company Targets**: 🏢 Google, Amazon, LinkedIn
+
+
 ---
 
 ### 📝 1. Problem Statement

@@ -1,5 +1,9 @@
 # 003. Middle of the Linked List (Easy)
 
+> [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Microsoft, Adobe
+
+
 ---
 
 ### 📝 1. Problem Statement

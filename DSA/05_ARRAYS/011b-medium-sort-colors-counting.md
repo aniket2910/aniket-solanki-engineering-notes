@@ -1,6 +1,8 @@
 # 011b. Sort an Array of 0's, 1's, and 2's (Counting Sort) (Medium)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Microsoft, Salesforce
+>
 > **Interview Tag**: 🔥 **FREQUENCY COUNTING** - Fundamental counting sort paradigm. Demonstrates count tracking and multi-pass array overwrites.
 
 ---

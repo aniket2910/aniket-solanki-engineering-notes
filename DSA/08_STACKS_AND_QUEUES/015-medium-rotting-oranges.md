@@ -1,6 +1,8 @@
 # 015. Rotting Oranges (Medium)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Microsoft, Google, Uber
+>
 > **Interview Tag**: 🔥 **MUST SOLVE** - A top-tier interview favorite. Demonstrates how to use a queue to simulate a **multi-source Breadth-First Search (BFS)** for modeling parallel spread simulations.
 
 ---

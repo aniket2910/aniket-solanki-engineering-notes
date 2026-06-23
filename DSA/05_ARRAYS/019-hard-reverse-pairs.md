@@ -1,6 +1,8 @@
 # 019. Reverse Pairs (Hard)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Google, Amazon
+>
 > **Interview Tag**: 🔥 **MODIFIED MERGE SORT** - Hard classic array problem. Essential for mastering index relations counting and split-and-conquer recurrences.
 
 ---

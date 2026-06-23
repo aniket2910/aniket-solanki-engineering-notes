@@ -1,6 +1,8 @@
 # 022. Longest Substring Without Repeating Characters (Medium)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Google, Bloomberg, Meta, Microsoft
+>
 > **Interview Tag**: 🔥 **SLIDING WINDOW CLASSIC** - A fundamental problem for mastering the two-pointer sliding window technique and optimized hash map tracking.
 
 ---

@@ -1,5 +1,9 @@
 # 017. Sum of Beauty of All Substrings (Medium)
 
+> [!IMPORTANT]
+> **Company Targets**: 🏢 Google, Amazon
+
+
 ---
 
 ### 📝 1. Problem Statement

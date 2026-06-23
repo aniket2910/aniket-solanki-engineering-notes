@@ -1,6 +1,8 @@
 # 009. Palindrome Linked List (Easy)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Microsoft, Facebook/Meta
+>
 > **Interview Tag**: 🔥 **MUST SOLVE** - An outstanding interview question. Tests your ability to find a list's middle, reverse sub-parts, and manage space-time complexity trade-offs.
 
 ---

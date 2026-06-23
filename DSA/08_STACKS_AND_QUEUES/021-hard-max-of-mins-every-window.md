@@ -1,6 +1,8 @@
 # 021. Maximum of Minimums for Every Window Size (Hard)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Google, Microsoft
+>
 > **Interview Tag**: Advanced Monotonic Stack - A challenging algorithmic puzzle. Combines previous/next smaller element boundary calculations with a backward dynamic programming propagation sweep.
 
 ---

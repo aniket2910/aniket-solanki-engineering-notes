@@ -1,6 +1,8 @@
 # 020b. Two Sum (Sorted Two-Pointer) (Easy)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Google, Microsoft, Meta
+>
 > **Interview Tag**: 🔥 **SORTED TWO-POINTER SCAN** - Classical binary partition scan. Tests sorting element indices, tracking original positions, and squeezing boundaries.
 
 ---

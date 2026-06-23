@@ -1,6 +1,8 @@
 # 003. Fibonacci Number (Easy)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Google, Amazon
+>
 > **Interview Tag**: 🔥 **BASIC RECURSION & MEMOIZATION** - The classic entry point to understanding recurrence relations, recursive call stack frames, and memoized caching.
 
 ---

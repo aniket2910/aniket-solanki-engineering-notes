@@ -1,5 +1,9 @@
 # 006. Remove Duplicates from Sorted List (Easy)
 
+> [!IMPORTANT]
+> **Company Targets**: 🏢 Adobe, Amazon
+
+
 ---
 
 ### 📝 1. Problem Statement

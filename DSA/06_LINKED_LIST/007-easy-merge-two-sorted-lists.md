@@ -1,6 +1,8 @@
 # 007. Merge Two Sorted Lists (Easy)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Microsoft, Google
+>
 > **Interview Tag**: 🔥 **MUST SOLVE** - A foundational linked list matching question. It teaches list zipping, dummy nodes vs in-place pointers, and iterative traversal.
 
 ---

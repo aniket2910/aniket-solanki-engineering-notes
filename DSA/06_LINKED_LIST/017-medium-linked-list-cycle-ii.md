@@ -1,6 +1,8 @@
 # 017. Find the Starting Point of Loop in Linked List (Medium)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Microsoft
+>
 > **Interview Tag**: 🔥 **FLOYD'S DETECT & MEET** - Core linked list challenge. Tests mathematical pointer convergence to find loop starting nodes in constant space.
 
 ---

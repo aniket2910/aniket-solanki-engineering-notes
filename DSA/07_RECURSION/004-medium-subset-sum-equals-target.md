@@ -1,6 +1,8 @@
 # 004. Subset Sum Equals to Target (Medium)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Microsoft
+>
 > **Interview Tag**: 🔥 **RECURSIVE COMBINATIONS & DP** - Core subset searching problem. Tests ability to express search states and optimize exponential recursive trees using memoization or DP.
 
 ---

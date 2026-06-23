@@ -1,5 +1,9 @@
 # 004. Merge Sorted Array (Easy)
 
+> [!IMPORTANT]
+> **Company Targets**: 🏢 Facebook/Meta, Microsoft, Amazon
+
+
 ---
 
 ### 📝 1. Problem Statement

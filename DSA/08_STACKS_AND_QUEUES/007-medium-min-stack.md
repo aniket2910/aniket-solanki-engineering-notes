@@ -1,6 +1,8 @@
 # 007. Min Stack (Medium)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Microsoft, Bloomberg, Google
+>
 > **Interview Tag**: 🔥 **MUST SOLVE** - A core system design interview classic. Tests your ability to trade space for time, showing how parallel tracking structures can eliminate linear search bottlenecks.
 
 ---

@@ -1,6 +1,8 @@
 # 017b. Majority Element I (Visited Hash Map) (Easy)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Microsoft, Google
+>
 > **Interview Tag**: 🔥 **HASH MAP TALLYING** - Fundamental frequency counter. Demonstrates basic mapping structures and early termination threshold conditions.
 
 ---

@@ -1,5 +1,9 @@
 # 005. Jewels and Stones (Easy)
 
+> [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Adobe, Google
+
+
 ---
 
 ### 📝 1. Problem Statement

@@ -1,5 +1,9 @@
 # 010. Largest Odd Number in a String (Easy)
 
+> [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Google
+
+
 ---
 
 ### 📝 1. Problem Statement

@@ -1,5 +1,9 @@
 # 006. Max Consecutive Ones (Easy)
 
+> [!IMPORTANT]
+> **Company Targets**: 🏢 Google, Amazon
+
+
 ---
 
 ### 📝 1. Problem Statement

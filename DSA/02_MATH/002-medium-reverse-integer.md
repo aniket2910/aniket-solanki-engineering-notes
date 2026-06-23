@@ -1,5 +1,9 @@
 # 002. Reverse Integer (Medium)
 
+> [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Bloomberg, Google, Apple
+
+
 ---
 
 ### 📝 1. Problem Statement

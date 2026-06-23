@@ -1,6 +1,8 @@
 # 003. Best Time to Buy and Sell Stock (Easy)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Microsoft, Facebook/Meta, Bloomberg
+>
 > **Interview Tag**: 🔥 **MUST SOLVE** - A top-tier interview classic. Perfect for testing sliding window concepts and greedy tracking of running minima.
 
 ---

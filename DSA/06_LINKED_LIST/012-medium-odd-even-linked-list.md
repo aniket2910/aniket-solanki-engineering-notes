@@ -1,5 +1,9 @@
 # 012. Odd Even Linked List (Medium)
 
+> [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Bloomberg
+
+
 ---
 
 ### 📝 1. Problem Statement

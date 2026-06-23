@@ -1,6 +1,8 @@
 # 014. Merge Two Sorted Arrays Without Extra Space (Hard)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Microsoft
+>
 > **Interview Tag**: 🔥 **IN-PLACE SHIFTING** - Hard classic array question. Tests array boundaries, sorting without allocations, and backwards pointer manipulation.
 
 ---

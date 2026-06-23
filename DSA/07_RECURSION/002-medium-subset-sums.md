@@ -1,6 +1,8 @@
 # 002. Subset Sums (Medium)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Microsoft
+>
 > **Interview Tag**: 🔥 **RECURSION & BACKTRACKING** - Classic backtracking problem focused on binary decision tree traversal (inclusion vs. exclusion of elements).
 
 ---

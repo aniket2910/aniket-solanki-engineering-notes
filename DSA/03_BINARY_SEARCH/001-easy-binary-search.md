@@ -1,5 +1,9 @@
 # 001. Binary Search (Easy)
 
+> [!IMPORTANT]
+> **Company Targets**: 🏢 Google, Amazon, Microsoft
+
+
 ---
 
 ### 📝 1. Problem Statement

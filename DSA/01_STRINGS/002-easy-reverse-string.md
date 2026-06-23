@@ -1,6 +1,8 @@
 # 002. Reverse String (Easy)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Adobe, Amazon, Google
+>
 > **Interview Tag**: 🔥 **MUST SOLVE** - The absolute fundamental training wheels for **Two-Pointer** pointer convergence and swapping.
 
 ---

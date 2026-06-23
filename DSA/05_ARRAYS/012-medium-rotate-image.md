@@ -1,6 +1,8 @@
 # 012. Rotate Matrix by 90 Degrees (Medium)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Microsoft, Google
+>
 > **Interview Tag**: 🔥 **IN-PLACE TRANSPOSE & REVERSE** - Classical matrix puzzle. Tests spatial reasoning and index mapping to achieve $O(1)$ extra space rotation.
 
 ---

@@ -1,5 +1,9 @@
 # 005. Move Zeroes (Easy)
 
+> [!IMPORTANT]
+> **Company Targets**: 🏢 Facebook/Meta, Amazon, Bloomberg
+
+
 ---
 
 ### 📝 1. Problem Statement

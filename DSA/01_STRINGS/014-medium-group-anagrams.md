@@ -1,5 +1,9 @@
 # 014. Group Anagrams (Medium)
 
+> [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Google, Facebook/Meta, Microsoft, Salesforce
+
+
 ---
 
 ### 📝 1. Problem Statement

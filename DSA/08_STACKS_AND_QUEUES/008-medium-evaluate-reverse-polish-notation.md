@@ -1,6 +1,8 @@
 # 008. Evaluate Reverse Polish Notation (Medium)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 LinkedIn, Google, Amazon
+>
 > **Interview Tag**: Mathematical Parsers - Classic stack application. Frequently asked by compiler, VM, and database teams to test expressions evaluation parsing logic.
 
 ---

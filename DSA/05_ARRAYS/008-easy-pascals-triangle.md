@@ -1,6 +1,8 @@
 # 008. Pascal's Triangle I (Easy)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Google, Microsoft
+>
 > **Interview Tag**: 🔥 **ITERATIVE BLOCK GENERATION** - Core array logic. Essential for understanding dynamic array allocations, indexing arithmetic, and mathematical row updates.
 
 ---

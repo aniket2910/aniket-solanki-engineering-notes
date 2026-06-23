@@ -1,6 +1,8 @@
 # 001. Subsets II (Medium)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Google, Amazon, Facebook/Meta
+>
 > **Interview Tag**: 🔥 **BACKTRACKING WITH DUPLICATE ELIMINATION** - Classic backtracking search problem. Tests sorting-based duplicate prevention and state-space tree traversal.
 
 ---

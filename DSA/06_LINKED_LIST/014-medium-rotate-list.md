@@ -1,5 +1,9 @@
 # 014. Rotate List (Medium)
 
+> [!IMPORTANT]
+> **Company Targets**: 🏢 Microsoft, Amazon
+
+
 ---
 
 ### 📝 1. Problem Statement

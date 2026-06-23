@@ -1,6 +1,8 @@
 # 002. Search in a 2D Matrix (Medium)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Amazon, Microsoft, Google
+>
 > **Interview Tag**: 🔥 **FLATTENED BINARY SEARCH** - Highly common standard interview question. Tests matrix index coordinate mapping onto sorted 1D array boundaries.
 
 ---

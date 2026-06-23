@@ -1,6 +1,8 @@
 # 027. Compare Version Numbers (Medium)
 
 > [!IMPORTANT]
+> **Company Targets**: 🏢 Apple, Salesforce, Amazon
+>
 > **Interview Tag**: 🔥 **STRING PARSING & TWO-POINTERS** - Core software engineering problem. Evaluates string tokenization, type conversions, and boundary checks for uneven lists of revisions.
 
 ---
