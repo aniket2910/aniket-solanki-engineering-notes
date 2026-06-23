@@ -13,11 +13,11 @@ To keep your interview preparation laser-focused, here is the real-time breakdow
 
 | Metric | Count |
 | :--- | :---: |
-| 🚀 **Total Solved Questions** | **92** |
-| 🟢 Easy Difficulty | **42** |
-| 🟡 Medium Difficulty | **44** |
-| 🔴 Hard Difficulty | **6** |
-| 🔥 **Must Solve Interview Targets** | **68** |
+| 🚀 **Total Solved Questions** | **114** |
+| 🟢 Easy Difficulty | **47** |
+| 🟡 Medium Difficulty | **56** |
+| 🔴 Hard Difficulty | **11** |
+| 🔥 **Must Solve Interview Targets** | **79** |
 
 ---
 
@@ -41,7 +41,9 @@ Select a topic to start your revision:
    * Pointer manipulation, Sentinel Dummy nodes, Tortoise & Hare fast/slow scans, and in-place list reversals.
 8. **[07. Recursion](./07_RECURSION/README.md)**
    * Recursive call stacks, base cases, choice rollbacks, and backtrack search trees.
-9. **[08. Algorithms](./ALGORITHMS/README.md)**
+9. **[08. Stacks & Queues](./08_STACKS_AND_QUEUES/README.md)**
+   * Linear lists with restricted access, monotonic lookup stacks, and FIFO queue pipelines.
+10. **[09. Algorithms](./ALGORITHMS/README.md)**
    * In-depth visual, plain-English reference cards for core algorithmic templates and step machines.
 
 ---
