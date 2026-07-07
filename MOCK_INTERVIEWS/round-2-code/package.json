@@ -1,0 +1,16 @@
+{
+  "name": "realistic-task-queue",
+  "version": "1.0.0",
+  "description": "implementation of a task queue for interviews.",
+  "main": "dist/queue.js",
+  "types": "dist/queue.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "typescript": "^5.3.3",
+    "vitest": "^1.2.1"
+  }
+}
