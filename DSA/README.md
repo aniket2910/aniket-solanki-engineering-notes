@@ -13,11 +13,11 @@ To keep your interview preparation laser-focused, here is the real-time breakdow
 
 | Metric | Count |
 | :--- | :---: |
-| 🚀 **Total Solved Questions** | **136** |
-| 🟢 Easy Difficulty | **58** |
-| 🟡 Medium Difficulty | **66** |
+| 🚀 **Total Solved Questions** | **141** |
+| 🟢 Easy Difficulty | **59** |
+| 🟡 Medium Difficulty | **70** |
 | 🔴 Hard Difficulty | **12** |
-| 🔥 **Must Solve Interview Targets** | **97** |
+| 🔥 **Must Solve Interview Targets** | **100** |
 
 ---
 
@@ -47,7 +47,9 @@ Select a topic to start your revision:
     * Opposite end coordinate squeezing, fast/slow cycles, and dynamic/fixed-size sliding window boundaries.
 11. **[10. Binary Tree](./10_BINARY_TREE/README.md)**
     * Hierarchical structures, DFS (pre, in, post) and BFS traversals, path sums, LCA, and subtree checks.
-12. **[11. Algorithms](./ALGORITHMS/README.md)**
+12. **[11. Binary Search Tree](./11_BINARY_SEARCH_TREE/README.md)**
+    * Node value invariants, search, insertion, and LCA optimization paths, and inorder sorted traversals.
+13. **[12. Algorithms](./ALGORITHMS/README.md)**
     * In-depth visual, plain-English reference cards for core algorithmic templates and step machines.
 
 ---
