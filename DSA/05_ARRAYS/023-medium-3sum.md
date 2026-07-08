@@ -3,7 +3,7 @@
 > [!IMPORTANT]
 > **Company Targets**: 🏢 Amazon, Facebook/Meta, Microsoft, Google
 >
-> **Interview Tag**: 🔥 **SORTED TWO-POINTER CLAMP** - High-frequency interview classic. Essential for mastering duplicates deduplication, boundary clamping, and index coordination.
+> **Interview Tag**: 🔥 **SORTED TWO-POINTER CLAMP** - High-frequency interview classic. Essential for mastering duplicates deduplication, boundary clamping, and index coordination. Links directly to the [Two-Pointer Blueprint](../../ALGORITHMS/two-pointers.md).
 
 ---
 

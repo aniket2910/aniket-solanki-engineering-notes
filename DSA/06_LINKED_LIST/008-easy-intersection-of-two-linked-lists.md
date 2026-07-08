@@ -2,6 +2,8 @@
 
 > [!IMPORTANT]
 > **Company Targets**: 🏢 Amazon, Microsoft, Airbnb
+>
+> **Interview Tag**: 🔥 **OFFSET POINTER ALIGNMENT** - Fundamental two-pointer coordination pattern on linked lists. Links directly to the [Two-Pointer Blueprint](../../ALGORITHMS/two-pointers.md).
 
 
 ---

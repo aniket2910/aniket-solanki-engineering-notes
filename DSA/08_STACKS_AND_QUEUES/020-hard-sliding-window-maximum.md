@@ -3,7 +3,7 @@
 > [!IMPORTANT]
 > **Company Targets**: 🏢 Google, Amazon, Microsoft, Uber
 >
-> **Interview Tag**: 🔥 **MUST SOLVE** - A highly popular hard problem. Perfectly demonstrates how a double-ended queue (Deque) can optimize sliding window lookups from linear $O(K)$ per window to amortized $O(1)$ constant time.
+> **Interview Tag**: 🔥 **MUST SOLVE** - A highly popular hard problem. Perfectly demonstrates how a double-ended queue (Deque) can optimize sliding window lookups from linear $O(K)$ per window to amortized $O(1)$ constant time. Links directly to the [Sliding Window Blueprint](../../ALGORITHMS/sliding-window.md).
 
 ---
 

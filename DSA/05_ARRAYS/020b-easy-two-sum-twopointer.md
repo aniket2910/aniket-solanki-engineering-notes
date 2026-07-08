@@ -3,7 +3,7 @@
 > [!IMPORTANT]
 > **Company Targets**: 🏢 Amazon, Google, Microsoft, Meta
 >
-> **Interview Tag**: 🔥 **SORTED TWO-POINTER SCAN** - Classical binary partition scan. Tests sorting element indices, tracking original positions, and squeezing boundaries.
+> **Interview Tag**: 🔥 **SORTED TWO-POINTER SCAN** - Classical binary partition scan. Tests sorting element indices, tracking original positions, and squeezing boundaries. Links directly to the [Two-Pointer Blueprint](../../ALGORITHMS/two-pointers.md).
 
 ---
 

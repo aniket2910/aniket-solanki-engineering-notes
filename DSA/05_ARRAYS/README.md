@@ -73,6 +73,8 @@ Use this list to track your progress and quickly open specific problem write-ups
 | `022` | [Longest Consecutive Sequence](./022-medium-longest-consecutive-sequence.md) 🔥 | 🟡 Medium | Sequence Start Lookup via Hash Set |
 | `023` | [3Sum](./023-medium-3sum.md) 🔥 | 🟡 Medium | Outer Loop with Two-Pointer Clamp |
 | `024` | [Trapping Rainwater](./024-hard-trapping-rainwater.md) 🔥 | 🔴 Hard | Converging Two-Pointer Peak Bounds |
+| `025` | [Two Sum II - Input Array Is Sorted](../09_TWO_POINTERS/001-medium-two-sum-ii.md) 🔥 | 🟡 Medium | Opposite Ends Two-Pointer Squeeze |
+| `026` | [Container with Most Water](../09_TWO_POINTERS/002-medium-container-with-most-water.md) 🔥 | 🟡 Medium | Opposite Ends Greedy Height Squeeze |
 
 ---
 

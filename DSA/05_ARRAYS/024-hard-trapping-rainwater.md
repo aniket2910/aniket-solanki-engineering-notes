@@ -3,7 +3,7 @@
 > [!IMPORTANT]
 > **Company Targets**: 🏢 Google, Amazon, Facebook/Meta, Microsoft, Goldman Sachs
 >
-> **Interview Tag**: 🔥 **TWO-POINTER CLAMP BOUNDARY** - Legendary hard array problem. Tests understanding of prefix/suffix dynamic boundaries and converging single-pass pointers.
+> **Interview Tag**: 🔥 **TWO-POINTER CLAMP BOUNDARY** - Legendary hard array problem. Tests understanding of prefix/suffix dynamic boundaries and converging single-pass pointers. Links directly to the [Two-Pointer Blueprint](../../ALGORITHMS/two-pointers.md).
 
 ---
 

@@ -74,6 +74,8 @@ Use this list to track your progress and quickly open specific problem write-ups
 | `025` | [Repeated Substring Pattern](./025-easy-repeated-substring-pattern.md) 🔥 | 🟢 Easy | Periodic Pattern Concatenation / KMP LPS |
 | `026` | [Find the Index of the First Occurrence in a String](./026-easy-find-index-first-occurrence.md) 🔥 | 🟢 Easy | Two-Pointer Sliding Window / KMP Substring Search |
 | `027` | [Compare Version Numbers](./027-medium-compare-version-numbers.md) 🔥 | 🟡 Medium | Version Dot-Split & Numeric Comparators |
+| `028` | [Longest Repeating Character Replacement](../09_TWO_POINTERS/003-medium-longest-repeating-character-replacement.md) 🔥 | 🟡 Medium | Sliding Window with Max Frequency |
+| `029` | [Permutation in String](../09_TWO_POINTERS/004-medium-permutation-in-string.md) 🔥 | 🟡 Medium | Fixed Size Sliding Window Array Check |
 
 ---
 

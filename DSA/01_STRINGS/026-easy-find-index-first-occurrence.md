@@ -3,7 +3,7 @@
 > [!IMPORTANT]
 > **Company Targets**: 🏢 Amazon, Apple, Goldman Sachs
 >
-> **Interview Tag**: 🔥 **KMP SUBSTRING SEARCH** - Standard string matching problem. Ideal for demonstrating optimal two-pointer string matching using precomputed prefix backtracks.
+> **Interview Tag**: 🔥 **KMP SUBSTRING SEARCH** - Standard string matching problem. Ideal for demonstrating optimal two-pointer string matching using precomputed prefix backtracks. Links directly to the [Two-Pointer Blueprint](../../ALGORITHMS/two-pointers.md) and [Sliding Window Blueprint](../../ALGORITHMS/sliding-window.md).
 
 ---
 

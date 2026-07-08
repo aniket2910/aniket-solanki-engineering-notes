@@ -13,11 +13,11 @@ To keep your interview preparation laser-focused, here is the real-time breakdow
 
 | Metric | Count |
 | :--- | :---: |
-| 🚀 **Total Solved Questions** | **114** |
+| 🚀 **Total Solved Questions** | **118** |
 | 🟢 Easy Difficulty | **47** |
-| 🟡 Medium Difficulty | **56** |
+| 🟡 Medium Difficulty | **60** |
 | 🔴 Hard Difficulty | **11** |
-| 🔥 **Must Solve Interview Targets** | **79** |
+| 🔥 **Must Solve Interview Targets** | **83** |
 
 ---
 
@@ -43,7 +43,9 @@ Select a topic to start your revision:
    * Recursive call stacks, base cases, choice rollbacks, and backtrack search trees.
 9. **[08. Stacks & Queues](./08_STACKS_AND_QUEUES/README.md)**
    * Linear lists with restricted access, monotonic lookup stacks, and FIFO queue pipelines.
-10. **[09. Algorithms](./ALGORITHMS/README.md)**
+10. **[09. Two Pointers & Sliding Window](./09_TWO_POINTERS/README.md)**
+   * Opposite end coordinate squeezing, fast/slow cycles, and dynamic/fixed-size sliding window boundaries.
+11. **[10. Algorithms](./ALGORITHMS/README.md)**
    * In-depth visual, plain-English reference cards for core algorithmic templates and step machines.
 
 ---

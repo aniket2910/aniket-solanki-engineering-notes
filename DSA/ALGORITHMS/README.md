@@ -14,6 +14,8 @@ Welcome to the **Core Algorithmic Blueprints Revision Hub**. This page serves as
 | `004` | [Kadane's Algorithm](./kadanes-algorithm.md) 🔥 | Greedy contiguous running sums, negative streak resets. | [Maximum Subarray (Kadane's)](../05_ARRAYS/010-medium-kadanes-algorithm.md) |
 | `005` | [Dutch National Flag Algorithm](./dutch-national-flag.md) 🔥 | Three-pointer partitioning scans (`low`, `mid`, `high`), single-pass in-place sorts. | [Sort Colors](../05_ARRAYS/011a-medium-sort-colors-dutch-flag.md) |
 | `006` | [Binary Exponentiation](./binary-exponentiation.md) 🔥 | Exponential doubling base squarings, logarithmic power halvings. | [Pow(x, n)](../02_MATH/006-medium-powx-n.md) |
+| `007` | [Two-Pointer Technique](./two-pointers.md) 🔥 | Opposite end squeeze/clamp, fast-slow cycles, and read/write partitions. | [Two Sum](../05_ARRAYS/020b-easy-two-sum-twopointer.md), [Two Sum II](../09_TWO_POINTERS/001-medium-two-sum-ii.md), [Container with Most Water](../09_TWO_POINTERS/002-medium-container-with-most-water.md), [3Sum](../05_ARRAYS/023-medium-3sum.md), [Trapping Rainwater](../05_ARRAYS/024-hard-trapping-rainwater.md) |
+| `008` | [Sliding Window Algorithm](./sliding-window.md) 🔥 | Subarray/substring boundary optimization, expanding right side and shrinking left side. | [Longest Substring Without Repeating Characters](../01_STRINGS/022-medium-longest-substring-without-repeating-characters.md), [Longest Repeating Character Replacement](../09_TWO_POINTERS/003-medium-longest-repeating-character-replacement.md), [Permutation in String](../09_TWO_POINTERS/004-medium-permutation-in-string.md), [Sliding Window Maximum](../08_STACKS_AND_QUEUES/020-hard-sliding-window-maximum.md) |
 
 ---
 
