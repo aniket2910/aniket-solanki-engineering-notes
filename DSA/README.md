@@ -13,11 +13,11 @@ To keep your interview preparation laser-focused, here is the real-time breakdow
 
 | Metric | Count |
 | :--- | :---: |
-| 🚀 **Total Solved Questions** | **118** |
-| 🟢 Easy Difficulty | **47** |
-| 🟡 Medium Difficulty | **60** |
-| 🔴 Hard Difficulty | **11** |
-| 🔥 **Must Solve Interview Targets** | **83** |
+| 🚀 **Total Solved Questions** | **136** |
+| 🟢 Easy Difficulty | **58** |
+| 🟡 Medium Difficulty | **66** |
+| 🔴 Hard Difficulty | **12** |
+| 🔥 **Must Solve Interview Targets** | **97** |
 
 ---
 
@@ -44,9 +44,11 @@ Select a topic to start your revision:
 9. **[08. Stacks & Queues](./08_STACKS_AND_QUEUES/README.md)**
    * Linear lists with restricted access, monotonic lookup stacks, and FIFO queue pipelines.
 10. **[09. Two Pointers & Sliding Window](./09_TWO_POINTERS/README.md)**
-   * Opposite end coordinate squeezing, fast/slow cycles, and dynamic/fixed-size sliding window boundaries.
-11. **[10. Algorithms](./ALGORITHMS/README.md)**
-   * In-depth visual, plain-English reference cards for core algorithmic templates and step machines.
+    * Opposite end coordinate squeezing, fast/slow cycles, and dynamic/fixed-size sliding window boundaries.
+11. **[10. Binary Tree](./10_BINARY_TREE/README.md)**
+    * Hierarchical structures, DFS (pre, in, post) and BFS traversals, path sums, LCA, and subtree checks.
+12. **[11. Algorithms](./ALGORITHMS/README.md)**
+    * In-depth visual, plain-English reference cards for core algorithmic templates and step machines.
 
 ---
 
