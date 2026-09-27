@@ -1,0 +1,69 @@
+.pb__row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0.5rem 0;
+}
+
+.pb__track {
+  position: relative;
+  flex: 1;
+  height: 12px;
+  background: #232833;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.pb__fill {
+  height: 100%;
+  width: 100%; /* full width; we reveal it by SCALING, not by resizing */
+  background: linear-gradient(90deg, #4f46e5, #22d3ee);
+  transform-origin: left; /* grow from the left edge, not the centre */
+  transform: scaleX(var(--progress-scale, 0));
+  /* Animate transform only — it's compositor-driven, so no layout per frame. */
+  transition: transform 0.4s ease;
+}
+
+/* Respect users who ask for less motion — snap instead of animate. */
+@media (prefers-reduced-motion: reduce) {
+  .pb__fill {
+    transition: none;
+  }
+}
+
+.pb__value {
+  min-width: 3ch; /* reserve space so the layout doesn't jump 9% -> 100% */
+  font-variant-numeric: tabular-nums;
+  font-size: 0.85rem;
+  color: #9aa3b2;
+}
+
+.pb-demo__section {
+  margin-bottom: 2rem;
+  max-width: 420px;
+}
+
+.pb-demo__slider {
+  width: 100%;
+  margin-top: 0.75rem;
+}
+
+.pb-seq__controls {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.pb-seq__controls button {
+  padding: 0.4rem 0.9rem;
+  border: 1px solid #2c3444;
+  border-radius: 8px;
+  background: #223056;
+  color: #dbe6ff;
+  cursor: pointer;
+}
+
+.pb-seq__controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

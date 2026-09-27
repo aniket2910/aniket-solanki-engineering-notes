@@ -1,0 +1,32 @@
+.file-node-list-wrapper {
+  max-width: 840px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.fs-node {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.add-btn {
+  width: 30%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.fs-wrapper {
+  width: 100%;
+}
+
+.fs-wrapper ul {
+  list-style: none;
+}
+
+.file-node-list-wrapper {
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: #1b2029;
+}

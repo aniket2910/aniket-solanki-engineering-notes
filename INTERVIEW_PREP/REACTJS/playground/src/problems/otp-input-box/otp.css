@@ -1,0 +1,16 @@
+.otp-input {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    margin: 7px;
+    font-size: 18px;
+    border: 1px solid #999;
+    border-radius: 6px;
+}
+
+/* IMPROVEMENT: visible focus ring so the active box is obvious during the demo */
+.otp-input:focus {
+    outline: none;
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.3);
+}

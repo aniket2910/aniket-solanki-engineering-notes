@@ -1,0 +1,259 @@
+/* File-system explorer demo. All styling lives here — components only set class names. */
+
+.fs-demo {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 1000px;
+  text-align: left;
+}
+
+.fs-layout {
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) minmax(300px, 1.2fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+@media (max-width: 760px) {
+  .fs-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── tree ── */
+.fs-tree,
+.fs-tree__group {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.fs-tree {
+  padding: 0.5rem;
+  background: #12151c;
+  border: 1px solid #232833;
+  border-radius: 10px;
+}
+
+/* Indentation comes from nesting, not from a depth-based inline style. */
+.fs-tree__group {
+  padding-left: 1.1rem;
+}
+
+.fs-row {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  border-radius: 6px;
+}
+
+.fs-row:hover {
+  background: #1b2029;
+}
+
+.fs-row--selected,
+.fs-row--selected:hover {
+  background: #223056;
+}
+
+.fs-row__toggle {
+  width: 1.4rem;
+  border: none;
+  background: transparent;
+  color: #9aa3b2;
+  cursor: pointer;
+}
+
+.fs-row__toggle:disabled {
+  cursor: default;
+}
+
+.fs-row__name {
+  flex: 1;
+  padding: 0.35rem 0.25rem;
+  border: none;
+  background: transparent;
+  color: #e7e9ee;
+  font-size: 0.92rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+/* ── chips (label tones are design tokens → classes) ── */
+.fs-chips {
+  display: inline-flex;
+  gap: 0.25rem;
+  padding-right: 0.4rem;
+}
+
+.fs-chip {
+  padding: 0.1rem 0.5rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  cursor: default;
+}
+
+button.fs-chip {
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.fs-chip--red { background: #4a1d24; color: #ffb4bd; }
+.fs-chip--amber { background: #4a3a14; color: #ffd98a; }
+.fs-chip--green { background: #173d28; color: #9ee6b8; }
+.fs-chip--blue { background: #1c2c4f; color: #b7cbff; }
+
+.fs-chip--off {
+  background: transparent;
+  border-color: #2c3444;
+  color: #9aa3b2;
+}
+
+/* ── forms & panels ── */
+.fs-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  background: #12151c;
+  border: 1px solid #232833;
+  border-radius: 10px;
+}
+
+.fs-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.fs-form__label {
+  color: #9aa3b2;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.fs-form__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.fs-input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.55rem 0.7rem;
+  font-size: 0.95rem;
+  color: #e7e9ee;
+  background: #0f1115;
+  border: 1px solid #2c3444;
+  border-radius: 8px;
+}
+
+.fs-input--narrow {
+  flex: 0 0 auto;
+}
+
+.fs-input:focus {
+  outline: none;
+  border-color: #4f6bd8;
+}
+
+.fs-btn {
+  padding: 0.5rem 0.85rem;
+  border: 1px solid #2c3444;
+  border-radius: 8px;
+  background: #1b2029;
+  color: #dbe6ff;
+  cursor: pointer;
+}
+
+.fs-btn:hover:not(:disabled) {
+  background: #223056;
+}
+
+.fs-btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.fs-btn--danger {
+  align-self: flex-start;
+  border-color: #6b2a33;
+  color: #ffb4bd;
+}
+
+.fs-error {
+  margin: 0;
+  color: #ff8f9c;
+  font-size: 0.85rem;
+}
+
+.fs-hint {
+  margin: 0;
+  color: #9aa3b2;
+  font-size: 0.85rem;
+}
+
+/* ── breadcrumbs ── */
+.fs-crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.95rem;
+}
+
+.fs-crumbs__sep {
+  padding: 0 0.4rem;
+  color: #5d6677;
+}
+
+.fs-crumbs__link {
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #9fb6ff;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+.fs-crumbs__link:hover {
+  text-decoration: underline;
+}
+
+/* ── search ── */
+.fs-results {
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0.25rem;
+  max-height: 220px;
+  overflow-y: auto;
+  background: #12151c;
+  border: 1px solid #232833;
+  border-radius: 10px;
+}
+
+.fs-result {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  width: 100%;
+  padding: 0.4rem 0.5rem;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: #e7e9ee;
+  text-align: left;
+  cursor: pointer;
+}
+
+.fs-result:hover {
+  background: #1b2029;
+}
+
+.fs-result__path {
+  margin-left: auto;
+  color: #7d8799;
+  font-size: 0.8rem;
+}
