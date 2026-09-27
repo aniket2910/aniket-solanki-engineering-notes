@@ -13,11 +13,11 @@ To keep your interview preparation laser-focused, here is the real-time breakdow
 
 | Metric | Count |
 | :--- | :---: |
-| 🚀 **Total Solved Questions** | **141** |
-| 🟢 Easy Difficulty | **59** |
-| 🟡 Medium Difficulty | **70** |
+| 🚀 **Total Solved Questions** | **146** |
+| 🟢 Easy Difficulty | **61** |
+| 🟡 Medium Difficulty | **73** |
 | 🔴 Hard Difficulty | **12** |
-| 🔥 **Must Solve Interview Targets** | **100** |
+| 🔥 **Must Solve Interview Targets** | **104** |
 
 ---
 
@@ -49,7 +49,9 @@ Select a topic to start your revision:
     * Hierarchical structures, DFS (pre, in, post) and BFS traversals, path sums, LCA, and subtree checks.
 12. **[11. Binary Search Tree](./11_BINARY_SEARCH_TREE/README.md)**
     * Node value invariants, search, insertion, and LCA optimization paths, and inorder sorted traversals.
-13. **[12. Algorithms](./ALGORITHMS/README.md)**
+13. **[12. Heap](./12_HEAP/README.md)**
+    * Complete binary tree representations, heapifyUp/heapifyDown bubble traversals, in-place heap sort, and custom priority queues.
+14. **[13. Algorithms](./ALGORITHMS/README.md)**
     * In-depth visual, plain-English reference cards for core algorithmic templates and step machines.
 
 ---
