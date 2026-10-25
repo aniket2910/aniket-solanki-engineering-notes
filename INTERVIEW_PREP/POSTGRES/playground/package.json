@@ -1,0 +1,15 @@
+{
+  "name": "postgres-playground",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "description": "One shared Postgres sandbox for every query in the Postgres notebook. Real Postgres (PGlite, WASM) — npm install and go, no server or Docker needed.",
+  "scripts": {
+    "q": "node src/run.js",
+    "repl": "node src/repl.js",
+    "list": "node src/run.js --list"
+  },
+  "dependencies": {
+    "@electric-sql/pglite": "0.5.8"
+  }
+}

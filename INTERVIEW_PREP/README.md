@@ -9,7 +9,7 @@ Deep-dive notes for technical interviews — organized by subject. Each topic is
 | `JS/` → [`../playground/JS/`](../playground/JS/) | JavaScript — closures, `this`, call/apply/bind, promises, event loop, etc. Notes + runnable code are co-located under the repo-root `playground/JS/`. |
 | `REACTJS/` | React — rendering, hooks, reconciliation, performance, patterns (with runnable setups where needed). |
 | `NODEJS/` | Node.js — event loop, streams, clustering, modules, async patterns. |
-| `POSTGRES/` | PostgreSQL — indexing, transactions, isolation, query planning. |
+| `POSTGRES/` | PostgreSQL — indexing, transactions, isolation, query planning. Runnable SQL in one shared playground (real Postgres via PGlite, `npm install` and go). |
 | `REDIS/` | Redis — data structures, persistence, caching patterns, pub/sub. |
 | `DOCKER/` | Containers, images, layers, networking, compose. |
 | `KUBERNETES/` | Pods, deployments, services, scheduling, scaling. |
@@ -24,7 +24,7 @@ Deep-dive notes for technical interviews — organized by subject. Each topic is
 - **One topic = one note file**, named `NNN-topic-slug.md` (e.g. `001-promises.md`), numbered in the order added, sitting at the subject-folder root.
 - Each subject folder has its own `README.md` index linking every topic.
 - Topics cross-link with relative Markdown links.
-- **Code-heavy subjects have ONE shared runnable app** (e.g. `REACTJS/playground/`), not a new setup per problem. Each problem is a component/module under that app's `problems/` folder; the note links into it. Install once, find everything in a predictable place.
+- **Code-heavy subjects have ONE shared runnable app** (e.g. `REACTJS/playground/`, `POSTGRES/playground/`), not a new setup per problem. Each problem is a component/module under that app's `problems/` folder; the note links into it. Install once, find everything in a predictable place.
 - Every note carries the interview craft layer — how it's decomposed, the named principles (DRY/SOLID/etc.), the keywords to say, and how the question is asked — not just a working answer.
 
 ## How to use
