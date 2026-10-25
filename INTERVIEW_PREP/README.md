@@ -2,6 +2,16 @@
 
 Deep-dive notes for technical interviews — organized by subject. Each topic is a first-principles lesson written to be **understood**, not memorized: why it exists, what it is, how it works under the hood, a real-life analogy for how to *think* about it, the keywords to say in the room, how the question actually gets asked, common traps/follow-ups, and links to related topics.
 
+## Read it in the browser
+
+[`hub/`](hub/README.md) is a reading-and-practice app for this whole folder. It shows the problem,
+the examples and the hints, and gives you an editor to write and run your answer in the same tab.
+Postgres (all of LeetCode SQL 50, on real in-browser Postgres) is live; React and DSA are next.
+
+```bash
+cd hub && npm install && npm run dev
+```
+
 ## Subjects
 
 | Folder | Covers |
