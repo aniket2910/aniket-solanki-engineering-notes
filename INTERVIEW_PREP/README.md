@@ -6,7 +6,8 @@ Deep-dive notes for technical interviews — organized by subject. Each topic is
 
 [`hub/`](hub/README.md) is a reading-and-practice app for this whole folder. It shows the problem,
 the examples and the hints, and gives you an editor to write and run your answer in the same tab.
-Postgres (all of LeetCode SQL 50, on real in-browser Postgres) is live; React and DSA are next.
+Live: **Postgres** (all of LeetCode SQL 50, on real in-browser Postgres) and **DSA** (the whole Namaste DSA
+Sheet, read from the repo's `DSA/` notes, with a TypeScript runner). React is next.
 
 ```bash
 cd hub && npm install && npm run dev

@@ -3,6 +3,7 @@ import { href } from "../../router.ts";
 import { problems, sections, studyPlan } from "./sql50/data.ts";
 import type { Difficulty } from "./sql50/parse.ts";
 import { resetProgress, useProgress } from "./progress.ts";
+import { Segmented } from "../../components/Segmented.tsx";
 
 type Status = "all" | "todo" | "solved";
 
@@ -138,23 +139,3 @@ function firstUnsolved(progress: ReturnType<typeof useProgress>) {
 }
 
 const stripMd = (s: string) => s.replace(/\*\*/g, "").replace(/`/g, "");
-
-export function Segmented<T extends string>({
-  value,
-  onChange,
-  options,
-}: {
-  value: T;
-  onChange: (v: T) => void;
-  options: T[];
-}) {
-  return (
-    <div className="seg" role="radiogroup">
-      {options.map((o) => (
-        <button key={o} role="radio" aria-checked={o === value} className={o === value ? "seg__on" : ""} onClick={() => onChange(o)}>
-          {o === "all" ? "All" : o[0].toUpperCase() + o.slice(1)}
-        </button>
-      ))}
-    </div>
-  );
-}

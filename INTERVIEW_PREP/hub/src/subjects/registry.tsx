@@ -34,8 +34,8 @@ export const subjects: Subject[] = [
   {
     id: "dsa",
     title: "DSA",
-    blurb: "Pattern-wise problems with a JS runner. Coming next.",
-    ready: false,
+    blurb: "The Namaste DSA Sheet: 165 problems read from your DSA/ notes, with a TypeScript runner.",
+    ready: true,
     Component: DsaSubject,
   },
 ];

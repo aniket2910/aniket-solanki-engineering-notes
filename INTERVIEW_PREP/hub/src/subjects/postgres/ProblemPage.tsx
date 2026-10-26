@@ -4,7 +4,7 @@ import { go, href } from "../../router.ts";
 import { problems, sectionByNum } from "./sql50/data.ts";
 import type { Sql50Problem } from "./sql50/parse.ts";
 import { usePersistentFlag, useProblemProgress } from "./progress.ts";
-import { Timer } from "./Timer.tsx";
+import { Timer } from "../../components/Timer.tsx";
 import { Workbench } from "./Workbench.tsx";
 
 /**

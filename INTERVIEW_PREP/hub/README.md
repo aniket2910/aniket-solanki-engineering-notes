@@ -4,8 +4,8 @@ A browser reading book for the whole `INTERVIEW_PREP/` notebook. Each subject (P
 is a tab. A problem page puts the statement, the examples, the hints and an editor on one screen,
 so you don't need to switch between platforms.
 
-**Nothing is copied.** Every page is rendered from the subject folders' markdown at build time. If
-you edit `POSTGRES/LEETCODE_SQL_50/02-basic-joins.md`, the hub hot-reloads it.
+**Nothing is copied.** Every page is rendered from the notes' markdown (`INTERVIEW_PREP/POSTGRES/…` and the
+repo-root `DSA/` notebook). If you edit a note, the hub hot-reloads it.
 
 ## Run it
 
@@ -43,7 +43,42 @@ Then open http://localhost:5180.
 - **Timer** on every problem, for the day-13 timed drill (it turns red after 10 minutes).
 - **Keys:** `⌘/Ctrl + Enter` runs the query. `Alt + ←/→` moves to the previous/next problem.
 
-**React** and **DSA** are placeholder tabs for now.
+**DSA → Namaste DSA Sheet**, all 165 problems in the sheet's order:
+
+- **Every page is one of your `DSA/` notes.** The left pane shows the problem and its test cases, then a
+  **help ladder** you climb one rung at a time: what it's really asking, the real-life analogy, the
+  approach (data structures & algorithms), the dry run. The solution (code + complexity) stays locked
+  until you reveal it, and "Load into editor" drops it into the workbench.
+- **TypeScript workbench.** The starter is the solution's signature with the body emptied (class
+  problems keep their public method headers only, so field names don't give the approach away). Code runs
+  in a **Web Worker** against the note's test cases; an infinite loop is killed after 5s instead of
+  freezing the tab. `console.log` output is shown per test case.
+- **LeetCode conventions are rebuilt for you:** arrays become `ListNode` lists, level-order arrays become
+  `TreeNode` trees, design problems run their `["MinStack","push",…]` operation lists, and the hidden APIs
+  (`guess`, `isBadVersion`) exist. Answers whose order doesn't matter (subsets, anagram groups, any valid
+  topological order, any valid reorganised string) are compared as such.
+- **Topic pages** render each `DSA/<topic>/README.md`, and links between notes open inside the hub.
+
+**React** is a placeholder tab for now.
+
+## How the DSA tab knows what to run
+
+`src/subjects/dsa/sheet.ts` is the sheet manifest: for each of the 165 entries, its note in `DSA/` and a
+small judge spec (function name, how to build list/tree inputs, how to compare). A note's own test cases
+are used unless the manifest overrides them (only where a note writes tests as prose or a code
+walkthrough, e.g. Min Stack). `DSA/NAMASTE_DSA_SHEET.md` is generated from the manifest:
+
+```bash
+npm run gen:dsa-sheet
+```
+
+```bash
+npm run check:dsa
+```
+
+`check:dsa` parses every note the way the browser does and runs each note's **own solution** against its
+tests, so a broken note (a typo in a test case, code that doesn't compile) is caught before you trip over
+it. Pass part of a path to check one topic: `npm run check:dsa -- 13_GREEDY`.
 
 ## Layout
 
@@ -59,6 +94,12 @@ hub/
       pglite.ts, db.ts          the in-browser Postgres, seeded once
       runner.ts                 run in a rolled-back transaction, grade against the reference
       ProblemPage.tsx           reading pane + Workbench.tsx (editor, results, tables)
+    subjects/dsa/
+      sheet.ts                  the Namaste sheet: order, note paths, judge specs
+      parseNote.ts              DSA note → statement, tests, ladder, solution, starter
+      judge.ts                  builds LeetCode inputs, runs, compares (shared with Node)
+      runner.worker.ts          runs your code off the main thread
+      DsaProblemPage.tsx        reading pane + DsaWorkbench.tsx
 ```
 
 ## Keeping the notes parseable
