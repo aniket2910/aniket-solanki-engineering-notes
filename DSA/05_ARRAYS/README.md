@@ -75,6 +75,9 @@ Use this list to track your progress and quickly open specific problem write-ups
 | `024` | [Trapping Rainwater](./024-hard-trapping-rainwater.md) 🔥 | 🔴 Hard | Converging Two-Pointer Peak Bounds |
 | `025` | [Two Sum II - Input Array Is Sorted](../09_TWO_POINTERS/001-medium-two-sum-ii.md) 🔥 | 🟡 Medium | Opposite Ends Two-Pointer Squeeze |
 | `026` | [Container with Most Water](../09_TWO_POINTERS/002-medium-container-with-most-water.md) 🔥 | 🟡 Medium | Opposite Ends Greedy Height Squeeze |
+| `027` | [Count Negative Numbers in an Array](./025-easy-count-negative-numbers.md) | 🟢 Easy | Linear Scan with Input Validation |
+| `028` | [Find Smallest Number in an Array](./026-easy-find-smallest-number.md) | 🟢 Easy | Running Minimum |
+| `029` | [Find Largest Number in an Array](./027-easy-find-largest-number.md) | 🟢 Easy | Running Maximum (seeded from the data) |
 
 ---
 

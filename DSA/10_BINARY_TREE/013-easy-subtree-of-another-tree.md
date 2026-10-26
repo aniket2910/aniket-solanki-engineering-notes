@@ -138,7 +138,7 @@ function isSameTree(p: TreeNode | null, q: TreeNode | null): boolean {
     return (
         p.val === q.val &&
         isSameTree(p.left, q.left) &&
-        isSameTree(p.right, q.right);
+        isSameTree(p.right, q.right)
     );
 }
 ```

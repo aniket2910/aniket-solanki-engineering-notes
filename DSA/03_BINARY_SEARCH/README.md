@@ -44,6 +44,16 @@ Use this list to track your progress and quickly open specific problem write-ups
 | :---: | :--- | :---: | :--- |
 | `001` | [Binary Search](./001-easy-binary-search.md) 🔥 | 🟢 Easy | Two-Pointer Standard Search |
 | `002` | [Search in a 2D Matrix](./002-medium-search-2d-matrix.md) 🔥 | 🟡 Medium | Coordinate Mapping & Flat Binary Search |
+| `003` | [Sqrt(x)](./003-easy-sqrtx.md) 🔥 | 🟢 Easy | Binary Search on the Answer |
+| `004` | [Guess Number Higher or Lower](./004-easy-guess-number-higher-or-lower.md) | 🟢 Easy | Binary Search through an API |
+| `005` | [Search in Rotated Sorted Array](./005-medium-search-in-rotated-sorted-array.md) 🔥 | 🟡 Medium | One Half Is Always Sorted |
+| `006` | [First Bad Version](./006-easy-first-bad-version.md) 🔥 | 🟢 Easy | Lower Bound (First `true`) |
+| `007` | [Find Peak Element](./007-medium-find-peak-element.md) 🔥 | 🟡 Medium | Binary Search on the Slope |
+| `008` | [Find Minimum in Rotated Sorted Array](./008-medium-find-minimum-in-rotated-sorted-array.md) 🔥 | 🟡 Medium | Compare Against the Right End |
+| `009` | [Find First and Last Position of Element](./009-medium-find-first-and-last-position.md) 🔥 | 🟡 Medium | Lower + Upper Bound |
+| `010` | [Peak Index in a Mountain Array](./010-medium-peak-index-in-a-mountain-array.md) | 🟡 Medium | First Descending Index |
+| `011` | [Single Element in a Sorted Array](./011-medium-single-element-in-a-sorted-array.md) 🔥 | 🟡 Medium | Binary Search on Index Parity |
+| `012` | [Find K Closest Elements](./012-medium-find-k-closest-elements.md) 🔥 | 🟡 Medium | Binary Search on the Window Start |
 
 ---
 

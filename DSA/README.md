@@ -13,11 +13,11 @@ To keep your interview preparation laser-focused, here is the real-time breakdow
 
 | Metric | Count |
 | :--- | :---: |
-| 🚀 **Total Solved Questions** | **146** |
-| 🟢 Easy Difficulty | **61** |
-| 🟡 Medium Difficulty | **73** |
-| 🔴 Hard Difficulty | **12** |
-| 🔥 **Must Solve Interview Targets** | **104** |
+| 🚀 **Total Solved Questions** | **207** |
+| 🟢 Easy Difficulty | **74** |
+| 🟡 Medium Difficulty | **116** |
+| 🔴 Hard Difficulty | **17** |
+| 🔥 **Must Solve Interview Targets** | **153** |
 
 ---
 
@@ -51,8 +51,24 @@ Select a topic to start your revision:
     * Node value invariants, search, insertion, and LCA optimization paths, and inorder sorted traversals.
 13. **[12. Heap](./12_HEAP/README.md)**
     * Complete binary tree representations, heapifyUp/heapifyDown bubble traversals, in-place heap sort, and custom priority queues.
-14. **[13. Algorithms](./ALGORITHMS/README.md)**
+14. **[13. Greedy](./13_GREEDY/README.md)**
+    * Exchange arguments, sort-then-sweep, interval scheduling, running state with resets, and two-pass constraints.
+15. **[14. Dynamic Programming](./14_DYNAMIC_PROGRAMMING/README.md)**
+    * State → transition → base case, take/skip, 0/1 and unbounded knapsack, grid, interval and string DP.
+16. **[15. Graphs](./15_GRAPHS/README.md)**
+    * Adjacency lists, BFS/DFS, cycle detection, topological sort, Union-Find, Dijkstra, Bellman-Ford and MSTs.
+17. **[Algorithms](./ALGORITHMS/README.md)**
     * In-depth visual, plain-English reference cards for core algorithmic templates and step machines.
+
+---
+
+## 🗒️ Namaste DSA Sheet
+
+Every problem of the [Namaste DSA Sheet](https://namastedev.com/namaste-dsa-sheet) (165, in the sheet's order) has a
+note in this notebook. [`NAMASTE_DSA_SHEET.md`](./NAMASTE_DSA_SHEET.md) maps each one to its note.
+
+To practise them in the browser, use the [Interview Prep Hub](../INTERVIEW_PREP/hub/README.md): each note becomes a page
+with a TypeScript editor that runs your code against the note's test cases.
 
 ---
 

@@ -35,6 +35,7 @@ Use this list to track your progress and quickly open specific problem write-ups
 | `009` | [Longest Repeating Character Replacement](./003-medium-longest-repeating-character-replacement.md) 🔥 | 🟡 Medium | Sliding Window with Max Frequency tracking |
 | `010` | [Permutation in String](./004-medium-permutation-in-string.md) 🔥 | 🟡 Medium | Fixed Size Sliding Window Array Check |
 | `011` | [Sliding Window Maximum](../08_STACKS_AND_QUEUES/020-hard-sliding-window-maximum.md) 🔥 | 🔴 Hard | Monotonic Deque Index/Value Eviction |
+| `012` | [Is Subsequence](./005-easy-is-subsequence.md) 🔥 | 🟢 Easy | Two Pointers at Different Speeds |
 
 ---
 

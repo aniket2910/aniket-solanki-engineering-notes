@@ -27,7 +27,7 @@ Given a string `s`, return *the sum of beauty of all its substrings*.
   * Sum of beauties = $1 + 1 + 2 + 1 = 5$.
 
 #### Test Case 2
-* **Input**: `s = "aabcba"`
+* **Input**: `s = "aabcbaa"`
 * **Output**: `17`
 
 ---

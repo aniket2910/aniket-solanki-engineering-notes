@@ -22,7 +22,7 @@ Return the *minimum number of moves* required to make `s` valid.
 ### 🧪 2. Test Cases
 
 #### Test Case 1
-* **Input**: `s = "()"`
+* **Input**: `s = "())"`
 * **Output**: `1`
 * **Why**: We need to add one opening parenthesis `(` at the start to make it valid: `"(())"`.
 

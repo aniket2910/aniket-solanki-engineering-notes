@@ -48,6 +48,14 @@ Use this list to track your progress and quickly open specific problem write-ups
 | `006` | [Combination Sum II](./006-medium-combination-sum-ii.md) 🔥 | 🟡 Medium | Sorting & Duplicate Sibling Pruning |
 | `007` | [Palindrome Partitioning](./007-medium-palindrome-partitioning.md) 🔥 | 🟡 Medium | Contiguous Slice Backtracking DFS |
 | `008` | [Permutation Sequence](./008-hard-permutation-sequence.md) 🔥 | 🔴 Hard | Mathematical Factorial Block Slicing |
+| `009` | [Subsets](./009-medium-subsets.md) 🔥 | 🟡 Medium | Loop Backtracking with a Start Index |
+| `010` | [Combinations](./010-medium-combinations.md) | 🟡 Medium | Fixed-Size Backtracking with Pruning |
+| `011` | [Permutations](./011-medium-permutations.md) 🔥 | 🟡 Medium | `used[]` Backtracking |
+| `012` | [Combination Sum III](./012-medium-combination-sum-iii.md) | 🟡 Medium | Size + Sum Pruning |
+| `013` | [Letter Combinations of a Phone Number](./013-medium-letter-combinations-of-a-phone-number.md) 🔥 | 🟡 Medium | Per-Level Choice Lists |
+| `014` | [Permutations II](./014-medium-permutations-ii.md) 🔥 | 🟡 Medium | Sort + Duplicate Skip Rule |
+| `015` | [Word Search](./015-medium-word-search.md) 🔥 | 🟡 Medium | Grid DFS with Mark / Unmark |
+| `016` | [N-Queens](./016-hard-n-queens.md) 🔥 | 🔴 Hard | Row-by-Row Placement, Column & Diagonal Sets |
 
 ---
 
