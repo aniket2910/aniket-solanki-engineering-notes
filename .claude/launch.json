@@ -2,32 +2,17 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "react-playground",
+      "name": "revise",
       "runtimeExecutable": "npm",
       "runtimeArgs": [
         "--prefix",
-        "INTERVIEW_PREP/REACTJS/playground",
-        "run",
-        "dev",
-        "--",
-        "--port",
-        "5179",
-        "--strictPort"
-      ],
-      "port": 5179
-    },
-    {
-      "name": "interview-hub",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": [
-        "--prefix",
-        "INTERVIEW_PREP/hub",
+        "INTERVIEW_PREP/app",
         "run",
         "dev",
         "--",
         "--strictPort"
       ],
-      "port": 5180
+      "port": 5190
     }
   ]
 }

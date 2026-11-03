@@ -1,4 +1,0 @@
-export const ACTION_TYPES = {
-  CREATE_NODE: "CREATE_NODE",
-  DELETE_NODE: "DELETE_NODE",
-};
