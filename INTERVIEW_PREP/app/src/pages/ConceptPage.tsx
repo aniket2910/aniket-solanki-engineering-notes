@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { concepts, pageId, sectionConcepts } from "../content/dsa/index.ts";
+import { concepts, pageId, sectionConcepts, sheet } from "../content/dsa/index.ts";
 import { Markdown } from "../components/Markdown.tsx";
 import { RateBar } from "../components/RateBar.tsx";
 import { Bullets, Keywords, RevealQA, Section } from "../components/bits.tsx";
@@ -17,7 +17,9 @@ export function ConceptPage({ slug }: { slug: string }) {
   }, [c]);
   if (!c) return <p className="page">No concept page called “{slug}”.</p>;
 
-  const list = Object.values(sectionConcepts).flat();
+  // Prev/next stay inside the concept's own section; after its last concept come its problems.
+  const [num, list] = Object.entries(sectionConcepts).find(([, cs]) => cs.includes(c))!;
+  const firstProblem = sheet.find((s) => s.num === Number(num))!.items[0];
   const i = list.indexOf(c);
   const prev = list[i - 1];
   const next = list[i + 1];
@@ -69,7 +71,7 @@ export function ConceptPage({ slug }: { slug: string }) {
 
       <nav className="pager">
         {prev ? <a href={href("dsa", "concept", prev.slug)}>← {prev.title}</a> : <span />}
-        {next ? <a href={href("dsa", "concept", next.slug)}>{next.title} →</a> : <a href={href("dsa", "sum")}>Start the problems →</a>}
+        {next ? <a href={href("dsa", "concept", next.slug)}>{next.title} →</a> : <a href={href("dsa", firstProblem.slug)}>Start the problems →</a>}
       </nav>
     </article>
   );
