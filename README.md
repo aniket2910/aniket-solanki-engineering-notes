@@ -20,11 +20,15 @@ Take a deep breath. You’ve got this. Let's make this preparation journey a lit
 
 ---
 
-## 📂 Active Topic: Data Structures & Algorithms
+## 📂 Revise: the interview revision app
 
-Currently, I am actively building out the **Data Structures and Algorithms (DSA)** notebook. Every single problem is documented in clean, human-readable **TypeScript** with complete explanations, real-world analogies, and strict complexity bounds.
+Everything now lives in one web app: **[`INTERVIEW_PREP/app`](./INTERVIEW_PREP/app/README.md)**. Each problem or concept is one page with what the question is really asking, cases to predict, three hints, the answer behind a reveal, the complexity explained, and the words to say in the interview. A heatmap and spaced repetition keep the revision on schedule.
 
-* **[📁 Click Here to Enter the DSA Revision Hub](./DSA/README.md)**
+Live today: **DSA** (the Namaste DSA Sheet, starting with Foundation and complexity basics).
+
+```bash
+cd INTERVIEW_PREP/app && docker compose up -d --build   # http://localhost:8080
+```
 
 ---
 
