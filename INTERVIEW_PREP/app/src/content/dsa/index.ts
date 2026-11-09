@@ -7,6 +7,7 @@ import timeComplexity from "./concepts/time-complexity.ts";
 import spaceComplexity from "./concepts/space-complexity.ts";
 import complexityInInterviews from "./concepts/complexity-in-interviews.ts";
 import arrays from "./concepts/arrays.ts";
+import linkedLists from "./concepts/linked-lists.ts";
 
 export { sheet };
 export type { SheetItem, SheetSection };
@@ -21,6 +22,7 @@ export const notes: Record<string, ProblemNote> = Object.fromEntries(
 export const sectionConcepts: Record<number, ConceptNote[]> = {
   1: [whyDsa, timeComplexity, spaceComplexity, complexityInInterviews],
   2: [arrays],
+  3: [linkedLists],
 };
 
 export const concepts: Record<string, ConceptNote> = Object.fromEntries(
